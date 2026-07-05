@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 
 export default function BackgroundWatermark() {
@@ -16,18 +15,19 @@ export default function BackgroundWatermark() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: "20vh", /* Offsets it downwards to avoid title clash */
+        paddingTop: "20vh",
       }}
       aria-hidden="true"
     >
-      <div 
-        style={{ 
-          position: "relative", 
-          width: "90vw", 
-          maxWidth: "1000px", 
+      <div
+        style={{
+          position: "relative",
+          width: "90vw",
+          maxWidth: "700px",
           aspectRatio: "1/1",
-          opacity: 0.12,
-          filter: "grayscale(0.8) brightness(0.8) contrast(1.2) drop-shadow(0 0 60px rgba(220, 20, 60, 0.3))",
+          opacity: 0.1,
+          mixBlendMode: "screen",
+          filter: "saturate(1.8) contrast(1.15)",
         }}
       >
         <Image

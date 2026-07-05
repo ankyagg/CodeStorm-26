@@ -5,6 +5,7 @@ import Image from "next/image";
 import Aurora from "../../components/Aurora";
 import EmberParticles from "../../components/EmberParticles";
 import ScanLines from "../../components/ScanLines";
+import SplashCursor from "../../components/SplashCursor";
 import "./about.css";
 
 /* ─── Committee Data ─── */
@@ -495,6 +496,12 @@ export default function AboutPage() {
   return (
     <div className="about-page">
       {/* Background Effects */}
+      <SplashCursor
+        DENSITY_DISSIPATION={5}
+        CURL={5}
+        COLOR_UPDATE_SPEED={14}
+        COLOR="#ffffff"
+      />
       <div style={{ position: "fixed", inset: 0, width: "100vw", height: "100vh", zIndex: -3, pointerEvents: "none" }}>
         <Aurora colorStops={["#d60028", "#000000", "#98001b"]} blend={0.5} amplitude={1.0} speed={0.5} />
       </div>

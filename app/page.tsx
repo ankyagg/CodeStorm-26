@@ -95,7 +95,28 @@ const hackathons = [
     ],
     winner: "----",
     runnerUp: "----",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    domainWinners: [
+      {
+        domain: "Industry Domain",
+        name: "Team Alpha",
+        prize: "₹XX,XXX",
+        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+      },
+      {
+        domain: "Web/App Domain",
+        name: "Team Beta",
+        prize: "₹XX,XXX",
+        photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
+      },
+      {
+        domain: "AI/ML Domain",
+        name: "Team Gamma",
+        prize: "₹XX,XXX",
+        photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+      },
+    ],
+    totalPrizePool: "₹X,XX,XXX"
   }
 ];
 
@@ -275,22 +296,51 @@ export default function Home() {
                       ))}
                     </div>
 
-                    <div className="hackathon-card__winners">
-                      <div className="hackathon-card__winner">
-                        <Trophy size={16} style={{ color: "var(--color-red)" }} />
-                        <div>
-                          <span className="hackathon-card__winner-label">Winner</span>
-                          <span className="hackathon-card__winner-name">{hack.winner}</span>
+                    {/* Domain Winners Grid (Codeissance 2025) or generic winner/runner-up */}
+                    {(hack as any).domainWinners ? (
+                      <>
+                        <div className="domain-winners-grid">
+                          {(hack as any).domainWinners.map((dw: any) => (
+                            <div className="domain-winner" key={dw.domain}>
+                              <span className="domain-winner__badge">{dw.domain}</span>
+                              <div className="domain-winner__photo-wrap">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={dw.photo}
+                                  alt={`${dw.name} — ${dw.domain}`}
+                                  className="domain-winner__photo"
+                                />
+                              </div>
+                              <span className="domain-winner__name">{dw.name}</span>
+                              <span className="domain-winner__prize">
+                                <Trophy size={12} /> {dw.prize}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="domain-winners-footer">
+                          <Flame size={14} />
+                          <span>3 Domains • Total Prize Pool: {(hack as any).totalPrizePool}</span>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="hackathon-card__winners">
+                        <div className="hackathon-card__winner">
+                          <Trophy size={16} style={{ color: "var(--color-red)" }} />
+                          <div>
+                            <span className="hackathon-card__winner-label">Winner</span>
+                            <span className="hackathon-card__winner-name">{hack.winner}</span>
+                          </div>
+                        </div>
+                        <div className="hackathon-card__winner">
+                          <Award size={16} style={{ color: "var(--color-gray)" }} />
+                          <div>
+                            <span className="hackathon-card__winner-label">Runner-up</span>
+                            <span className="hackathon-card__winner-name">{hack.runnerUp}</span>
+                          </div>
                         </div>
                       </div>
-                      <div className="hackathon-card__winner">
-                        <Award size={16} style={{ color: "var(--color-gray)" }} />
-                        <div>
-                          <span className="hackathon-card__winner-label">Runner-up</span>
-                          <span className="hackathon-card__winner-name">{hack.runnerUp}</span>
-                        </div>
-                      </div>
-                    </div>
+                    )}
 
                     <div className="hackathon-card__stats-row">
                       <div className="hackathon-card__stat-pill">

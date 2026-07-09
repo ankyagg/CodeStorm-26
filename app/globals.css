@@ -300,6 +300,7 @@ body {
 
 /* Hide lower-priority nav links on smaller screens */
 @media (max-width: 1100px) {
+
   .navbar__links li:nth-child(4),
   .navbar__links li:nth-child(5) {
     display: none;
@@ -1259,6 +1260,143 @@ h1.codestorm-title .c9 {
   margin-right: 0.25rem;
 }
 
+/* ===== Domain Winners Grid (Codeissance 2025) ===== */
+.domain-winners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: rgba(220, 20, 60, 0.03);
+  border: 1px dashed rgba(220, 20, 60, 0.18);
+  border-radius: 14px;
+}
+
+.domain-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: 12px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.domain-winner:hover {
+  background: rgba(220, 20, 60, 0.06);
+  transform: translateY(-2px);
+}
+
+.domain-winner__badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-red);
+  background: var(--color-red-subtle);
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.domain-winner__photo-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--color-red), var(--color-red-dark));
+  box-shadow: 0 0 20px rgba(220, 20, 60, 0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.domain-winner:hover .domain-winner__photo-wrap {
+  box-shadow: 0 0 30px rgba(220, 20, 60, 0.45);
+  transform: scale(1.05);
+}
+
+.domain-winner__photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-black);
+}
+
+.domain-winner__name {
+  font-size: 0.72rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.domain-winner__prize {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-red-bright);
+  background: var(--color-red-subtle);
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.domain-winner__prize svg {
+  flex-shrink: 0;
+}
+
+.domain-winners-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(220, 20, 60, 0.04);
+  border: 1px solid rgba(220, 20, 60, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-white-muted);
+  letter-spacing: 0.03em;
+}
+
+.domain-winners-footer svg {
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+/* Mobile: horizontally scrollable row */
+@media (max-width: 640px) {
+  .domain-winners-grid {
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.75rem;
+    padding: 1rem 0.75rem;
+  }
+
+  .domain-winner {
+    scroll-snap-align: center;
+    min-width: 130px;
+  }
+
+  .domain-winner__photo-wrap {
+    width: 60px;
+    height: 60px;
+  }
+
+  .domain-winner__name {
+    font-size: 0.8rem;
+  }
+}
+
 /* ===== Achievements Grid ===== */
 .achievements-grid {
   display: grid;
@@ -1484,6 +1622,269 @@ h1.codestorm-title .c9 {
 .winner-card__prize {
   color: var(--color-red-bright);
   background: var(--color-red-subtle);
+}
+
+.winner-card__coming-soon {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Clickable Winner Card ===== */
+.winner-card--clickable {
+  cursor: pointer;
+}
+
+.winner-card--clickable:hover {
+  border-color: rgba(220, 20, 60, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(220, 20, 60, 0.12);
+}
+
+.winner-card__view-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-red);
+  letter-spacing: 0.03em;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.winner-card--clickable:hover .winner-card__view-hint {
+  opacity: 1;
+}
+
+/* ===== Modal Overlay ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal-content {
+  position: relative;
+  background: var(--color-black-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem 2rem 2rem;
+  max-width: 1080px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(220, 20, 60, 0.08);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.modal-close:hover {
+  background: rgba(220, 20, 60, 0.15);
+  border-color: rgba(220, 20, 60, 0.3);
+  color: var(--color-white);
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modal-subheading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-white-muted);
+  letter-spacing: 0.03em;
+}
+
+.modal-subheading svg {
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .modal-overlay {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    padding: 2rem 1.25rem 1.5rem;
+    border-radius: 18px;
+  }
+}
+
+/* ===== Winners Grid (centered, equal cards) ===== */
+.winners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 320px));
+  gap: 32px;
+  justify-content: center;
+}
+
+/* ===== Domain Card (standalone, equal-peer treatment) ===== */
+.domain-card {
+  background: var(--color-black-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.domain-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-red), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.domain-card:hover {
+  border-color: rgba(220, 20, 60, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(220, 20, 60, 0.08);
+}
+
+.domain-card:hover::after {
+  opacity: 1;
+}
+
+.domain-card__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-red);
+  background: var(--color-red-subtle);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.domain-card__pill svg {
+  flex-shrink: 0;
+}
+
+.domain-card__photo-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--color-red), var(--color-red-dark));
+  box-shadow: 0 0 20px rgba(220, 20, 60, 0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+  margin: 0.25rem 0;
+  overflow: hidden;
+}
+
+.domain-card:hover .domain-card__photo-wrap {
+  box-shadow: 0 0 30px rgba(220, 20, 60, 0.45);
+  transform: scale(1.02);
+}
+
+.domain-card__photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.domain-card__name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.domain-card__domain {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  letter-spacing: 0.02em;
+}
+
+.domain-card__prize {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-red-bright);
+  background: var(--color-red-subtle);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  margin-top: auto;
+}
+
+.domain-card__prize svg {
+  flex-shrink: 0;
+}
+
+/* Responsive: domain winners grid */
+@media (max-width: 860px) {
+  .winners-grid {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .winners-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
 }
 
 /* ===== Problem Cards ===== */

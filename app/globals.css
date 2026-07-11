@@ -387,6 +387,75 @@ body {
   background-size: 180px 180px;
 }
 
+/* Huge faded CODESTORM watermark */
+.hero__watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%) scaleX(1.15);
+  font-family: var(--font-heading, "Chakra Petch", sans-serif);
+  font-weight: 700;
+  font-size: clamp(6rem, 20vw, 18rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(180deg,
+    rgba(120, 120, 120, 0.35) 0%,
+    rgba(214, 0, 40, 0.75) 55%,
+    rgba(60, 0, 10, 0.9) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  animation: hero-watermark-in 2.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+}
+
+@keyframes hero-watermark-in {
+  from {
+    opacity: 0;
+    filter: blur(24px);
+    transform: translate(-50%, -48%) scaleX(1.15) scale(1.06);
+  }
+  to {
+    opacity: 0.12;
+    filter: blur(0);
+    transform: translate(-50%, -55%) scaleX(1.15) scale(1);
+  }
+}
+
+/* Ghost logo behind the title */
+.hero__ghost-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: clamp(200px, 25vw, 320px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0;
+  filter: blur(0);
+  animation: hero-ghost-logo-in 2s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+@keyframes hero-ghost-logo-in {
+  from {
+    opacity: 0;
+    filter: blur(16px);
+    transform: translate(-50%, -48%) scale(1.1);
+  }
+  to {
+    opacity: 0.08;
+    filter: blur(1px);
+    transform: translate(-50%, -55%) scale(1);
+  }
+}
+
 /* CODESTORM split: CODE white, STORM in red accent */
 .hero__title-storm {
   color: var(--color-red);
@@ -806,6 +875,25 @@ h1.codestorm-title .c9 {
   letter-spacing: 0.03em;
 }
 
+/* ===== Quotes 2×2 Grid ===== */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.quotes-grid .participant-quote {
+  margin-top: 0;
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .quotes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== CTA Banner ===== */
 .cta-banner {
   position: relative;
@@ -1055,23 +1143,17 @@ h1.codestorm-title .c9 {
   }
 }
 
-/* ===== Hackathon Timeline ===== */
+/* ===== Hackathon Timeline (2×2 Grid) ===== */
 .timeline {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding-left: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding-left: 0;
 }
 
 .timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 7px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--color-red), var(--color-gray-border));
+  display: none;
 }
 
 .timeline__item {
@@ -1079,16 +1161,13 @@ h1.codestorm-title .c9 {
 }
 
 .timeline__marker {
-  position: absolute;
-  left: -2rem;
-  top: 2rem;
-  width: 16px;
-  height: 16px;
-  background: var(--color-red);
-  border: 3px solid var(--color-black);
-  border-radius: 50%;
-  box-shadow: 0 0 15px var(--color-red-glow);
-  z-index: 2;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Hackathon Card */
@@ -1564,11 +1643,10 @@ h1.codestorm-title .c9 {
 .winner-card__image {
   width: 100%;
   height: 220px;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 8px;
   margin-bottom: 0.5rem;
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .winner-card__edition {
@@ -1752,17 +1830,6 @@ h1.codestorm-title .c9 {
   grid-template-columns: repeat(3, minmax(0, 320px));
   gap: 32px;
   justify-content: center;
-}
-
-.winners-grid--centered {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.winners-grid--centered .domain-card {
-  width: 100%;
-  max-width: 320px;
 }
 
 /* ===== Domain Card (standalone, equal-peer treatment) ===== */

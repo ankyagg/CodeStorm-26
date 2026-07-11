@@ -1,12 +1,10 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { FolderGit2, Braces, BrainCircuit, ArrowRight, BookOpen, TerminalSquare, AlertCircle } from "lucide-react";
 import Image from "next/image";
-import Aurora from "../../components/Aurora";
-import EmberParticles from "../../components/EmberParticles";
-import ScanLines from "../../components/ScanLines";
+import Link from "next/link";
 import ProblemGrid from "../../components/ProblemGrid";
+
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
@@ -20,38 +18,24 @@ const stagger: Variants = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-
-
 export default function PracticePage() {
   return (
     <>
-      {/* Aurora Background — matches home page */}
-      <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: -1, pointerEvents: 'none' }}>
-        <Aurora
-          colorStops={["#d70025", "#000000", "#b90020"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-      </div>
-      <EmberParticles />
-      <ScanLines />
-
-      {/* Navbar — matches home page */}
+      {/* Navbar */}
       <nav className="navbar" id="navbar">
-        <a href="/" className="navbar__logo">
+        <Link href="/" className="navbar__logo">
           <span className="navbar__logo-icon" style={{ background: "transparent", boxShadow: "none" }}>
             <Image src="/logo.png" alt="TSEC Codestorm" width={32} height={32} style={{ borderRadius: "8px", objectFit: "contain" }} />
           </span>
           TSEC Codestorm
-        </a>
+        </Link>
         <ul className="navbar__links">
-          <li><a href="/#hackathons" className="navbar__link">Our Hackathons</a></li>
-          <li><a href="/about" className="navbar__link">About Us</a></li>
-          <li><a href="/winners" className="navbar__link">Hall of Fame</a></li>
-          <li><a href="/practice" className="navbar__link" style={{ color: "var(--color-white)" }}>Practice</a></li>
+          <li><Link href="/#hackathons" className="navbar__link">Our Hackathons</Link></li>
+          <li><Link href="/about" className="navbar__link">About Us</Link></li>
+          <li><Link href="/winners" className="navbar__link">Hall of Fame</Link></li>
+          <li><Link href="/practice" className="navbar__link" style={{ color: "var(--color-white)" }}>Practice</Link></li>
         </ul>
-        <a href="/#hackathons" className="navbar__cta">Codeissance 2026</a>
+        <Link href="/#hackathons" className="navbar__cta">Codeissance 2026</Link>
       </nav>
 
       <main style={{ paddingTop: "140px", paddingBottom: "100px", minHeight: "100vh" }}>
@@ -75,9 +59,6 @@ export default function PracticePage() {
           <div style={{ marginBottom: "5rem" }}>
             <ProblemGrid />
           </div>
-
-
-
         </div>
       </main>
 

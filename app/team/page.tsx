@@ -4,9 +4,7 @@ import "./team.css";
 
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
-import Aurora from "../../components/Aurora";
-import EmberParticles from "../../components/EmberParticles";
-import ScanLines from "../../components/ScanLines";
+import Link from "next/link";
 import CommitteeCard from "../../components/CommitteeCard";
 import type { CommitteeMember } from "../../components/CommitteeCard";
 
@@ -61,34 +59,22 @@ const committees = [
 export default function TeamPage() {
   return (
     <>
-      {/* Background */}
-      <div style={{ position: "fixed", inset: 0, width: "100vw", height: "100vh", zIndex: -1, pointerEvents: "none" }}>
-        <Aurora
-          colorStops={["#d70025", "#000000", "#b90020"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-      </div>
-      <EmberParticles />
-      <ScanLines />
-
       {/* Navbar */}
       <nav className="navbar" id="navbar">
-        <a href="/" className="navbar__logo">
+        <Link href="/" className="navbar__logo">
           <span className="navbar__logo-icon" style={{ background: "transparent", boxShadow: "none" }}>
             <Image src="/logo.png" alt="Codestorm" width={32} height={32} style={{ borderRadius: "8px", objectFit: "contain" }} />
           </span>
           CODESTORM
-        </a>
+        </Link>
         <ul className="navbar__links">
-          <li><a href="/#hackathons" className="navbar__link">Our Hackathons</a></li>
-          <li><a href="/#achievements" className="navbar__link">Achievements</a></li>
-          <li><a href="/team" className="navbar__link" style={{ color: "var(--color-white)" }}>Team</a></li>
-          <li><a href="/winners" className="navbar__link">Hall of Fame</a></li>
-          <li><a href="/practice" className="navbar__link">Practice</a></li>
+          <li><Link href="/#hackathons" className="navbar__link">Our Hackathons</Link></li>
+          <li><Link href="/#achievements" className="navbar__link">Achievements</Link></li>
+          <li><Link href="/team" className="navbar__link" style={{ color: "var(--color-white)" }}>Team</Link></li>
+          <li><Link href="/winners" className="navbar__link">Hall of Fame</Link></li>
+          <li><Link href="/practice" className="navbar__link">Practice</Link></li>
         </ul>
-        <a href="/" className="navbar__cta">Codeissance 2026</a>
+        <Link href="/" className="navbar__cta">Codeissance 2026</Link>
       </nav>
 
       {/* Page Content */}
@@ -136,9 +122,7 @@ export default function TeamPage() {
                 transition={{ duration: 0.6, delay: i * 0.12, type: "spring", bounce: 0.35 }}
               >
                 <h2 className="team-grid__label">{committee.name}</h2>
-                <CommitteeCard
-                  members={committee.members}
-                />
+                <CommitteeCard members={committee.members} />
               </motion.div>
             ))}
           </div>

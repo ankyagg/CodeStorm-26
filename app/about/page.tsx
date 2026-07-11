@@ -2,9 +2,7 @@
 import TiltedCard from "../../components/TiltedCard";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import Aurora from "../../components/Aurora";
-import EmberParticles from "../../components/EmberParticles";
-import ScanLines from "../../components/ScanLines";
+import Link from "next/link";
 import "./about.css";
 
 /* ─── Committee Data ─── */
@@ -494,29 +492,24 @@ export default function AboutPage() {
 
   return (
     <div className="about-page">
-      {/* Background Effects */}
-      <div style={{ position: "fixed", inset: 0, width: "100vw", height: "100vh", zIndex: -3, pointerEvents: "none" }}>
-        <Aurora colorStops={["#d60028", "#000000", "#98001b"]} blend={0.5} amplitude={1.0} speed={0.5} />
-      </div>
+      {/* Background Effects — Aurora/EmberParticles/ScanLines now render globally via layout.tsx */}
       <div ref={spotlightRef} className="about-spotlight" aria-hidden="true" />
-      <EmberParticles />
-      <ScanLines />
 
       {/* ═══ Navbar (reused from homepage) ═══ */}
       <nav className="navbar" id="navbar" aria-label="Main navigation">
-        <a href="/" className="navbar__logo">
+        <Link href="/" className="navbar__logo">
           <span className="navbar__logo-icon" style={{ background: "transparent", boxShadow: "none" }}>
             <Image src="/logo.png" alt="TSEC Codestorm" width={32} height={32} style={{ borderRadius: "8px", objectFit: "contain" }} />
           </span>
           TSEC Codestorm
-        </a>
+        </Link>
         <ul className="navbar__links">
-          <li><a href="/#hackathons" className="navbar__link">Our Hackathons</a></li>
-          <li><a href="/about" className="navbar__link" style={{ color: "var(--color-white)" }}>About Us</a></li>
-          <li><a href="/winners" className="navbar__link">Hall of Fame</a></li>
-          <li><a href="/practice" className="navbar__link">Practice</a></li>
+          <li><Link href="/#hackathons" className="navbar__link">Our Hackathons</Link></li>
+          <li><Link href="/about" className="navbar__link" style={{ color: "var(--color-white)" }}>About Us</Link></li>
+          <li><Link href="/winners" className="navbar__link">Hall of Fame</Link></li>
+          <li><Link href="/practice" className="navbar__link">Practice</Link></li>
         </ul>
-        <a href="/#hackathons" className="navbar__cta">Codeissance 2026</a>
+        <Link href="/#hackathons" className="navbar__cta">Codeissance 2026</Link>
       </nav>
 
       <main>
@@ -730,9 +723,9 @@ export default function AboutPage() {
             CODESTORM
           </div>
           <ul className="footer__links">
-            <li><a href="/#hackathons" className="footer__link">Hackathons</a></li>
-            <li><a href="/about" className="footer__link">About</a></li>
-            <li><a href="/#achievements" className="footer__link">Achievements</a></li>
+            <li><Link href="/#hackathons" className="footer__link">Hackathons</Link></li>
+            <li><Link href="/about" className="footer__link">About</Link></li>
+            <li><Link href="/#achievements" className="footer__link">Achievements</Link></li>
           </ul>
           <div className="footer__socials">
             <a href="https://www.instagram.com/tseccodestorm/?hl=en" target="_blank" rel="noopener noreferrer" className="footer__social" aria-label="Instagram">

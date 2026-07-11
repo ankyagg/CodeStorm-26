@@ -4,9 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Trophy, Award, Star, Zap, Code, Flame, Globe, Brain, Building2, X } from "lucide-react";
 import Image from "next/image";
-import Aurora from "../../components/Aurora";
-import EmberParticles from "../../components/EmberParticles";
-import ScanLines from "../../components/ScanLines";
+import Link from "next/link";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -50,14 +48,14 @@ const winners: WinnerEntry[] = [
     track: "--------",
     prize: "--------",
     icon: <Award size={20} />,
-    image: "/winners/codeissance2025-cover.png",
+    image: "/winners/Codeissance-25.jpg",
     domainWinners: [
       {
         domain: "Industry Domain",
         label: "Industry",
-        name: "Team Alpha",
-        prize: "₹XX,XXX",
-        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+        name: "HackNova",
+        prize: "₹20,000",
+        photo: "/winners/industry-winner.png",
         icon: <Building2 size={18} />,
       },
       {
@@ -77,16 +75,90 @@ const winners: WinnerEntry[] = [
         icon: <Brain size={18} />,
       },
     ],
-    totalPrizePool: "₹X,XX,XXX"
+    totalPrizePool: "₹60,000"
+  },
+  {
+    edition: "Hack Sprint",
+    team: "",
+    project: "",
+    track: "",
+    prize: "",
+    icon: <Zap size={20} />,
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    domainWinners: [
+      {
+        domain: "Overall Winner",
+        label: "Winner",
+        name: "Winning Team",
+        prize: "TBA",
+        photo: "/winners/Hacksprint.png",
+        icon: <Trophy size={18} />,
+      }
+    ]
+  },
+  {
+    edition: "Technovation 2025",
+    team: "",
+    project: "",
+    track: "",
+    prize: "",
+    icon: <Star size={20} />,
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    domainWinners: [
+      {
+        domain: "Domain 1",
+        label: "Domain 1",
+        name: "TBA",
+        prize: "₹XX,XXX",
+        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+        icon: <Building2 size={18} />,
+      },
+      {
+        domain: "Domain 2",
+        label: "Domain 2",
+        name: "TBA",
+        prize: "₹XX,XXX",
+        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+        icon: <Globe size={18} />,
+      },
+      {
+        domain: "Domain 3",
+        label: "Domain 3",
+        name: "TBA",
+        prize: "₹XX,XXX",
+        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+        icon: <Brain size={18} />,
+      }
+    ],
+    totalPrizePool: "₹50,000"
   },
   {
     edition: "Codessiance 2024",
-    team: "-------",
-    project: "------",
-    track: "------",
-    prize: "------",
+    team: "",
+    project: "",
+    track: "",
+    prize: "",
     icon: <Code size={20} />,
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+    domainWinners: [
+      {
+        domain: "Offline Mode",
+        label: "Offline",
+        name: "Offline Winners",
+        prize: "₹25,000",
+        photo: "/winners/codeissance2024-offline.png",
+        icon: <Building2 size={18} />,
+      },
+      {
+        domain: "Online Mode",
+        label: "Online",
+        name: "Online Winners",
+        prize: "₹25,000",
+        photo: "/winners/codeissance2024-online.png",
+        icon: <Globe size={18} />,
+      }
+    ],
+    totalPrizePool: "₹50,000"
   },
   {
     edition: "Technovation 2024",
@@ -104,8 +176,8 @@ const winners: WinnerEntry[] = [
     track: "--------",
     prize: "--------",
     icon: <Zap size={20} />,
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
-  },
+    image: "/winners/Codeissance-23.jpg"
+  }
 ];
 
 export default function WinnersPage() {
@@ -114,33 +186,21 @@ export default function WinnersPage() {
 
   return (
     <>
-      {/* Aurora Background — matches home page */}
-      <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: -1, pointerEvents: 'none' }}>
-        <Aurora
-          colorStops={["#d70025", "#000000", "#b90020"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-      </div>
-      <EmberParticles />
-      <ScanLines />
-
-      {/* Navbar — matches home page */}
+      {/* Navbar */}
       <nav className="navbar" id="navbar">
-        <a href="/" className="navbar__logo">
+        <Link href="/" className="navbar__logo">
           <span className="navbar__logo-icon" style={{ background: "transparent", boxShadow: "none" }}>
             <Image src="/logo.png" alt="TSEC Codestorm" width={32} height={32} style={{ borderRadius: "8px", objectFit: "contain" }} />
           </span>
           TSEC Codestorm
-        </a>
+        </Link>
         <ul className="navbar__links">
-          <li><a href="/#hackathons" className="navbar__link">Our Hackathons</a></li>
-          <li><a href="/about" className="navbar__link">About Us</a></li>
-          <li><a href="/winners" className="navbar__link" style={{ color: "var(--color-white)" }}>Hall of Fame</a></li>
-          <li><a href="/practice" className="navbar__link">Practice</a></li>
+          <li><Link href="/#hackathons" className="navbar__link">Our Hackathons</Link></li>
+          <li><Link href="/about" className="navbar__link">About Us</Link></li>
+          <li><Link href="/winners" className="navbar__link" style={{ color: "var(--color-white)" }}>Hall of Fame</Link></li>
+          <li><Link href="/practice" className="navbar__link">Practice</Link></li>
         </ul>
-        <a href="/#hackathons" className="navbar__cta">Codeissance 2026</a>
+        <Link href="/#hackathons" className="navbar__cta">Codeissance 2026</Link>
       </nav>
 
       <main style={{ paddingTop: "140px", paddingBottom: "100px", minHeight: "100vh" }}>
@@ -152,7 +212,7 @@ export default function WinnersPage() {
             style={{ textAlign: "center", marginBottom: "4rem" }}
           >
             <motion.h1 className="heading-xl hero__title" variants={fadeUp} custom={1} style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
-              <span style={{ color: "var(--color-white)" }}>HALL OF</span>
+              <span style={{ color: "var(--color-white)" }}>HALL OF </span>
               <span className="hero__title-storm"> FAME</span>
             </motion.h1>
             <motion.p className="text-body hero__subtitle" variants={fadeUp} custom={2} style={{ margin: "0 auto" }}>
@@ -185,11 +245,11 @@ export default function WinnersPage() {
                   <>
                     <div className="winner-card__meta">
                       <span className="winner-card__pill">
-                        <Flame size={14} /> {winner.domainWinners.length} Domains
+                        <Flame size={14} /> {winner.domainWinners.length} {winner.domainWinners.length === 1 ? 'Winner' : 'Domains'}
                       </span>
                       {winner.totalPrizePool && (
                         <span className="winner-card__pill winner-card__prize">
-                          Prize Pool: 60,000/-
+                          Prize Pool: {winner.totalPrizePool}
                         </span>
                       )}
                     </div>
@@ -261,12 +321,12 @@ export default function WinnersPage() {
                 {activeModal.totalPrizePool && (
                   <div className="modal-subheading">
                     <Flame size={14} />
-                    <span>{activeModal.domainWinners.length} Domains &bull; Total Prize Pool: {activeModal.totalPrizePool}</span>
+                    <span>{activeModal.domainWinners.length} {activeModal.domainWinners.length === 1 ? 'Winner' : 'Domains'} &bull; Total Prize Pool: {activeModal.totalPrizePool}</span>
                   </div>
                 )}
               </div>
 
-              <div className="winners-grid">
+              <div className={`winners-grid ${activeModal.domainWinners.length <= 2 ? 'winners-grid--centered' : ''}`}>
                 {activeModal.domainWinners.map((dw, j) => (
                   <motion.div
                     key={dw.domain}

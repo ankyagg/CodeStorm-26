@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import BackgroundWatermark from "../components/BackgroundWatermark";
-import SplashCursor from "../components/SplashCursor";
+import BackgroundWatermark from "@/components/BackgroundWatermark";
+import BackgroundEffects from "@/components/BackgroundEffects";
 
 export const metadata: Metadata = {
   title: "Codestorm | Where Code Meets Chaos",
@@ -29,13 +29,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <SplashCursor
-          RAINBOW_MODE={false}
-          COLOR="#ff0000"
-          DENSITY_DISSIPATION={5}
-          CURL={2}
-          COLOR_UPDATE_SPEED={10}
-        />
+        <BackgroundEffects />
         <BackgroundWatermark />
         {children}
       </body>

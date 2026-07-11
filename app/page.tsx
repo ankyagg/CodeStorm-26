@@ -212,15 +212,7 @@ export default function Home() {
             <br />Turns out, a lot of people agreed.
           </motion.p>
 
-          <motion.div className="hero__actions" variants={fadeUp} custom={3}>
-            <a href="#hackathons" className="btn btn--primary">
-              Explore Our Hackathons
-              <ChevronRight size={18} />
-            </a>
-            <a href="#achievements" className="btn btn--outline">
-              See the Numbers
-            </a>
-          </motion.div>
+
 
         </motion.div>
       </section>

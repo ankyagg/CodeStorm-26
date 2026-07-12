@@ -190,6 +190,11 @@ body {
 
 /* ===== Navbar ===== */
 .navbar {
+  /* Single source of truth for the flex row's natural height.
+     = navbar__logo-icon height (32px). The CTA derives its height
+     from align-self:stretch so this variable exists for reference /
+     any future fixed-height fallback — do NOT duplicate here. */
+  --nav-inner-height: 2rem;
   position: fixed;
   top: 1.25rem;
   left: 50%;
@@ -202,10 +207,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(15, 5, 8, 0.97) 0%, rgba(30, 8, 12, 0.95) 100%);
+  border: 1px solid rgba(214, 0, 40, 0.15);
   border-radius: 100px;
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.35),
@@ -250,7 +253,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-gray);
+  color: var(--color-white-muted); /* boosted from --color-gray (#888) for contrast on solid dark bg */
   text-decoration: none;
   transition: color 0.3s ease;
   position: relative;
@@ -280,11 +283,17 @@ body {
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
-  padding: 0.55rem 1.25rem;
+  /* Height: derived from the flex row via align-self:stretch — no px value needed.
+     If the layout ever becomes non-flex, fall back to: height: var(--nav-inner-height) */
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.25rem; /* horizontal only — vertical is owned by align-self:stretch */
   background: var(--color-red);
   color: var(--color-white);
   border: none;
-  border-radius: 8px;
+  border-radius: 9999px; /* pill — stays visually correct at any height, matches nav container */
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -318,6 +327,26 @@ body {
   text-align: center;
   padding: 8rem 2rem 4rem;
   overflow: hidden;
+}
+
+/* Scroll-down indicator — identical treatment to .about-hero__scroll */
+.hero__scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  color: var(--color-red);
+  opacity: 0.88;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px var(--color-red-glow));
+  animation: hero-scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50%       { transform: translate(-50%, 8px); }
 }
 
 .hero__badge {
@@ -1150,6 +1179,7 @@ h1.codestorm-title .c9 {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding-left: 0;
+  align-items: stretch; /* equal-height rows */
 }
 
 .timeline::before {
@@ -1158,6 +1188,20 @@ h1.codestorm-title .c9 {
 
 .timeline__item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Framer motion.div wrapper is the direct child — let it grow */
+.timeline__item > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The hackathon card stretches to fill the motion wrapper */
+.timeline__item .hackathon-card {
+  flex: 1;
 }
 
 .timeline__marker {

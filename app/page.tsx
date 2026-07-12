@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, type Variants, useScroll, useTransform } from "framer-motion";
-import { Trophy, Calendar, Users, Award, Star, ChevronRight, Flame } from "lucide-react";
+import { Calendar, Users, Award, Star, ChevronRight, ChevronDown } from "lucide-react";
 
 import Aurora from "../components/Aurora";
 import EmberParticles from "../components/EmberParticles";
@@ -24,7 +24,7 @@ const stagger: Variants = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 const tickerItems = [
-  "Codestorm 2.0 — Coming Soon",
+  "Codeissance 2026 — Coming Soon",
   "1000+ Developers & Counting",
   "50+ Colleges. One Stage.",
   "Real Problems. Real Solutions.",
@@ -37,10 +37,10 @@ const hackathons = [
     title: "Codessiance 2023",
     tagline: "Where It All Began",
     date: "March 2023",
-    participants: "150+",
+    participants: "1000+",
     duration: "24 Hours",
     description:
-      "Nobody knew what to expect — 150 developers crammed into one room, fueled by caffeine and chaos. Teams tackled fintech, healthcare, and sustainability tracks. Honestly? It was rough around the edges. But that's exactly what made it magic.",
+      "Nobody knew what to expect — 1000+ developers (registrations) crammed into one room, fueled by caffeine and chaos. Teams tackled fintech, healthcare, and sustainability tracks. Honestly? It was rough around the edges. But that's exactly what made it magic.",
     highlights: [
       "3 industry-sponsored tracks",
       "Mentored by industry experts",
@@ -77,8 +77,6 @@ const hackathons = [
       "------",
       "------",
     ],
-    winner: "----",
-    runnerUp: "----",
     image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -93,30 +91,7 @@ const hackathons = [
       "-------",
       "--------",
     ],
-    winner: "----",
-    runnerUp: "----",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-    domainWinners: [
-      {
-        domain: "Industry Domain",
-        name: "Team Alpha",
-        prize: "₹XX,XXX",
-        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
-      },
-      {
-        domain: "Web/App Domain",
-        name: "Team Beta",
-        prize: "₹XX,XXX",
-        photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
-      },
-      {
-        domain: "AI/ML Domain",
-        name: "Team Gamma",
-        prize: "₹XX,XXX",
-        photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
-      },
-    ],
-    totalPrizePool: "₹X,XX,XXX"
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -215,6 +190,9 @@ export default function Home() {
 
 
         </motion.div>
+
+        {/* Scroll-down indicator — mirrors .about-hero__scroll pattern */}
+        <ChevronDown size={32} className="hero__scroll" aria-hidden="true" />
       </section>
 
       {/* ═══════════════ TICKER MARQUEE ═══════════════ */}
@@ -287,52 +265,6 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
-
-                    {/* Domain Winners Grid (Codeissance 2025) or generic winner/runner-up */}
-                    {(hack as any).domainWinners ? (
-                      <>
-                        <div className="domain-winners-grid">
-                          {(hack as any).domainWinners.map((dw: any) => (
-                            <div className="domain-winner" key={dw.domain}>
-                              <span className="domain-winner__badge">{dw.domain}</span>
-                              <div className="domain-winner__photo-wrap">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={dw.photo}
-                                  alt={`${dw.name} — ${dw.domain}`}
-                                  className="domain-winner__photo"
-                                />
-                              </div>
-                              <span className="domain-winner__name">{dw.name}</span>
-                              <span className="domain-winner__prize">
-                                <Trophy size={12} /> {dw.prize}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="domain-winners-footer">
-                          <Flame size={14} />
-                          <span>3 Domains • Total Prize Pool: {(hack as any).totalPrizePool}</span>
-                        </div>
-                      </>
-                    ) : (
-                      <div className="hackathon-card__winners">
-                        <div className="hackathon-card__winner">
-                          <Trophy size={16} style={{ color: "var(--color-red)" }} />
-                          <div>
-                            <span className="hackathon-card__winner-label">Winner</span>
-                            <span className="hackathon-card__winner-name">{hack.winner}</span>
-                          </div>
-                        </div>
-                        <div className="hackathon-card__winner">
-                          <Award size={16} style={{ color: "var(--color-gray)" }} />
-                          <div>
-                            <span className="hackathon-card__winner-label">Runner-up</span>
-                            <span className="hackathon-card__winner-name">{hack.runnerUp}</span>
-                          </div>
-                        </div>
-                      </div>
-                    )}
 
                     <div className="hackathon-card__stats-row">
                       <div className="hackathon-card__stat-pill">

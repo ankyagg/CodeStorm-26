@@ -47,59 +47,49 @@ const COMMITTEES: Committee[] = [
       {
         name: "Tech Team",
         members: [
-          { name: "Alex Mercer", role: "Team Lead", image: U("photo-1506794778202-cad84cf45f1d") },
-          { name: "Sarah Jenkins", role: "Team Member", image: U("photo-1494790108377-be9c29b29330") },
-          { name: "Michael Chang", role: "Team Member", image: U("photo-1507003211169-0a1dd7228f2d") },
-          { name: "Priya Patel", role: "Team Member", image: U("photo-1438761681033-6461ffad8d80") },
-          { name: "David Rodriguez", role: "Team Member", image: U("photo-1492562080023-ab3db95bfbce") },
+          { name: "Manav Sonawane", role: "Technical SCOM Head", image: "/manav-sonawane.jpg" },
+          { name: "Aniket Walanj", role: "Technical SCOM", image: "/aniket-walanj.jpg" },
+          { name: "Ankit Vishwakarma", role: "Technical SCOM", image: "/ankit-vishwakarma.jpg" },
+          { name: "Akshata Pandit", role: "Technical SCOM", image: "/akshata-pandit.jpg" },
         ],
       },
       {
         name: "Design Team",
         members: [
-          { name: "Jordan Lee", role: "Team Lead", image: U("photo-1472099645785-5658abf4ff4e") },
-          { name: "Emma Wilson", role: "Team Member", image: U("photo-1534528741775-53994a69daeb") },
-          { name: "Marcus Johnson", role: "Team Member", image: U("photo-1500648767791-00dcc994a43e") },
-          { name: "Sophia Chen", role: "Team Member", image: U("photo-1517841905240-472988babdf9") },
+          { name: "Vansh Gaur", role: "Design SCOM", image: "/VanshGaur_SCOM.jpg" },
+          { name: "Shreya Yeole", role: "Design SCOM", image: "ShreyaYeole_SCOM.jpg" },
+          { name: "Priyanka Patil", role: "Design SCOM", image: "PriyankaPatil_SCOM.jpg" },
         ],
       },
       {
         name: "Social Media Management",
         members: [
-          { name: "Taylor Smith", role: "Team Lead", image: U("photo-1544005313-94ddf0286df2") },
-          { name: "Chris Evans", role: "Team Member", image: U("photo-1519085360753-af0119f7cbe7") },
-          { name: "Jessica Alba", role: "Team Member", image: U("photo-1524504388940-b1c1722653e1") },
+          { name: "Aryan Pathare", role: "SMM SCOM Head", image: "/aryan-pathare.jpg" },
         ],
       },
       {
         name: "Logistics",
         members: [
-          { name: "Ryan Gosling", role: "Team Lead", image: U("photo-1503023345310-bd7c1de61c7d") },
-          { name: "Emma Stone", role: "Team Member", image: U("photo-1529626455594-4ff0802cfb7e") },
-          { name: "Dev Sharma", role: "Team Member", image: U("photo-1568602471122-7832951cc4c5") },
+          { name: "Dhruv Hemdev", role: "Logistics SCOM Head", image: "/dhruv-hemdev.jpg" },
         ],
       },
       {
         name: "Marketing",
         members: [
-          { name: "Nina Kapoor", role: "Team Lead", image: U("photo-1580489944761-15a19d654956") },
-          { name: "Leo Fernandes", role: "Team Member", image: U("photo-1520813792240-56fc4a3765a7") },
-          { name: "Aisha Khan", role: "Team Member", image: U("photo-1544723795-3fb6469f5b39") },
+          { name: "Mansi Parande", role: "Marketing SCOM", image: "/mansi-parande.jpg" },
+          { name: "Deepesh Jaisingh", role: "Marketing SCOM", image: "/deepesh-jaisingh.jpg" },
         ],
       },
       {
         name: "PR",
         members: [
-          { name: "Rohan Mehta", role: "Team Lead", image: U("photo-1519345182560-3f2917c472ef") },
-          { name: "Zara Ali", role: "Team Member", image: U("photo-1531123897727-8f129e1688ce") },
+          { name: "Yash Chinchawade", role: "PR SCOM Head", image: "/yash-chinchawade.jpg" },
         ],
       },
       {
         name: "Editorial",
         members: [
-          { name: "Ishaan Verma", role: "Team Lead", image: U("photo-1508341591423-4347099e1f19") },
-          { name: "Maya Iyer", role: "Team Member", image: U("photo-1487412720507-e7ab37603c6f") },
-          { name: "Kabir Nair", role: "Team Member", image: U("photo-1463453091185-61582044d556") },
+          { name: "Saarthak Patil", role: "Editorial SCOM Head", image: "saarthak-patil.jpg" },
         ],
       },
     ],
@@ -111,44 +101,41 @@ const COMMITTEES: Committee[] = [
       {
         name: "Tech Team",
         members: [
-          { name: "Arjun Rao", role: "Team Lead", image: U("photo-1500048993953-d23a436266cf") },
-          { name: "Sneha Kulkarni", role: "Team Member", image: U("photo-1487412720507-e7ab37603c6f") },
-          { name: "Vivaan Joshi", role: "Team Member", image: U("photo-1519244703995-f4e0f30006d5") },
+          { name: "Aditya Haswani", role: "Technical JCOM", image: "AdityaHaswani_JCOM.jpg" },
+          { name: "Sanskar Jadhav", role: "Technical JCOM", image: "SanskarJadhav_JCOM.jpg" },
         ],
       },
       {
         name: "Design Team",
         members: [
-          { name: "Riya Desai", role: "Team Lead", image: U("photo-1489424731084-a5d8b219a5bb") },
-          { name: "Aditya Singh", role: "Team Member", image: U("photo-1506277886164-e25aa3f4ef7f") },
+          { name: "Khushnuma Vimadalal", role: "Design JCOM", image: "KhushnumaVimadalal_JCOM.jpg" },
+          { name: "Piyush Tehlani", role: "Design JCOM", image: "PiyushTehlani_JCOM.jpg" },
         ],
       },
       {
         name: "Social Media Management",
         members: [
-          { name: "Kiara Shah", role: "Team Lead", image: U("photo-1531746020798-e6953c6e8e04") },
-          { name: "Ansh Gupta", role: "Team Member", image: U("photo-1492446845049-9c50cc313f00") },
+          { name: "Dixit Bind", role: "SMM JCOM", image: "dixit-bind.jpg" },
+          { name: "Parv Jain", role: "SMM JCOM", image: "/parv-jain.jpg" }
         ],
       },
       {
         name: "Logistics",
         members: [
-          { name: "Om Patil", role: "Team Lead", image: U("photo-1504257432389-52343af06ae3") },
-          { name: "Tanvi More", role: "Team Member", image: U("photo-1499996860823-5214fcc65f8f") },
+          { name: "Rishabh Jain", role: "Logistics JCOM", image: "rishabh-jain.jpg" },
         ],
       },
       {
         name: "Marketing",
         members: [
-          { name: "Ira Bhatt", role: "Team Lead", image: U("photo-1517365830460-955ce3ccd263") },
-          { name: "Yash Thakur", role: "Team Member", image: U("photo-1521119989659-a83eee488004") },
+          { name: "Vardaan Grover", role: "Marketing JCOM", image: "/vardaan-grover.jpg" },
+          { name: "Dhruv Pareek", role: "Marketing JCOM", image: "/dhruv-pareek.jpg" }
         ],
       },
       {
         name: "PR",
         members: [
-          { name: "Advait Kelkar", role: "Team Lead", image: U("photo-1522075469751-3a6694fb2f61") },
-          { name: "Naina Chopra", role: "Team Member", image: U("photo-1509967419530-da38b4704bc6") },
+          { name: "Arfiya Malkani", role: "PR JCOM", image: "arfiya-malkani.jpg" },
         ],
       },
       {
@@ -407,8 +394,21 @@ export default function AboutPage() {
     }, 420);
   }, []);
 
+  const nextDomain = useCallback((dir: number) => {
+    const total = committee.domains.length;
+    if (total <= 1) return;
+    const newDomain = (domainIdx + dir + total) % total;
+    transitionCard(committeeIdx, newDomain);
+  }, [committee.domains.length, domainIdx, committeeIdx, transitionCard]);
+
   const nextMember = useCallback((fromAutoplay: boolean) => {
     const total = domain.members.length;
+    
+    if (!shuffleOn && memberIdx >= total - 1) {
+      nextDomain(1);
+      return;
+    }
+
     transitionMember(1, () => {
       setMemberIdx(prev => {
         if (shuffleOn && total > 1) {
@@ -420,24 +420,23 @@ export default function AboutPage() {
       });
     });
     if (!fromAutoplay) setPlaying(true);
-  }, [domain.members.length, shuffleOn, transitionMember]);
+  }, [domain.members.length, memberIdx, shuffleOn, transitionMember, nextDomain]);
 
   // Keep ref in sync
   useEffect(() => { nextMemberRef.current = nextMember; }, [nextMember]);
 
   const prevMember = useCallback(() => {
     const total = domain.members.length;
+    
+    if (memberIdx === 0) {
+      nextDomain(-1);
+      return;
+    }
+
     transitionMember(-1, () => {
       setMemberIdx(prev => (prev - 1 + total) % total);
     });
-  }, [domain.members.length, transitionMember]);
-
-  const nextDomain = useCallback((dir: number) => {
-    const total = committee.domains.length;
-    if (total <= 1) return;
-    const newDomain = (domainIdx + dir + total) % total;
-    transitionCard(committeeIdx, newDomain);
-  }, [committee.domains.length, domainIdx, committeeIdx, transitionCard]);
+  }, [domain.members.length, memberIdx, transitionMember, nextDomain]);
 
   const switchCommittee = useCallback((i: number) => {
     if (i === committeeIdx) return;
@@ -621,9 +620,6 @@ export default function AboutPage() {
                 <header className="player-card__head">
                   <div>
                     <p className="player-card__album member-anim">{domain.name}</p>
-                    <p className="player-card__index member-anim">
-                      <span className="accent">{memberIdx + 1}</span> / {domain.members.length}
-                    </p>
                   </div>
                   <p className="player-card__roletag member-anim">{member.role}</p>
                 </header>
@@ -635,6 +631,12 @@ export default function AboutPage() {
                     src={member.image}
                     alt={`${member.name} — ${member.role}`}
                     loading="eager"
+                    style={
+                      member.image === "/aryan-pathare.jpg" ? { objectPosition: "center 25%" } :
+                      member.image === "PriyankaPatil_SCOM.jpg" ? { objectPosition: "center 15%" } :
+                      member.image === "KhushnumaVimadalal_JCOM.jpg" ? { objectPosition: "center 80%" } :
+                      undefined
+                    }
                   />
                 </div>
 

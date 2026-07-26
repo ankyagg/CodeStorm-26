@@ -595,7 +595,7 @@
 .about-page .player-card__art {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
   border-radius: var(--ab-radius-md);
   overflow: hidden;
   background: var(--ab-color-gray-dark);
@@ -613,7 +613,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 42%;
   transition: transform 0.55s var(--ab-ease-out), opacity 0.4s var(--ab-ease-out),
     filter 0.4s var(--ab-ease-out);
 }

@@ -163,7 +163,7 @@ export default function Home() {
           <li><a href="/winners" className="navbar__link">Hall of Fame</a></li>
           <li><a href="/practice" className="navbar__link">Practice</a></li>
         </ul>
-        <a href="/#hackathons" className="navbar__cta"> Codeissance 2026</a>
+        <a href="/codeissance" className="navbar__cta"> Codeissance 2026</a>
       </nav>
 
       <section className="hero" id="hero" ref={heroRef} style={{ overflow: "hidden", position: "relative" }}>

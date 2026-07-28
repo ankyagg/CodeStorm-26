@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, type Variants, useScroll, useTransform } from "framer-motion";
 import { Calendar, Users, Award, Star, ChevronRight, ChevronDown } from "lucide-react";
 
-import Aurora from "../components/Aurora";
 import Vortex from "../components/Vortex";
 import EmberParticles from "../components/EmberParticles";
 import ScanLines from "../components/ScanLines";
@@ -136,13 +135,15 @@ export default function Home() {
 
   return (
     <>
-      {/* Aurora Background — covers the whole page behind everything */}
-      <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: -1, pointerEvents: 'none' }}>
-        <Aurora
-          colorStops={["#d70025", "#000000", "#b90020"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
+      {/* Vortex Background */}
+      <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
+        <Vortex
+          background="transparent"
+          lineOptions={{ color: "#d70025" }}
+          cometOptions={{ color: "#b90020" }}
+          dots={true}
+          comets={true}
+          repel={true}
         />
       </div>
       {/* Ember particles — scroll-reactive */}

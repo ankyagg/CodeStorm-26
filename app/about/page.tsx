@@ -49,7 +49,7 @@ const COMMITTEES: Committee[] = [
       {
         name: "Tech Team",
         members: [
-          { name: "Manav Sonawane", role: "Technical SCOM Head", image: "/manav-sonawane.jpg", github: "https://github.com/Manav-Sonawane", linkedin: "https://linkedin.com/in/manavsonawane" },
+          { name: "Manav Sonawane", role: "Technical SCOM", image: "/manav-sonawane.jpg", github: "https://github.com/Manav-Sonawane", linkedin: "https://linkedin.com/in/manavsonawane" },
           { name: "Aniket Walanj", role: "Technical SCOM", image: "/aniket-walanj.jpg", github: "https://github.com/ankyagg", linkedin: "https://linkedin.com/in/aniketwalanj" },
           { name: "Ankit Vishwakarma", role: "Technical SCOM", image: "/ankit-vishwakarma.jpg", github: "http://github.com/Ankitvishwa07", linkedin: "https://www.linkedin.com/in/ankit-vishwakarma-29bbab20a" },
           { name: "Akshata Pandit", role: "Technical SCOM", image: "/akshata-pandit.jpg", github: "https://github.com/akshatapandit", linkedin: "https://www.linkedin.com/in/akshata-pandit-452760332/" },
@@ -66,13 +66,13 @@ const COMMITTEES: Committee[] = [
       {
         name: "Social Media Management",
         members: [
-          { name: "Aryan Pathare", role: "SMM SCOM Head", image: "/aryan-pathare.jpg", github: "https://github.com/Aryan-Pathare", linkedin: "https://www.linkedin.com/in/aryan-pathare/" },
+          { name: "Aryan Pathare", role: "SMM SCOM", image: "/aryan-pathare.jpg", github: "https://github.com/Aryan-Pathare", linkedin: "https://www.linkedin.com/in/aryan-pathare/" },
         ],
       },
       {
         name: "Logistics",
         members: [
-          { name: "Dhruv Hemdev", role: "Logistics SCOM Head", image: "/dhruv-hemdev.jpg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
+          { name: "Dhruv Hemdev", role: "Logistics SCOM", image: "/dhruv-hemdev.jpg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
         ],
       },
       {
@@ -85,13 +85,13 @@ const COMMITTEES: Committee[] = [
       {
         name: "PR",
         members: [
-          { name: "Yash Chinchawade", role: "PR SCOM Head", image: "/yash-chinchawade.jpg", github: "https://github.com/14yashh", linkedin: "https://www.linkedin.com/in/yash-chinchwade" },
+          { name: "Yash Chinchawade", role: "PR SCOM", image: "/yash-chinchawade.jpg", github: "https://github.com/14yashh", linkedin: "https://www.linkedin.com/in/yash-chinchwade" },
         ],
       },
       {
         name: "Editorial",
         members: [
-          { name: "Saarthak Patil", role: "Editorial SCOM Head", image: "saarthak-patil.jpg", github: "http://github.com/Olecularwind10", linkedin: "http://linkedin.com/in/saarthak-patil" },
+          { name: "Saarthak Patil", role: "Editorial SCOM", image: "saarthak-patil.jpg", github: "http://github.com/Olecularwind10", linkedin: "http://linkedin.com/in/saarthak-patil" },
         ],
       },
     ],

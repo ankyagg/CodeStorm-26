@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, type Variants, useScroll, useTransform } from "framer-motion";
 import { Calendar, Users, Award, Star, ChevronRight, ChevronDown } from "lucide-react";
 
+import Aurora from "../components/Aurora";
 import Vortex from "../components/Vortex";
 import EmberParticles from "../components/EmberParticles";
 import ScanLines from "../components/ScanLines";
@@ -47,7 +48,7 @@ const hackathons = [
     ],
     winner: "----",
     runnerUp: "----",
-    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80"
+    image: "/Codeissance23.jpeg"
   },
   {
     title: "Codessiance 2024",
@@ -63,7 +64,7 @@ const hackathons = [
     ],
     winner: "----",
     runnerUp: "----",
-    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80"
+    image: "/Codeissance24.jpeg"
   },
   {
     title: "Technovation 2024",
@@ -91,7 +92,7 @@ const hackathons = [
       "-------",
       "--------",
     ],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+    image: "/25.HEIC"
   }
 ];
 
@@ -135,15 +136,13 @@ export default function Home() {
 
   return (
     <>
-      {/* Vortex Background */}
-      <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
-        <Vortex
-          background="transparent"
-          lineOptions={{ color: "#d70025" }}
-          cometOptions={{ color: "#b90020" }}
-          dots={true}
-          comets={true}
-          repel={true}
+      {/* Aurora Background — covers the whole page behind everything */}
+      <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: -1, pointerEvents: 'none' }}>
+        <Aurora
+          colorStops={["#d70025", "#000000", "#b90020"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
         />
       </div>
       {/* Ember particles — scroll-reactive */}
@@ -185,11 +184,11 @@ export default function Home() {
             speed={10}
             direction="right"
             dots
-            dotOptions={{ color: "#ff3333" }}
+            dotOptions={{ color: "#ff3333", count: 3000, size: 15 }}
             comets
-            cometOptions={{ color: "#F9731A" }}
-            lineOptions={{ color: "#ff4444" }}
-            repel
+            cometOptions={{ color: "#F9731A", count: 5 }}
+            lineOptions={{ color: "#ff4444", count: 120 }}
+            repel={false}
           />
         </div>
 
@@ -235,10 +234,10 @@ export default function Home() {
         <div className="section__container">
           <motion.div
             className="section__header section__header--left"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <span className="section__label">Our Hackathons</span>
             <h2 className="heading-lg section__title">
@@ -254,10 +253,10 @@ export default function Home() {
               <motion.div
                 key={hack.title}
                 className="timeline__item"
-                initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60, scale: 0.9, rotateY: i % 2 === 0 ? -15 : 15 }}
-                whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
               >
                 <div className="timeline__marker" />
                 <div className={`hackathon-layout ${i % 2 !== 0 ? 'hackathon-layout--reverse' : ''}`}>

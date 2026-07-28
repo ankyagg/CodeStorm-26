@@ -6,6 +6,7 @@ import { motion, type Variants, useScroll, useTransform } from "framer-motion";
 import { Calendar, Users, Award, Star, ChevronRight, ChevronDown } from "lucide-react";
 
 import Aurora from "../components/Aurora";
+import Vortex from "../components/Vortex";
 import EmberParticles from "../components/EmberParticles";
 import ScanLines from "../components/ScanLines";
 import ParallaxImage from "../components/ParallaxImage";
@@ -135,7 +136,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Aurora Background */}
+      {/* Aurora Background — covers the whole page behind everything */}
       <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: -1, pointerEvents: 'none' }}>
         <Aurora
           colorStops={["#d70025", "#000000", "#b90020"]}
@@ -167,13 +168,37 @@ export default function Home() {
       </nav>
 
       <section className="hero" id="hero" ref={heroRef} style={{ overflow: "hidden", position: "relative" }}>
-        <div className="hero__grain" />
+        {/* Vortex tornado — sits inside the hero only. Because the hero has
+            overflow:hidden and its own opaque background, this masks the
+            page-wide Aurora within the hero bounds without touching Aurora
+            anywhere else on the page. */}
+        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+          <Vortex
+            background="#000000"
+            topRadius={380}
+            waistRadius={53}
+            waistPosition={50}
+            bottomRadius={1150}
+            twist={3}
+            zoom={75}
+            speed={10}
+            direction="right"
+            dots
+            dotOptions={{ color: "#ff3333" }}
+            comets
+            cometOptions={{ color: "#F9731A" }}
+            lineOptions={{ color: "#ff4444" }}
+            repel
+          />
+        </div>
+
+        <div className="hero__grain" style={{ position: "relative", zIndex: 1 }} />
 
         <motion.div
           initial="hidden"
           animate="visible"
           variants={stagger}
-          style={{ position: "relative", zIndex: 1, y: yText }}
+          style={{ position: "relative", zIndex: 2, y: yText }}
         >
 
           <motion.h1 className="heading-xl hero__title codestorm-title" variants={fadeUp} custom={1}>
@@ -192,7 +217,7 @@ export default function Home() {
         </motion.div>
 
         {/* Scroll-down indicator — mirrors .about-hero__scroll pattern */}
-        <ChevronDown size={32} className="hero__scroll" aria-hidden="true" />
+        <ChevronDown size={32} className="hero__scroll" aria-hidden="true" style={{ position: "relative", zIndex: 2 }} />
       </section>
 
       {/* ═══════════════ TICKER MARQUEE ═══════════════ */}

@@ -13,6 +13,8 @@ interface Member {
   name: string;
   role: string;
   image: string;
+  github?: string;
+  linkedin?: string;
 }
 
 interface Domain {
@@ -34,8 +36,8 @@ const COMMITTEES: Committee[] = [
       {
         name: "Head Teachers",
         members: [
-          { name: "Morgan Davies", role: "Head Teacher", image: U("photo-1560250097-0b93528c311a") },
-          { name: "Elena Ruiz", role: "Head Teacher", image: U("photo-1573496359142-b8d87734a5a2") },
+          { name: "Morgan Davies", role: "Head Teacher", image: U("photo-1560250097-0b93528c311a"), github: "https://github.com/morgandavies", linkedin: "https://linkedin.com/in/morgandavies" },
+          { name: "Elena Ruiz", role: "Head Teacher", image: U("photo-1573496359142-b8d87734a5a2"), github: "https://github.com/elenaruiz", linkedin: "https://linkedin.com/in/elenaruiz" },
         ],
       },
     ],
@@ -47,49 +49,49 @@ const COMMITTEES: Committee[] = [
       {
         name: "Tech Team",
         members: [
-          { name: "Manav Sonawane", role: "Technical SCOM Head", image: "/manav-sonawane.jpg" },
-          { name: "Aniket Walanj", role: "Technical SCOM", image: "/aniket-walanj.jpg" },
-          { name: "Ankit Vishwakarma", role: "Technical SCOM", image: "/ankit-vishwakarma.jpg" },
-          { name: "Akshata Pandit", role: "Technical SCOM", image: "/akshata-pandit.jpg" },
+          { name: "Manav Sonawane", role: "Technical SCOM Head", image: "/manav-sonawane.jpg", github: "https://github.com/Manav-Sonawane", linkedin: "https://linkedin.com/in/manavsonawane" },
+          { name: "Aniket Walanj", role: "Technical SCOM", image: "/aniket-walanj.jpg", github: "https://github.com/ankyagg", linkedin: "https://linkedin.com/in/aniketwalanj" },
+          { name: "Ankit Vishwakarma", role: "Technical SCOM", image: "/ankit-vishwakarma.jpg", github: "http://github.com/Ankitvishwa07", linkedin: "https://www.linkedin.com/in/ankit-vishwakarma-29bbab20a" },
+          { name: "Akshata Pandit", role: "Technical SCOM", image: "/akshata-pandit.jpg", github: "https://github.com/akshatapandit", linkedin: "https://www.linkedin.com/in/akshata-pandit-452760332/" },
         ],
       },
       {
         name: "Design Team",
         members: [
-          { name: "Vansh Gaur", role: "Design SCOM", image: "/VanshGaur_SCOM.jpg" },
-          { name: "Shreya Yeole", role: "Design SCOM", image: "ShreyaYeole_SCOM.jpg" },
-          { name: "Priyanka Patil", role: "Design SCOM", image: "PriyankaPatil_SCOM.jpg" },
+          { name: "Vansh Gaur", role: "Design SCOM", image: "/VanshGaur_SCOM.jpg", github: "https://github.com/VanshGaur06", linkedin: "https://www.linkedin.com/in/vanshgaur06" },
+          { name: "Shreya Yeole", role: "Design SCOM", image: "ShreyaYeole_SCOM.jpg", github: "https://github.com/shreyayeole-png", linkedin: "https://www.linkedin.com/in/shreya-yeole-8144a02b5?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+          { name: "Priyanka Patil", role: "Design SCOM", image: "PriyankaPatil_SCOM.jpg", github: "https://github.com/priyanka-patill", linkedin: "https://www.linkedin.com/in/priyanka-patil-45489b336" },
         ],
       },
       {
         name: "Social Media Management",
         members: [
-          { name: "Aryan Pathare", role: "SMM SCOM Head", image: "/aryan-pathare.jpg" },
+          { name: "Aryan Pathare", role: "SMM SCOM Head", image: "/aryan-pathare.jpg", github: "https://github.com/Aryan-Pathare", linkedin: "https://www.linkedin.com/in/aryan-pathare/" },
         ],
       },
       {
         name: "Logistics",
         members: [
-          { name: "Dhruv Hemdev", role: "Logistics SCOM Head", image: "/dhruv-hemdev.jpg" },
+          { name: "Dhruv Hemdev", role: "Logistics SCOM Head", image: "/dhruv-hemdev.jpg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
         ],
       },
       {
         name: "Marketing",
         members: [
-          { name: "Mansi Parande", role: "Marketing SCOM", image: "/mansi-parande.jpg" },
-          { name: "Deepesh Jaisingh", role: "Marketing SCOM", image: "/deepesh-jaisingh.jpg" },
+          { name: "Mansi Parande", role: "Marketing SCOM", image: "/mansi-parande.jpg", github: "https://github.com/Mansi374", linkedin: "https://www.linkedin.com/in/mansi-parande" },
+          { name: "Deepesh Jaisingh", role: "Marketing SCOM", image: "/deepesh-jaisingh.jpg", github: "https://github.com/jaisinghdeepesh", linkedin: "http://linkedin.com/in/deepesh-k-jaisingh" },
         ],
       },
       {
         name: "PR",
         members: [
-          { name: "Yash Chinchawade", role: "PR SCOM Head", image: "/yash-chinchawade.jpg" },
+          { name: "Yash Chinchawade", role: "PR SCOM Head", image: "/yash-chinchawade.jpg", github: "https://github.com/14yashh", linkedin: "https://www.linkedin.com/in/yash-chinchwade" },
         ],
       },
       {
         name: "Editorial",
         members: [
-          { name: "Saarthak Patil", role: "Editorial SCOM Head", image: "saarthak-patil.jpg" },
+          { name: "Saarthak Patil", role: "Editorial SCOM Head", image: "saarthak-patil.jpg", github: "http://github.com/Olecularwind10", linkedin: "http://linkedin.com/in/saarthak-patil" },
         ],
       },
     ],
@@ -101,48 +103,50 @@ const COMMITTEES: Committee[] = [
       {
         name: "Tech Team",
         members: [
-          { name: "Aditya Haswani", role: "Technical JCOM", image: "AdityaHaswani_JCOM.jpg" },
-          { name: "Sanskar Jadhav", role: "Technical JCOM", image: "SanskarJadhav_JCOM.jpg" },
+          { name: "Aditya Haswani", role: "Technical JCOM", image: "AdityaHaswani_JCOM.jpg", github: "https://github.com/AadityaHaswani", linkedin: "https://www.linkedin.com/in/aditya-haswani-095209378/" },
+          { name: "Sanskar Jadhav", role: "Technical JCOM", image: "SanskarJadhav_JCOM.jpg", github: "https://github.com/jadhavsanskar7432-lang", linkedin: "https://www.linkedin.com/in/sanskar-jadhav-a6b76a370/" },
         ],
       },
       {
         name: "Design Team",
         members: [
-          { name: "Khushnuma Vimadalal", role: "Design JCOM", image: "KhushnumaVimadalal_JCOM.jpg" },
-          { name: "Piyush Tehlani", role: "Design JCOM", image: "PiyushTehlani_JCOM.jpg" },
+          { name: "Khushnuma Vimadalal", role: "Design JCOM", image: "KhushnumaVimadalal_JCOM.jpg", github: "https://share.google/upWMtZmouQZr547Ol", linkedin: "https://www.linkedin.com/in/khushnuma-vimadalal-96173341a?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+          { name: "Piyush Tehalani", role: "Design JCOM", image: "PiyushTehlani_JCOM.jpg", github: "https://github.com/GeekyPiyushh", linkedin: "http://www.linkedin.com/in/piyush-tehalani" },
+          { name: "Pahal Killekar", role: "Design JCOM", image: "PahalKillekar_JCOM.jpg", github: "https://github.com/pahal5", linkedin: "http://www.linkedin.com/in/pahal-killekar-b80953306" },
+          { name: "Sushant Raghuvanshi", role: "Design JCOM", image: "SushantRaghuvanshi_JCOM.jpg", github: "https://github.com/sushantgit-cyber", linkedin: "https://www.linkedin.com/in/sushant-raghuvanshi-2a0309386?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
         ],
       },
       {
         name: "Social Media Management",
         members: [
-          { name: "Dixit Bind", role: "SMM JCOM", image: "dixit-bind.jpg" },
-          { name: "Parv Jain", role: "SMM JCOM", image: "/parv-jain.jpg" }
+          { name: "Dixit Bind", role: "SMM JCOM", image: "dixit-bind.jpg", github: "https://github.com/dixitbind", linkedin: "https://linkedin.com/in/dixitbind" },
+          { name: "Parv Jain", role: "SMM JCOM", image: "/parv-jain.jpg", github: "https://github.com/parvxg", linkedin: "https://www.linkedin.com/in/parv-jain-" }
         ],
       },
       {
         name: "Logistics",
         members: [
-          { name: "Rishabh Jain", role: "Logistics JCOM", image: "rishabh-jain.jpg" },
+          { name: "Rishabh Jain", role: "Logistics JCOM", image: "rishabh-jain.jpg", github: "https://github.com/RishabhJainn09", linkedin: "https://www.linkedin.com/in/rishabh-jain-3a12b8364?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
         ],
       },
       {
         name: "Marketing",
         members: [
-          { name: "Vardaan Grover", role: "Marketing JCOM", image: "/vardaan-grover.jpg" },
-          { name: "Dhruv Pareek", role: "Marketing JCOM", image: "/dhruv-pareek.jpg" }
+          { name: "Vardaan Grover", role: "Marketing JCOM", image: "/vardaan-grover.jpg", github: "https://github.com/vardaangrover30-stack", linkedin: "https://www.linkedin.com/in/vardaan-grover-691393253/" },
+          { name: "Dhruv Pareek", role: "Marketing JCOM", image: "/dhruv-pareek.jpg", github: "https://github.com/dhruv-pareek23", linkedin: "https://www.linkedin.com/in/dhruv-pareek-088492264?utm_source=share_via&utm_content=profile&utm_medium=member_ios" }
         ],
       },
       {
         name: "PR",
         members: [
-          { name: "Arfiya Malkani", role: "PR JCOM", image: "arfiya-malkani.jpg" },
+          { name: "Arfiya Malkani", role: "PR JCOM", image: "arfiya-malkani.jpg", github: "https://github.com/arfiyamalkani07", linkedin: "https://www.linkedin.com/in/arfiya-malkani-2697733b9?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
         ],
       },
       {
         name: "Editorial",
         members: [
-          { name: "Reyansh Jain", role: "Team Lead", image: U("photo-1502823403499-6ccfcf4fb453") },
-          { name: "Anika Reddy", role: "Team Member", image: U("photo-1494959764136-6be9eb3c261e") },
+          { name: "Reyansh Jain", role: "Team Lead", image: U("photo-1502823403499-6ccfcf4fb453"), github: "https://github.com/reyanshJain", linkedin: "https://linkedin.com/in/reyanshJain" },
+          { name: "Anika Reddy", role: "Team Member", image: U("photo-1494959764136-6be9eb3c261e"), github: "https://github.com/anikareddy", linkedin: "https://linkedin.com/in/anikareddy" },
         ],
       },
     ],
@@ -403,7 +407,7 @@ export default function AboutPage() {
 
   const nextMember = useCallback((fromAutoplay: boolean) => {
     const total = domain.members.length;
-    
+
     if (!shuffleOn && memberIdx >= total - 1) {
       nextDomain(1);
       return;
@@ -427,7 +431,7 @@ export default function AboutPage() {
 
   const prevMember = useCallback(() => {
     const total = domain.members.length;
-    
+
     if (memberIdx === 0) {
       nextDomain(-1);
       return;
@@ -633,9 +637,9 @@ export default function AboutPage() {
                     loading="eager"
                     style={
                       member.image === "/aryan-pathare.jpg" ? { objectPosition: "center 25%" } :
-                      member.image === "PriyankaPatil_SCOM.jpg" ? { objectPosition: "center 15%" } :
-                      member.image === "KhushnumaVimadalal_JCOM.jpg" ? { objectPosition: "center 80%" } :
-                      undefined
+                        member.image === "PriyankaPatil_SCOM.jpg" ? { objectPosition: "center 15%" } :
+                          member.image === "KhushnumaVimadalal_JCOM.jpg" ? { objectPosition: "center 80%" } :
+                            undefined
                     }
                   />
                 </div>
@@ -671,14 +675,21 @@ export default function AboutPage() {
                 </div>
 
                 <div className="player-card__controls">
-                  <button
-                    className={`pc-btn${shuffleOn ? " is-on" : ""}`}
-                    type="button"
-                    aria-label="Shuffle"
-                    onClick={() => setShuffleOn(s => !s)}
-                  >
-                    <i className="fa-solid fa-shuffle" aria-hidden="true" />
-                  </button>
+                  {member.github ? (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pc-btn"
+                      aria-label={`${member.name} GitHub`}
+                    >
+                      <i className="fa-brands fa-github" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <span className="pc-btn pc-btn--disabled" aria-hidden="true">
+                      <i className="fa-brands fa-github" />
+                    </span>
+                  )}
                   <button className="pc-btn pc-btn--skip" type="button" aria-label="Previous member" onClick={prevMember}>
                     <i className="fa-solid fa-backward-step" aria-hidden="true" />
                   </button>
@@ -693,14 +704,21 @@ export default function AboutPage() {
                   <button className="pc-btn pc-btn--skip" type="button" aria-label="Next member" onClick={() => nextMember(false)}>
                     <i className="fa-solid fa-forward-step" aria-hidden="true" />
                   </button>
-                  <button
-                    className={`pc-btn${repeatOn ? " is-on" : ""}`}
-                    type="button"
-                    aria-label="Repeat"
-                    onClick={() => setRepeatOn(r => !r)}
-                  >
-                    <i className="fa-solid fa-repeat" aria-hidden="true" />
-                  </button>
+                  {member.linkedin ? (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pc-btn"
+                      aria-label={`${member.name} LinkedIn`}
+                    >
+                      <i className="fa-brands fa-linkedin-in" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <span className="pc-btn pc-btn--disabled" aria-hidden="true">
+                      <i className="fa-brands fa-linkedin-in" />
+                    </span>
+                  )}
                 </div>
               </article>
 

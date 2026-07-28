@@ -253,7 +253,8 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-white-muted); /* boosted from --color-gray (#888) for contrast on solid dark bg */
+  color: var(--color-white-muted);
+  /* boosted from --color-gray (#888) for contrast on solid dark bg */
   text-decoration: none;
   transition: color 0.3s ease;
   position: relative;
@@ -289,11 +290,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.25rem; /* horizontal only — vertical is owned by align-self:stretch */
+  padding: 0 1.25rem;
+  /* horizontal only — vertical is owned by align-self:stretch */
   background: var(--color-red);
   color: var(--color-white);
   border: none;
-  border-radius: 9999px; /* pill — stays visually correct at any height, matches nav container */
+  border-radius: 9999px;
+  /* pill — stays visually correct at any height, matches nav container */
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -345,8 +348,15 @@ body {
 }
 
 @keyframes hero-scroll-bounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50%       { transform: translate(-50%, 8px); }
+
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 8px);
+  }
 }
 
 .hero__badge {
@@ -409,7 +419,7 @@ body {
 .hero__grain {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -432,9 +442,9 @@ body {
   pointer-events: none;
   z-index: 0;
   background: linear-gradient(180deg,
-    rgba(120, 120, 120, 0.35) 0%,
-    rgba(214, 0, 40, 0.75) 55%,
-    rgba(60, 0, 10, 0.9) 100%);
+      rgba(120, 120, 120, 0.35) 0%,
+      rgba(214, 0, 40, 0.75) 55%,
+      rgba(60, 0, 10, 0.9) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -448,6 +458,7 @@ body {
     filter: blur(24px);
     transform: translate(-50%, -48%) scaleX(1.15) scale(1.06);
   }
+
   to {
     opacity: 0.12;
     filter: blur(0);
@@ -478,6 +489,7 @@ body {
     filter: blur(16px);
     transform: translate(-50%, -48%) scale(1.1);
   }
+
   to {
     opacity: 0.08;
     filter: blur(1px);
@@ -1179,7 +1191,8 @@ h1.codestorm-title .c9 {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding-left: 0;
-  align-items: stretch; /* equal-height rows */
+  align-items: stretch;
+  /* equal-height rows */
 }
 
 .timeline::before {
@@ -1193,7 +1206,7 @@ h1.codestorm-title .c9 {
 }
 
 /* Framer motion.div wrapper is the direct child — let it grow */
-.timeline__item > * {
+.timeline__item>* {
   flex: 1;
   display: flex;
   flex-direction: column;

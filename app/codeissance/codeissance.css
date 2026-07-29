@@ -11,7 +11,7 @@
   min-height: 100vh;
   background: #000;
   overflow: hidden;
-  isolation: isolate;          /* keep z-layers contained */
+  isolation: isolate;
 }
 
 /* ─── Background layer ─── */
@@ -22,7 +22,7 @@
   pointer-events: none;
 }
 
-/* Ambient glow orbs — low-opacity, soft radial gradients */
+/* Ambient glow orbs */
 .ci-orb {
   position: absolute;
   border-radius: 50%;

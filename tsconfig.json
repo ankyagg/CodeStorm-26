@@ -37,6 +37,8 @@
     "**/*.mts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "Codessiance-26",
+    "Codestorm 2.0"
   ]
 }

@@ -120,21 +120,77 @@ export default function Aurora(props) {
     const ctn = ctnDom.current;
     if (!ctn) return;
 
-    const renderer = new Renderer({
-      alpha: true,
-      premultipliedAlpha: true,
-      antialias: true
-    });
-    const gl = renderer.gl;
-    gl.clearColor(0, 0, 0, 0);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-    gl.canvas.style.backgroundColor = 'transparent';
+    let animateId = 0;
+    let contextLost = false;
+    let renderer, gl, program, mesh, geometry;
 
-    let program;
+    function initWebGL() {
+      renderer = new Renderer({
+        alpha: true,
+        premultipliedAlpha: true,
+        antialias: true
+      });
+      gl = renderer.gl;
+      gl.clearColor(0, 0, 0, 0);
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      // Use black background so a lost WebGL context shows black, not white
+      gl.canvas.style.backgroundColor = '#0a0a0a';
+
+      geometry = new Triangle(gl);
+      if (geometry.attributes.uv) {
+        delete geometry.attributes.uv;
+      }
+
+      const colorStopsArray = colorStops.map(hex => {
+        const c = new Color(hex);
+        return [c.r, c.g, c.b];
+      });
+
+      program = new Program(gl, {
+        vertex: VERT,
+        fragment: FRAG,
+        uniforms: {
+          uTime: { value: 0 },
+          uAmplitude: { value: amplitude },
+          uColorStops: { value: colorStopsArray },
+          uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
+          uBlend: { value: blend }
+        }
+      });
+
+      mesh = new Mesh(gl, { geometry, program });
+
+      // Listen for WebGL context loss/restore
+      gl.canvas.addEventListener('webglcontextlost', handleContextLost);
+      gl.canvas.addEventListener('webglcontextrestored', handleContextRestored);
+
+      ctn.appendChild(gl.canvas);
+      resize();
+    }
+
+    function handleContextLost(e) {
+      e.preventDefault();
+      contextLost = true;
+      cancelAnimationFrame(animateId);
+      if (gl && gl.canvas) gl.canvas.style.visibility = 'hidden';
+    }
+
+    function handleContextRestored() {
+      contextLost = false;
+      if (gl && gl.canvas) gl.canvas.style.visibility = 'visible';
+      // Remove the old canvas and reinitialize
+      if (ctn && gl && gl.canvas.parentNode === ctn) {
+        gl.canvas.removeEventListener('webglcontextlost', handleContextLost);
+        gl.canvas.removeEventListener('webglcontextrestored', handleContextRestored);
+        ctn.removeChild(gl.canvas);
+      }
+      initWebGL();
+      animateId = requestAnimationFrame(update);
+    }
 
     function resize() {
-      if (!ctn) return;
+      if (!ctn || !renderer || !program) return;
       const width = ctn.offsetWidth;
       const height = ctn.offsetHeight;
       renderer.setSize(width, height);
@@ -142,35 +198,9 @@ export default function Aurora(props) {
         program.uniforms.uResolution.value = [width, height];
       }
     }
-    window.addEventListener('resize', resize);
 
-    const geometry = new Triangle(gl);
-    if (geometry.attributes.uv) {
-      delete geometry.attributes.uv;
-    }
-
-    const colorStopsArray = colorStops.map(hex => {
-      const c = new Color(hex);
-      return [c.r, c.g, c.b];
-    });
-
-    program = new Program(gl, {
-      vertex: VERT,
-      fragment: FRAG,
-      uniforms: {
-        uTime: { value: 0 },
-        uAmplitude: { value: amplitude },
-        uColorStops: { value: colorStopsArray },
-        uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
-        uBlend: { value: blend }
-      }
-    });
-
-    const mesh = new Mesh(gl, { geometry, program });
-    ctn.appendChild(gl.canvas);
-
-    let animateId = 0;
     const update = t => {
+      if (contextLost) return;
       animateId = requestAnimationFrame(update);
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       program.uniforms.uTime.value = time * speed * 0.1;
@@ -183,17 +213,22 @@ export default function Aurora(props) {
       });
       renderer.render({ scene: mesh });
     };
-    animateId = requestAnimationFrame(update);
 
-    resize();
+    window.addEventListener('resize', resize);
+    initWebGL();
+    animateId = requestAnimationFrame(update);
 
     return () => {
       cancelAnimationFrame(animateId);
       window.removeEventListener('resize', resize);
-      if (ctn && gl.canvas.parentNode === ctn) {
-        ctn.removeChild(gl.canvas);
+      if (gl && gl.canvas) {
+        gl.canvas.removeEventListener('webglcontextlost', handleContextLost);
+        gl.canvas.removeEventListener('webglcontextrestored', handleContextRestored);
+        if (ctn && gl.canvas.parentNode === ctn) {
+          ctn.removeChild(gl.canvas);
+        }
       }
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      gl?.getExtension('WEBGL_lose_context')?.loseContext();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amplitude]);

@@ -91,7 +91,7 @@ function SplashCursor({
         halfFloat = gl.getExtension('OES_texture_half_float');
         supportLinearFiltering = gl.getExtension('OES_texture_half_float_linear');
       }
-      gl.clearColor(0.0, 0.0, 0.0, 1.0);
+      gl.clearColor(0.0, 0.0, 0.0, 0.0);
 
       const halfFloatTexType = isWebGL2 ? gl.HALF_FLOAT : halfFloat && halfFloat.HALF_FLOAT_OES;
       let formatRGBA;
@@ -1036,6 +1036,35 @@ function SplashCursor({
     window.addEventListener('touchmove', handleTouchMove, false);
     window.addEventListener('touchend', handleTouchEnd);
 
+    // Handle WebGL context loss — hide canvas to prevent white overlay
+    function handleContextLost(e) {
+      e.preventDefault();
+      isActive = false;
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+        animationFrameId.current = null;
+      }
+      if (canvas) canvas.style.visibility = 'hidden';
+    }
+
+    function handleContextRestored() {
+      isActive = true;
+      if (canvas) canvas.style.visibility = 'visible';
+      try {
+        updateKeywords();
+        initFramebuffers();
+        lastUpdateTime = Date.now();
+        colorUpdateTimer = 0.0;
+        updateFrame();
+      } catch(e) {
+        // WebGL restoration failed — keep canvas hidden
+        if (canvas) canvas.style.visibility = 'hidden';
+      }
+    }
+
+    canvas.addEventListener('webglcontextlost', handleContextLost);
+    canvas.addEventListener('webglcontextrestored', handleContextRestored);
+
     updateFrame();
 
     // Cleanup function
@@ -1054,6 +1083,12 @@ function SplashCursor({
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
+
+      // Remove WebGL context loss handlers
+      if (canvas) {
+        canvas.removeEventListener('webglcontextlost', handleContextLost);
+        canvas.removeEventListener('webglcontextrestored', handleContextRestored);
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

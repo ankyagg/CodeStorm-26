@@ -10,7 +10,7 @@ const ScanLines = dynamic(() => import("./ScanLines"), { ssr: false });
 export default function BackgroundEffects() {
   return (
     <>
-      <div style={{ position: "fixed", inset: 0, width: "100vw", height: "100vh", zIndex: -1, pointerEvents: "none" }}>
+      <div style={{ position: "fixed", inset: 0, width: "100vw", height: "100vh", zIndex: -1, pointerEvents: "none", background: "#0a0a0a" }}>
         <Aurora
           colorStops={["#d70025", "#000000", "#b90020"]}
           blend={0.5}

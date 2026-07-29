@@ -994,7 +994,7 @@ function createVortex(
         const beat =
           1 - cfg.dotFlicker +
           cfg.dotFlicker *
-            (0.08 + 0.92 * Math.max(0, Math.sin(t * dot.flickerRate + dot.pulse)) ** 2.5);
+          (0.08 + 0.92 * Math.max(0, Math.sin(t * dot.flickerRate + dot.pulse)) ** 2.5);
         const swollen = dotScale[i] > 1.02 ? 1 + (dotScale[i] - 1) * 0.5 : 1;
         const v = dot.bright * beat * cfg.dotGlow * swollen * fadeDot * (1 + dotFlash[i]) * alive;
         dotColors[at] = tint.dot.r * v;
@@ -1028,6 +1028,11 @@ function createVortex(
       container.removeEventListener("pointercancel", onPointerLeave);
       for (const d of disposables) d.dispose();
       renderer.dispose();
+      const gl = renderer.getContext();
+      if (gl) {
+        const ext = gl.getExtension('WEBGL_lose_context');
+        if (ext) ext.loseContext();
+      }
       (renderer as any).forceContextLoss?.();
     },
   };
@@ -1079,7 +1084,6 @@ export default function Vortex(props: VortexProps) {
   } = props;
 
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
   const reducedMotion = useReducedMotion();
   const running = !reducedMotion;
@@ -1140,24 +1144,62 @@ export default function Vortex(props: VortexProps) {
   const apiRef = React.useRef<VortexAPI | null>(null);
 
   React.useEffect(() => {
-    const canvas = canvasRef.current;
     const container = containerRef.current;
-    if (!canvas || !container) return;
-    try {
-      apiRef.current = createVortex(canvas, container, configRef);
-    } catch {
-      // WebGL unavailable — fail silently to a transparent canvas.
+    if (!container) return;
+
+    // Dynamically create canvas to avoid React Strict Mode reusing a lost context
+    const canvas = document.createElement("canvas");
+    canvas.style.position = "absolute";
+    canvas.style.inset = "0";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.display = "block";
+    container.appendChild(canvas);
+
+    function init() {
+      try {
+        apiRef.current = createVortex(canvas, container, configRef);
+      } catch (e) {
+        console.error("VORTEX INIT FAILED", e);
+        // WebGL unavailable — fail silently to a transparent canvas.
+      }
     }
+
+    function handleContextLost(e: Event) {
+      e.preventDefault();
+      canvas.style.visibility = 'hidden';
+      if (apiRef.current) {
+        const api = apiRef.current;
+        apiRef.current = null;
+        api.dispose();
+      }
+    }
+
+    function handleContextRestored() {
+      canvas.style.visibility = 'visible';
+      init();
+    }
+
+    canvas.addEventListener('webglcontextlost', handleContextLost);
+    canvas.addEventListener('webglcontextrestored', handleContextRestored);
+
+    init();
+
     return () => {
+      canvas.removeEventListener('webglcontextlost', handleContextLost);
+      canvas.removeEventListener('webglcontextrestored', handleContextRestored);
       apiRef.current?.dispose();
       apiRef.current = null;
+      if (canvas.parentNode === container) {
+        container.removeChild(canvas);
+      }
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(() => {
     apiRef.current?.rebuild();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buildKey]);
 
   return (
@@ -1172,17 +1214,6 @@ export default function Vortex(props: VortexProps) {
         ...style,
       }}
       className={className}
-    >
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          display: "block",
-        }}
-      />
-    </div>
+    />
   );
 }

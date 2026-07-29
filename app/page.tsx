@@ -5,10 +5,7 @@ import Image from "next/image";
 import { motion, type Variants, useScroll, useTransform } from "framer-motion";
 import { Calendar, Users, Award, Star, ChevronRight, ChevronDown } from "lucide-react";
 
-import Aurora from "../components/Aurora";
 import Vortex from "../components/Vortex";
-import EmberParticles from "../components/EmberParticles";
-import ScanLines from "../components/ScanLines";
 import ParallaxImage from "../components/ParallaxImage";
 import TeamSection from "../components/TeamSection";
 
@@ -38,12 +35,12 @@ const hackathons = [
     title: "Codessiance 2023",
     tagline: "Where It All Began",
     date: "March 2023",
-    participants: "1000+",
+    participants: "500+",
     duration: "24 Hours",
     description:
-      "Nobody knew what to expect — 1000+ developers (registrations) crammed into one room, fueled by caffeine and chaos. Teams tackled fintech, healthcare, and sustainability tracks. Honestly? It was rough around the edges. But that's exactly what made it magic.",
+      "Codeissance 2023 was a 24-hour hackathon organised by TSEC CodeStorm on 4th–5th October 2023. It brought together students to solve real-world challenges through innovation, collaboration, and technology. Participants worked in teams to design and build impactful solutions within a limited time, promoting creativity, problem-solving, and teamwork. The event provided a platform for aspiring developers to learn, compete, and connect with the tech community.",
     highlights: [
-      "3 industry-sponsored tracks",
+      "",
       "Mentored by industry experts",
     ],
     winner: "----",
@@ -54,45 +51,45 @@ const hackathons = [
     title: "Codessiance 2024",
     tagline: "The Evolution",
     date: "September 2024",
-    participants: "1000+",
+    participants: "1100+",
     duration: "24 Hours",
     description:
-      "The energy was different this time. 1000+ developers. 50+ colleges. The buzz was real. We expanded to multiple tracks — AI, Web3, Cybersecurity, and Open Innovation. This was the event that put us on the map.",
+      "Codeissance 2024 was a 24-hour hybrid hackathon organised by TSEC CodeStorm on 30th September and 1st October 2024. Participants from across different colleges collaborated to build innovative solutions in Web/App Development, AI/ML, and Social Causes. The event encouraged creativity, teamwork, and problem-solving while giving students an opportunity to showcase their technical skills on both online and offline platforms",
     highlights: [
-      "-------",
-      "-------",
+      "54,000 Prize Pool",
+      "1100+ Registrations",
     ],
     winner: "----",
     runnerUp: "----",
     image: "/Codeissance24.jpeg"
   },
   {
-    title: "Technovation 2024",
+    title: "Technovation 2025",
     tagline: "The Innovation",
-    date: "-------",
-    participants: "------",
-    duration: "------",
+    date: "April 2025",
+    participants: "500+",
+    duration: "8 Hours",
     description:
-      "Online event",
+      "Technovation 2025 was a two-day Final Year Project Expo organised by TSEC CodeStorm on 3rd and 4th April 2025. It featured 73 project teams from multiple engineering branches showcasing innovative and practical solutions. The event promoted technical knowledge, teamwork, creativity, and real-world problem-solving through expert evaluation rounds.",
     highlights: [
-      "------",
-      "------",
+      "73+ Projects",
+      "286+ Participants",
     ],
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+    image: "/technovation2025.jpg"
   },
   {
     title: "Codessiance 2025",
     tagline: "The Spectacle",
     date: "September 2025",
-    participants: "1000+",
+    participants: "1600+",
     duration: "24 Hours",
     description:
-      "The energy was different this time. 1000+ developers. 50+ colleges. The buzz was real. We expanded to multiple tracks — AI, Web3, Cybersecurity, and Open Innovation. This was the event that put us on the map.",
+      "Codeissance 2025 was a 24-hour offline hackathon organised by TSEC CodeStorm on 26th–27th September 2025. The event brought together students to build innovative solutions across Web/App Development, AI/ML, and Industry-Relevant Problem Statements, with a strong focus on Agentic AI and real-world problem solving. It encouraged creativity, teamwork, technical excellence, and sustainable innovation through mentorship and expert evaluation.",
     highlights: [
-      "-------",
-      "--------",
+      "₹60,000 Prize Pool",
+      "1600+ Registrations",
     ],
-    image: "/25.HEIC"
+    image: "/Codeissance2025.jpeg"
   }
 ];
 
@@ -136,19 +133,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Aurora Background — covers the whole page behind everything */}
-      <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: -1, pointerEvents: 'none' }}>
-        <Aurora
-          colorStops={["#d70025", "#000000", "#b90020"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-      </div>
-      {/* Ember particles — scroll-reactive */}
-      <EmberParticles />
-      {/* CRT scan lines — subtle digital texture */}
-      <ScanLines />
+      {/* Aurora, EmberParticles, ScanLines are rendered globally via BackgroundEffects in layout.tsx */}
 
       {/* Navbar */}
       <nav className="navbar" id="navbar">
@@ -284,8 +269,8 @@ export default function Home() {
                     <p className="hackathon-card__desc">{hack.description}</p>
 
                     <div className="hackathon-card__highlights">
-                      {hack.highlights.map((h) => (
-                        <span key={h} className="hackathon-card__highlight">
+                      {hack.highlights.map((h, i) => (
+                        <span key={i} className="hackathon-card__highlight">
                           <ChevronRight size={12} /> {h}
                         </span>
                       ))}
@@ -296,7 +281,7 @@ export default function Home() {
                         <strong>{hack.duration}</strong>
                       </div>
                       <div className="hackathon-card__stat-pill">
-                        <strong>{hack.participants}</strong> Participants
+                        <strong>{hack.participants}</strong> Registerations
                       </div>
                     </div>
                   </div>

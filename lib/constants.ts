@@ -136,15 +136,6 @@ export interface CrewMember {
   avatar?: string; // TODO: Replace with real photos
 }
 
-export const CREW_MEMBERS: CrewMember[] = [
-  // TODO: Replace with actual committee members for '26
-  { id: "crew-1", name: "Organizer One", role: "Lead Organizer", funStat: "500+ commits reviewed" },
-  { id: "crew-2", name: "Organizer Two", role: "Tech Lead", funStat: "1,200 lines of config" },
-  { id: "crew-3", name: "Organizer Three", role: "Design Lead", funStat: "47 Figma frames" },
-  { id: "crew-4", name: "Organizer Four", role: "Marketing Lead", funStat: "300+ DMs sent" },
-  { id: "crew-5", name: "Organizer Five", role: "Logistics", funStat: "∞ pizza boxes counted" },
-  { id: "crew-6", name: "Organizer Six", role: "Sponsorship Lead", funStat: "50+ cold emails" },
-];
 
 // ── Section metadata for the player bar ──
 export interface SectionMeta {

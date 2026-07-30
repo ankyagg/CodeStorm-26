@@ -138,7 +138,7 @@ export default function Footer() {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
                     <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-sm sm:text-base lg:text-lg">+91 88509 67604</span>
+                  <span className="text-sm sm:text-base lg:text-lg">+91 90820 67720</span>
                 </a>
               </li>
               <li>
@@ -149,7 +149,7 @@ export default function Footer() {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
                     <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-sm sm:text-base lg:text-lg">+91 70399 54217</span>
+                  <span className="text-sm sm:text-base lg:text-lg">+91 98926 77787</span>
                 </a>
               </li>
             </ul>

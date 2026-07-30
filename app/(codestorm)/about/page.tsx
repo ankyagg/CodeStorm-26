@@ -78,7 +78,7 @@ const COMMITTEES: Committee[] = [
         ],
       },
       {
-        name: "Social Media Management",
+        name: "SMM",
         members: [
           { name: "Aryan Pathare", role: "SMM SCOM", image: "/aryan-pathare.jpg", github: "https://github.com/Aryan-Pathare", linkedin: "https://www.linkedin.com/in/aryan-pathare/" },
         ],
@@ -86,6 +86,7 @@ const COMMITTEES: Committee[] = [
       {
         name: "Logistics",
         members: [
+          { name: "Aditya Pawar", role: "Logistics SCOM", image: "/AdityaPawar_SCOM.jpeg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
           { name: "Dhruv Hemdev", role: "Logistics SCOM", image: "/dhruv-hemdev.jpg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
         ],
       },
@@ -152,6 +153,7 @@ const COMMITTEES: Committee[] = [
           { name: "Arfiya Malkani", role: "PR JCOM", image: "arfiya-malkani.jpg", github: "https://github.com/arfiyamalkani07", linkedin: "https://www.linkedin.com/in/arfiya-malkani-2697733b9?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
         ],
       },
+
     ],
   },
 ];
@@ -642,7 +644,8 @@ export default function AboutPage() {
                       member.image === "/aryan-pathare.jpg" ? { objectPosition: "center 25%" } :
                         member.image === "PriyankaPatil_SCOM.jpg" ? { objectPosition: "center 15%" } :
                           member.image === "KhushnumaVimadalal_JCOM.jpg" ? { objectPosition: "center 80%" } :
-                            undefined
+                            member.image === "saarthak-patil.jpg" || member.image === "/saarthak-patil.jpg" ? { objectPosition: "center 30%" } :
+                              undefined
                     }
                   />
                 </div>

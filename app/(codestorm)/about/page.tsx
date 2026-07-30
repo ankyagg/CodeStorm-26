@@ -59,7 +59,7 @@ const COMMITTEES: Committee[] = [
       {
         name: "Marketing",
         members: [
-          { name: "Mansi Parande", role: "Marketing SCOM", image: "/mansi-parande.jpg", github: "https://github.com/Mansi374", linkedin: "https://www.linkedin.com/in/mansi-parande" },
+          { name: "Mansi Parande", role: "Marketing+Technical SCOM", image: "/mansi-parande.jpg", github: "https://github.com/Mansi374", linkedin: "https://www.linkedin.com/in/mansi-parande" },
           { name: "Deepesh Jaisingh", role: "Marketing SCOM", image: "/deepesh-jaisingh.jpg", github: "https://github.com/jaisinghdeepesh", linkedin: "http://linkedin.com/in/deepesh-k-jaisingh" },
         ],
       },

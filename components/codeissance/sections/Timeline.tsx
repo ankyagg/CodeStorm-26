@@ -53,7 +53,7 @@ export default function Timeline() {
         trigger: sectionRef.current,
         start: "top top", // Pin exactly at the top of the viewport
         end: `+=${TOTAL * 400}`, // Scroll distance for cycling all timeline cards
-        pin: pinTargetRef.current,
+        pin: true,
         pinSpacing: true,
         scrub: 0.2,
         onUpdate: (self) => {

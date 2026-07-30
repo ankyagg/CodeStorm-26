@@ -49,13 +49,21 @@ export default function Timeline() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top", // Pin exactly at the top of the viewport
-        end: `+=${TOTAL * 400}`, // Scroll distance for cycling all timeline cards
+        end: `+=${TOTAL * (isMobile ? 650 : 500)}`, // Distance per card so single swipe moves 1 card
         pin: true,
         pinSpacing: true,
+        anticipatePin: 1, // Eliminates jump/slide before pinning on touch devices
         scrub: 0.2,
+        snap: {
+          snapTo: 1 / (TOTAL - 1),
+          duration: { min: 0.15, max: 0.35 },
+          delay: 0.02,
+          ease: "power1.inOut",
+        },
         onUpdate: (self) => {
           const idx = Math.min(TOTAL - 1, Math.floor(self.progress * TOTAL));
           setActiveIndex(idx);
@@ -130,9 +138,8 @@ export default function Timeline() {
                 fill
                 priority={num === 1 || num === 2}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className={`object-cover transition-opacity duration-300 ${
-                  ((activeIndex % 6) + 1) === num ? "opacity-100" : "opacity-0"
-                }`}
+                className={`object-cover transition-opacity duration-300 ${((activeIndex % 6) + 1) === num ? "opacity-100" : "opacity-0"
+                  }`}
               />
             ))}
 
@@ -146,7 +153,7 @@ export default function Timeline() {
               {/* Event Time (Positioned in the colored stripe) */}
               <div className="absolute bottom-[34%] left-0 w-full px-4 md:px-8 text-center">
                 <div
-                  className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-none"
+                  className="text-5xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-none"
                   style={{
                     fontFamily: "var(--font-display)",
                     color: "#EAE5DE",
@@ -160,7 +167,7 @@ export default function Timeline() {
               {/* Event Label (Positioned in the black bottom area) */}
               <div className="absolute bottom-[16%] translate-y-[50%] left-0 w-full px-4 text-white text-center">
                 <div
-                  className={`font-bold uppercase tracking-wide ${event.fontSize || "text-base sm:text-xl md:text-5xl"}`}
+                  className={`font-bold uppercase tracking-wide ${event.fontSize || "text-4xl sm:text-xl md:text-5xl"}`}
                   style={{ fontFamily: event.font || "var(--font-display)" }}
                 >
                   {event.label}

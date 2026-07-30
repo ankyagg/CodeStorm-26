@@ -52,13 +52,13 @@ export interface TimelineEvent {
 
 export const TIMELINE_EVENTS: TimelineEvent[] = [
   { id: "reporting", time: "08:00", label: "Reporting & Registration", day: 1 },
-  { id: "inauguration", time: "10:00", label: "Inauguration", day: 1, fontSize: "text-1xl sm:text-3xl md:text-4xl" },
+  { id: "inauguration", time: "10:00", label: "Inauguration", day: 1, fontSize: "text-3xl sm:text-3xl md:text-4xl" },
   { id: "hack-start", time: "11:00", label: "Hackathon Begins", day: 1 },
   { id: "lunch", time: "13:30", label: "Lunch", day: 1 },
   { id: "mentoring", time: "19:00", label: "Mentoring Round", day: 1 },
   { id: "dinner", time: "21:00", label: "Dinner", day: 1 },
   { id: "judging-internal", time: "11:00", label: "Internal Judging", day: 2 },
-  { id: "shortlist", time: "12:30", label: "Shortlisting", day: 2 },
+  { id: "shortlist", time: "12:30", label: "Shortlisting", day: 2, fontSize: "text-2xl sm:text-3xl md:text-5xl" },
   { id: "judging-final", time: "14:00", label: "Final Judging", day: 2 },
   { id: "closing", time: "17:00", label: "Closing Ceremony & Results", day: 2 },
 ];

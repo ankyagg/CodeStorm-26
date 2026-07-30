@@ -79,7 +79,7 @@ export default function Intro() {
     <section
       ref={sectionRef}
       id="intro"
-      className="section-light grain-overlay relative pt-16 pb-28 md:pt-24 md:pb-36 overflow-visible"
+      className="section-light grain-overlay relative pt-6 pb-16 md:pt-24 md:pb-36"
       style={{ backgroundColor: "#EBE6DF" }}
     >
       {/* Decorative: Concentric Circles — mid right, flowing from Hero */}
@@ -97,39 +97,38 @@ export default function Intro() {
         <VerticalBars bars={4} color="#1A1A1A" className="h-24" />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
 
-          {/* Left Column: Folder Graphic + Contents TOC (5 cols) */}
-          <div ref={leftRef} className="lg:col-span-5 opacity-0">
-
-            {/* Black Polka Dots Cluster */}
-            <div className="mb-6 pointer-events-none">
-              <DotGrid rows={4} cols={6} dotSize={22} gap={14} color="#1A1A1A" />
-            </div>
-            <div className="translate-y-35">
-              <TOCFolder items={TOC_ITEMS} />
-            </div>
-
-          </div>
-
-          {/* Right Column: High-Impact Editorial Text (7 cols) */}
-          <div ref={rightRef} className="lg:col-span-7 pt-4 opacity-0">
+          {/* Right Column: High-Impact Editorial Text — shown FIRST on mobile (7 cols on lg) */}
+          <div ref={rightRef} className="lg:col-span-7 lg:order-2 pt-0 -mt-2 opacity-0">
             <p
-              className="text-2xl sm:text-4xl md:text-4xl leading-[1.25] font-normal text-[#1A1A1A]"
+              className="text-xl sm:text-3xl md:text-4xl leading-[1.35] font-normal text-[#1A1A1A]"
               style={{ fontFamily: "var(--font-body)" }}
             >
               <strong className="font-black text-black">Codeissance &apos;26</strong> is here, and it&apos;s more dynamic, personal, and{" "}
               <strong className="font-black italic text-black">unmistakably you</strong> than ever before. This year brings fresh ways to build, innovate, and{" "}
               <strong className="font-black text-black">moments that defined your year</strong>, and to share them with the world around you.
             </p>
-
           </div>
+
+          {/* Left Column: Folder Graphic + Contents TOC (5 cols on lg) — shown SECOND on mobile */}
+          <div ref={leftRef} className="lg:col-span-5 lg:order-1 opacity-0">
+            {/* Black Polka Dots Cluster — hidden on mobile to save space */}
+            <div className="mb-4 pointer-events-none hidden lg:block">
+              <DotGrid rows={4} cols={6} dotSize={22} gap={14} color="#1A1A1A" />
+            </div>
+            {/* translate-y only on lg+ so it doesn't break mobile layout */}
+            <div className="lg:translate-y-35">
+              <TOCFolder items={TOC_ITEMS} />
+            </div>
+          </div>
+
         </div>
       </div>
 
-      {/* Wavy Stamp / Badge hanging over section boundary */}
-      <div className="absolute -bottom-16 md:-bottom-24 right-2 md:right-16 z-30 pointer-events-auto">
-        <a href="#outro" className="block relative w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 group">
+      {/*Register Button 1*/}
+      <div className="relative z-30 flex justify-start ml-2 mt-6 lg:mt-0 lg:absolute lg:right-6 pointer-events-auto">
+        <a href="#outro" className="block relative w-62 h-62 sm:w-34 sm:h-36 lg:w-64 lg:h-64 group -translate-x-[6rem] -translate-y-[3rem]">
           <div
             ref={stampRef}
             className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105 drop-shadow-xl"

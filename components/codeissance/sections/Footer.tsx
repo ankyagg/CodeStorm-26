@@ -40,92 +40,92 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-black text-white pt-12 sm:pt-16 pb-8 sm:pb-12 px-4 sm:px-10 lg:px-16 border-t border-white/10 font-sans">
+    <footer className="w-full bg-black text-white pt-10 sm:pt-16 pb-8 sm:pb-12 px-6 sm:px-10 lg:px-16 border-t border-white/10 font-sans">
       <div className="max-w-7xl mx-auto">
-        {/* Main Grid Section — OG Spotify Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16 items-start">
+        {/* Main Grid Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 mb-12 sm:mb-16 items-start">
 
-          {/* Logo (Top Left) */}
-          <div className="lg:col-span-2 flex flex-col items-start gap-3">
+          {/* Logo & Description */}
+          <div className="sm:col-span-2 lg:col-span-3 flex flex-col items-start gap-3">
             <a href="#" className="flex items-center gap-2.5 group">
-              <Anchor className="w-8 h-8 text-white transition-transform group-hover:scale-105" />
-              <span className="text-2xl font-black tracking-tight text-white font-serif">
+              <Anchor className="w-7 h-7 sm:w-8 sm:h-8 text-white transition-transform group-hover:scale-105" />
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-white font-serif">
                 CodeStorm
               </span>
             </a>
-            <p className="text-xs text-white/60 leading-relaxed max-w-[200px]">
-              Embark on the greatest coding adventure. Codeissiance 2.0.
+            <p className="text-xs text-white/60 leading-relaxed max-w-xs">
+              Embark on the greatest coding adventure. Codeissance 2026.
             </p>
           </div>
 
-          {/* COMMUNITIES / QUICK LINKS Column 1 (OG Circular Icon Badges) */}
+          {/* QUICK LINKS */}
           <div className="lg:col-span-3">
-            <h3 className="text-xs uppercase font-bold tracking-widest text-white/50 mb-6">
+            <h3 className="text-xs uppercase font-bold tracking-widest text-white/50 mb-4 sm:mb-6">
               QUICK LINKS
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3 sm:space-y-4">
               <li>
                 <button
                   onClick={() => scrollTo("hero")}
-                  className="flex items-center gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors text-left"
+                  className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors text-left"
                 >
-                  <div className="w-10 h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
-                    <Home className="w-4 h-4" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
+                    <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-base sm:text-lg">Home</span>
+                  <span className="text-sm sm:text-base lg:text-lg">Home</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => scrollTo("genres")}
-                  className="flex items-center gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors text-left"
+                  className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors text-left"
                 >
-                  <div className="w-10 h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
-                    <Layers className="w-4 h-4" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
+                    <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-base sm:text-lg">Domains</span>
+                  <span className="text-sm sm:text-base lg:text-lg">Domains</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => scrollTo("in-rotation")}
-                  className="flex items-center gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors text-left"
+                  className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors text-left"
                 >
-                  <div className="w-10 h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
-                    <Users className="w-4 h-4" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
+                    <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-base sm:text-lg">Crew</span>
+                  <span className="text-sm sm:text-base lg:text-lg">Crew</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => scrollTo("timeline")}
-                  className="flex items-center gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors text-left"
+                  className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors text-left"
                 >
-                  <div className="w-10 h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
-                    <Clock className="w-4 h-4" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
+                    <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-base sm:text-lg">Timeline</span>
+                  <span className="text-sm sm:text-base lg:text-lg">Timeline</span>
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* CONTACT Column 2 (OG Circular Icon Badges) */}
+          {/* CONTACT US */}
           <div className="lg:col-span-3">
-            <h3 className="text-xs uppercase font-bold tracking-widest text-white/50 mb-6">
+            <h3 className="text-xs uppercase font-bold tracking-widest text-white/50 mb-4 sm:mb-6">
               CONTACT US
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3 sm:space-y-4">
               <li>
                 <a
                   href="mailto:tseccodestorm@gmail.com"
-                  className="flex items-center gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors"
+                  className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
-                    <Mail className="w-4 h-4" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
+                    <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-sm sm:text-base truncate">
+                  <span className="text-xs sm:text-sm lg:text-base break-all">
                     tseccodestorm@gmail.com
                   </span>
                 </a>
@@ -133,114 +133,97 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+918850967604"
-                  className="flex items-center gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors"
+                  className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
-                    <Phone className="w-4 h-4" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
+                    <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-base sm:text-lg">+91 88509 67604</span>
+                  <span className="text-sm sm:text-base lg:text-lg">+91 88509 67604</span>
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+917039954217"
-                  className="flex items-center gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors"
+                  className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
-                    <Phone className="w-4 h-4" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
+                    <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <span className="text-base sm:text-lg">+91 70399 54217</span>
+                  <span className="text-sm sm:text-base lg:text-lg">+91 70399 54217</span>
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* COMPANY Column */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs uppercase font-bold tracking-widest text-white/50 mb-6">
-              COMPANY
-            </h3>
-            <ul className="space-y-4 font-bold text-base sm:text-lg">
-              <li>
-                <button
-                  onClick={() => scrollTo("intro")}
-                  className="hover:text-[#1DB954] transition-colors"
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollTo("recap")}
-                  className="hover:text-[#1DB954] transition-colors"
-                >
-                  FAQ
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollTo("top-artist")}
-                  className="hover:text-[#1DB954] transition-colors"
-                >
-                  Sponsors
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Socials & CTA Button Column */}
-          <div className="lg:col-span-2 flex flex-col justify-between h-full space-y-6">
+          {/* COMPANY & SOCIALS */}
+          <div className="lg:col-span-3 flex flex-col justify-between h-full space-y-6">
             <div>
-              <h3 className="text-xs uppercase font-bold tracking-widest text-white/50 mb-6">
-                USEFUL LINKS
+              <h3 className="text-xs uppercase font-bold tracking-widest text-white/50 mb-4 sm:mb-6">
+                EXPLORE
               </h3>
-              <ul className="space-y-4 font-bold text-base sm:text-lg mb-8">
+              <ul className="flex flex-wrap sm:flex-col gap-4 font-bold text-sm sm:text-base">
                 <li>
                   <button
-                    onClick={() => scrollTo("outro")}
+                    onClick={() => scrollTo("intro")}
                     className="hover:text-[#1DB954] transition-colors"
                   >
-                    Register Now
+                    About
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollTo("recap")}
+                    className="hover:text-[#1DB954] transition-colors"
+                  >
+                    FAQ
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollTo("top-artist")}
+                    className="hover:text-[#1DB954] transition-colors"
+                  >
+                    Sponsors
                   </button>
                 </li>
               </ul>
             </div>
 
-            {/* Social Icons & Get Codeissance CTA Button */}
-            <div className="space-y-6">
+            {/* Social Icons & Register CTA Button */}
+            <div className="space-y-4 pt-2">
               <div className="flex items-center gap-3">
                 <a
                   href="https://instagram.com/tseccodestorm"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-11 h-11 rounded-full bg-neutral-900 hover:bg-neutral-800 flex items-center justify-center text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-neutral-900 hover:bg-neutral-800 flex items-center justify-center text-white transition-colors border border-white/10"
                 >
-                  <InstagramIcon className="w-5 h-5 text-[#E1306C]" />
+                  <InstagramIcon className="w-4 h-4 text-[#E1306C]" />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/tsec-codestorm/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="w-11 h-11 rounded-full bg-neutral-900 hover:bg-neutral-800 flex items-center justify-center text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-neutral-900 hover:bg-neutral-800 flex items-center justify-center text-white transition-colors border border-white/10"
                 >
-                  <LinkedInIcon className="w-5 h-5 text-[#0077B5]" />
+                  <LinkedInIcon className="w-4 h-4 text-[#0077B5]" />
                 </a>
                 <a
                   href="https://x.com/TCodestorm"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Twitter"
-                  className="w-11 h-11 rounded-full bg-neutral-900 hover:bg-neutral-800 flex items-center justify-center text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-neutral-900 hover:bg-neutral-800 flex items-center justify-center text-white transition-colors border border-white/10"
                 >
-                  <TwitterIcon className="w-5 h-5 text-[#1DA1F2]" />
+                  <TwitterIcon className="w-4 h-4 text-[#1DA1F2]" />
                 </a>
               </div>
 
               <button
                 onClick={() => scrollTo("outro")}
-                className="w-full bg-white text-black font-bold text-base px-6 py-3.5 rounded-full hover:scale-105 transition-transform active:scale-95 text-center shadow-lg"
+                className="w-full sm:w-auto bg-white text-black font-bold text-sm sm:text-base px-6 py-3 rounded-full hover:scale-105 transition-transform active:scale-95 text-center shadow-lg"
               >
                 Register Now
               </button>
@@ -249,8 +232,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
-          <div className="flex flex-wrap items-center gap-6 font-semibold">
+        <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60 text-center sm:text-left">
+          <div className="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6 font-semibold">
             <a href="#" className="hover:text-white transition-colors">
               Legal
             </a>
@@ -265,7 +248,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <p className="text-white/40">
+          <p className="text-white/40 text-[11px] sm:text-xs">
             © 2026 CodeStorm. All rights reserved. | Made with{" "}
             <span className="text-red-500">❤️</span> for the coding community
           </p>

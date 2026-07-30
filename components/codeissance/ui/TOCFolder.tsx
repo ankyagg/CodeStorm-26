@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface TOCFolderProps {
   items: { label: string; href: string }[];
@@ -14,6 +14,12 @@ export default function TOCFolder({
   maxWidth = "578px" 
 }: TOCFolderProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+      setIsOpen(true);
+    }
+  }, []);
 
   return (
     <div 

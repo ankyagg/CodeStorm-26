@@ -31,13 +31,15 @@ interface Committee {
 const COMMITTEES: Committee[] = [
   {
     key: "head-teachers",
-    label: "Head Teachers",
+    label: "Faculty",
     domains: [
       {
-        name: "Head Teachers",
+        name: "Faculty",
         members: [
-          { name: "Morgan Davies", role: "Head Teacher", image: U("photo-1560250097-0b93528c311a"), github: "https://github.com/morgandavies", linkedin: "https://linkedin.com/in/morgandavies" },
-          { name: "Elena Ruiz", role: "Head Teacher", image: U("photo-1573496359142-b8d87734a5a2"), github: "https://github.com/elenaruiz", linkedin: "https://linkedin.com/in/elenaruiz" },
+          { name: "Anjali Malviya", role: "Head of Department", image: U("photo-1560250097-0b93528c311a"), github: "https://github.com/morgandavies", linkedin: "https://linkedin.com/in/morgandavies" },
+          { name: "Shanthi Therese", role: "Teacher", image: U("photo-1573496359142-b8d87734a5a2"), github: "https://github.com/elenaruiz", linkedin: "https://linkedin.com/in/elenaruiz" },
+          { name: "Sheetal Gondal", role: "Teacher", image: U("photo-1560250097-0b93528c311a"), github: "https://github.com/morgandavies", linkedin: "https://linkedin.com/in/morgandavies" },
+          { name: "Geeta Karande", role: "Teacher", image: U("photo-1560250097-0b93528c311a"), github: "https://github.com/morgandavies", linkedin: "https://linkedin.com/in/morgandavies" },
         ],
       },
     ],
@@ -59,7 +61,7 @@ const COMMITTEES: Committee[] = [
       {
         name: "Marketing",
         members: [
-          { name: "Mansi Parande", role: "Marketing+Technical SCOM", image: "/mansi-parande.jpg", github: "https://github.com/Mansi374", linkedin: "https://www.linkedin.com/in/mansi-parande" },
+          { name: "Mansi Parande", role: "Marketing+Tech SCOM", image: "/mansi-parande.jpg", github: "https://github.com/Mansi374", linkedin: "https://www.linkedin.com/in/mansi-parande" },
           { name: "Deepesh Jaisingh", role: "Marketing SCOM", image: "/deepesh-jaisingh.jpg", github: "https://github.com/jaisinghdeepesh", linkedin: "http://linkedin.com/in/deepesh-k-jaisingh" },
         ],
       },
@@ -86,7 +88,7 @@ const COMMITTEES: Committee[] = [
       {
         name: "Logistics",
         members: [
-          { name: "Aditya Pawar", role: "Logistics SCOM", image: "/AdityaPawar_SCOM.jpeg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
+          { name: "Aditya Pawar", role: "Logistics SCOM", image: "/AdityaPawar_SCOM.jpeg", github: "hhttps://www.linkedin.com/in/aditya-pawar-634755384/", linkedin: "https://github.com/LavaHoundLogic" },
           { name: "Dhruv Hemdev", role: "Logistics SCOM", image: "/dhruv-hemdev.jpg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
         ],
       },

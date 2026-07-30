@@ -116,7 +116,9 @@ const COMMITTEES: Committee[] = [
         name: "Marketing",
         members: [
           { name: "Vardaan Grover", role: "Marketing JCOM", image: "/vardaan-grover.jpg", github: "https://github.com/vardaangrover30-stack", linkedin: "https://www.linkedin.com/in/vardaan-grover-691393253/" },
-          { name: "Dhruv Pareek", role: "Marketing JCOM", image: "/dhruv-pareek.jpg", github: "https://github.com/dhruv-pareek23", linkedin: "https://www.linkedin.com/in/dhruv-pareek-088492264?utm_source=share_via&utm_content=profile&utm_medium=member_ios" }
+          { name: "Dhruv Pareek", role: "Marketing JCOM", image: "/dhruv-pareek.jpg", github: "https://github.com/dhruv-pareek23", linkedin: "https://www.linkedin.com/in/dhruv-pareek-088492264?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
+          { name: "Vedika Panjwani", role: "Marketing JCOM", image: "/vedika-panjwani.jpeg", github: "https://github.com/vedipanj115", linkedin: "www.linkedin.com/in/vedika-panjwani-85731127b" },
+          { name: "Aarohi Limaye", role: "Marketing JCOM", image: "/aarohi-limaye.jpeg", github: "https://github.com/aa-aarohiiii", linkedin: "https://www.linkedin.com/in/aarohi-limaye-705b79421?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
         ],
       },
       {

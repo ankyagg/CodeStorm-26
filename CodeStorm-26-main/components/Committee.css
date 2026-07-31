@@ -1,0 +1,214 @@
+/* ═══════════════════════════════════════════════
+   Committee Components — Precise visual spec
+   ═══════════════════════════════════════════════ */
+
+/* ─── Showcase Grid ─── */
+.cc-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  width: 100%;
+  justify-items: center;
+}
+
+@media (min-width: 1100px) {
+  .cc-showcase-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* ─── Section (title + card) ─── */
+.cc-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cc-section-title {
+  font-family: var(--font-heading, "Space Grotesk", sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin: 0 0 1.75rem 0;  /* mb-6+ spacing — clearly above the card */
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Card ─── */
+.cc-card {
+  position: relative;
+  width: 320px;             /* fixed width, not stretching */
+  background: #121212;
+  border-radius: 1rem;      /* rounded-2xl */
+  padding: 1.75rem;         /* generous inner padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* ─ Neon green glow border ─ */
+  box-shadow:
+    0 0 0 1.5px rgba(30, 215, 96, 0.3),   /* thin ring */
+    0 0 12px rgba(30, 215, 96, 0.15),      /* inner glow */
+    0 0 35px rgba(30, 215, 96, 0.08),      /* mid glow */
+    0 0 80px rgba(30, 215, 96, 0.04),      /* outer bloom */
+    0 12px 40px rgba(0, 0, 0, 0.5);        /* drop shadow */
+  transition: box-shadow 0.35s ease;
+}
+
+.cc-card:hover {
+  box-shadow:
+    0 0 0 2px rgba(30, 215, 96, 0.45),
+    0 0 18px rgba(30, 215, 96, 0.22),
+    0 0 50px rgba(30, 215, 96, 0.12),
+    0 0 100px rgba(30, 215, 96, 0.06),
+    0 16px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* ─── Counter ─── */
+.cc-counter {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cc-counter-current {
+  color: #1ED760;
+  font-weight: 700;
+}
+
+/* ─── Photo ─── */
+.cc-photo-wrapper {
+  position: relative;
+  width: 100%;                /* fills card padding area */
+  aspect-ratio: 1 / 1;
+  border-radius: 0.75rem;    /* rounded-xl */
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background: #1a1a1a;
+}
+
+.cc-photo-motion {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cc-photo {
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+/* ─── Info (Name + Role) ─── */
+.cc-info {
+  text-align: center;
+  margin-bottom: 1rem;
+  min-height: 58px;
+  width: 100%;
+}
+
+.cc-name {
+  font-size: 1.4rem;        /* text-2xl+ */
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.25;
+}
+
+.cc-role {
+  font-size: 0.85rem;       /* text-sm */
+  color: #9ca3af;           /* text-gray-400 */
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ─── Divider (decorative progress bar) ─── */
+.cc-divider {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  margin-bottom: 1.25rem;
+  position: relative;
+  overflow: visible;
+}
+
+.cc-divider-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #1ED760;
+  border-radius: 3px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cc-divider-dot {
+  position: absolute;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Controls ─── */
+.cc-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cc-nav-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #6b7280;           /* gray default */
+  cursor: pointer;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.cc-nav-btn:hover {
+  color: #1ED760;           /* green on hover */
+  background: rgba(30, 215, 96, 0.1);
+  transform: scale(1.1);
+}
+
+.cc-nav-btn:active {
+  transform: scale(0.93);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 400px) {
+  .cc-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.25rem;
+    border-radius: 0.875rem;
+  }
+
+  .cc-name {
+    font-size: 1.2rem;
+  }
+
+  .cc-controls {
+    gap: 1.5rem;
+  }
+}

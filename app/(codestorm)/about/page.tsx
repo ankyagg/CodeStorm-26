@@ -3,6 +3,7 @@ import TiltedCard from "../../../components/TiltedCard";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "../../../components/MobileNav";
 import "./about.css";
 
 /* ─── Committee Data ─── */
@@ -522,6 +523,7 @@ export default function AboutPage() {
           <li><Link href="/practice" className="navbar__link">Practice</Link></li>
         </ul>
         <Link href="/codeissance" className="navbar__cta">Codeissance 2026</Link>
+        <MobileNav />
       </nav>
 
       <main>

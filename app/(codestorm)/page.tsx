@@ -8,6 +8,7 @@ import { Calendar, Users, Award, Star, ChevronRight, ChevronDown } from "lucide-
 import Vortex from "../../components/Vortex";
 import ParallaxImage from "../../components/ParallaxImage";
 import TeamSection from "../../components/TeamSection";
+import MobileNav from "../../components/MobileNav";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -150,6 +151,7 @@ export default function Home() {
           <li><a href="/practice" className="navbar__link">Practice</a></li>
         </ul>
         <a href="/codeissance" className="navbar__cta"> Codeissance 2026</a>
+        <MobileNav />
       </nav>
 
       <section className="hero" id="hero" ref={heroRef} style={{ overflow: "hidden", position: "relative" }}>

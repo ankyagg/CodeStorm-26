@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CommitteeCard from "../../../components/CommitteeCard";
 import type { CommitteeMember } from "../../../components/CommitteeCard";
+import MobileNav from "../../../components/MobileNav";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -75,6 +76,7 @@ export default function TeamPage() {
           <li><Link href="/practice" className="navbar__link">Practice</Link></li>
         </ul>
         <Link href="/codeissance" className="navbar__cta">Codeissance 2026</Link>
+        <MobileNav />
       </nav>
 
       {/* Page Content */}

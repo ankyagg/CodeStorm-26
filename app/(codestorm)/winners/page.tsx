@@ -5,6 +5,7 @@ import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Trophy, Award, Star, Zap, Code, Flame, Globe, Brain, Building2, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "../../../components/MobileNav";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -103,7 +104,7 @@ const winners: WinnerEntry[] = [
     track: "",
     prize: "NA",
     icon: <Star size={20} />,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    image: "/Typography/Technovation2025.png",
     domainWinners: [
       {
         domain: "Final Year Project",
@@ -225,6 +226,7 @@ export default function WinnersPage() {
           <li><Link href="/practice" className="navbar__link">Practice</Link></li>
         </ul>
         <Link href="/codeissance" className="navbar__cta">Codeissance 2026</Link>
+        <MobileNav />
       </nav>
 
       <main style={{ paddingTop: "140px", paddingBottom: "100px", minHeight: "100vh" }}>

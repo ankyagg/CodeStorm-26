@@ -85,12 +85,12 @@ const winners: WinnerEntry[] = [
     track: "",
     prize: "",
     icon: <Zap size={20} />,
-    image: "/HackSprint1.png",
+    image: "/Typography/HackSprint1.png",
     domainWinners: [
       {
         domain: "Overall Winner",
         label: "Winner",
-        name: "Winning Team",
+        name: "Winner",
         prize: "TBA",
         photo: "/winners/Hacksprint.png",
         icon: <Trophy size={18} />,
@@ -153,19 +153,19 @@ const winners: WinnerEntry[] = [
     track: "",
     prize: "NA",
     icon: <Star size={20} />,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    image: "/Typography/Technovation24.png",
     domainWinners: [
       {
-        domain: "Final Year Project",
+
         label: "Final Year Project",
-        name: "TesterOP",
-        prize: "₹NA",
-        photo: "/winners/Technovation2025-winners.png",
+        name: "Final Year Project",
+
+        photo: "/winners/Technovation24.png",
         icon: <Building2 size={18} />,
       }
 
     ],
-    totalPrizePool: "₹NA"
+
   },
   {
     edition: "Codessiance 2023",

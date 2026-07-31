@@ -82,6 +82,18 @@ export default function Hero() {
           {/* Main Title Block */}
           <div className="relative z-10 my-16 md:my-24 w-full flex justify-center perspective-1000">
             <div className="group relative">
+              
+              {/* Date Tag - Top Right of Banner */}
+              <div className="absolute -top-6 -right-2 md:-top-8 md:-right-8 z-30 inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-[#1A1A1A] shadow-[6px_6px_0px_0px_rgba(255,70,50,1)] hover:-translate-y-1 transition-transform border border-transparent transform rotate-[4deg]">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#1DB954] animate-pulse"></span>
+                <p
+                  className="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-[#F0EDEA]"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Happening on 20 to 21st August
+                </p>
+              </div>
+
               <div className="relative bg-[#1A1A1A] border-4 border-[#1DB954] text-[#F0EDEA] px-8 sm:px-14 md:px-24 py-8 sm:py-12 shadow-[12px_12px_0px_0px_rgba(29,185,84,1)] overflow-hidden transition-transform hover:-translate-y-2 hover:-translate-x-2">
                 <h1
                   className="relative z-10 text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none break-words"

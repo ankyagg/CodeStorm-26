@@ -8,10 +8,10 @@ interface TOCFolderProps {
   maxWidth?: string; // e.g. "578px"
 }
 
-export default function TOCFolder({ 
-  items, 
-  className = "", 
-  maxWidth = "578px" 
+export default function TOCFolder({
+  items,
+  className = "",
+  maxWidth = "578px"
 }: TOCFolderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,68 +22,81 @@ export default function TOCFolder({
   }, []);
 
   return (
-    <div 
-      className={`folder-outer relative w-full mx-auto lg:mx-0 cursor-pointer select-none transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${className}`}
-      style={{ maxWidth, height: isOpen ? '540px' : '180px' }}
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      {/* 1. BACK FLAP (rises up with contents, has left tab "CONTENTS") */}
-      <div 
-        className="back-flap absolute bottom-0 left-0 w-full transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-10 flex flex-col"
+    <>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .folder-outer:hover {
+          transform: translateY(-16px) scale(1.02) rotate(-1deg) !important;
+          filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25)) !important;
+          z-index: 50 !important;
+        }
+      `}} />
+      <div
+        className={`folder-outer relative w-full mx-auto lg:mx-0 cursor-pointer select-none transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${className}`}
         style={{
-          height: isOpen ? '540px' : '180px',
+          maxWidth,
+          height: isOpen ? '540px' : '180px'
         }}
+        onClick={() => setIsOpen(!isOpen)}
       >
-        {/* Back Flap Background Shape (solid purple, left tab elevated) */}
-        <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
-          <BackFlapSVG />
-        </div>
-
-        {/* Contents Text positioned on the left tab */}
-        <div className="relative z-10 h-[52px] pl-7 flex items-center shrink-0">
-          <span 
-            className="text-xl md:text-2xl font-black uppercase tracking-wider text-[#232323]"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Contents
-          </span>
-        </div>
-
-        {/* Nested White Card containing links */}
-        <div 
-          className="relative z-10 flex-grow px-4 pb-4 overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+        {/* 1. BACK FLAP (rises up with contents, has left tab "CONTENTS") */}
+        <div
+          className="back-flap absolute bottom-0 left-0 w-full transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-10 flex flex-col"
           style={{
-            maxHeight: isOpen ? '460px' : '0px',
-            opacity: isOpen ? 1 : 0,
-            pointerEvents: isOpen ? 'auto' : 'none',
+            height: isOpen ? '540px' : '180px',
           }}
         >
-          <div className="bg-[#EFEFEA] border-2 border-[#232323] rounded-[18px] p-6 h-full">
-            <ul className="contents-list vertical-list flex flex-col divide-y-[1.5px] divide-[#232323]">
-              {items.map((item, idx) => (
-                <li key={idx}>
-                  <a 
-                    href={item.href} 
-                    className="block py-2 text-lg md:text-xl font-black text-[#232323] hover:text-[#9691FF] transition-colors"
-                    style={{ fontFamily: "var(--font-display)" }}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Back Flap Background Shape (solid purple, left tab elevated) */}
+          <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+            <BackFlapSVG />
+          </div>
+
+          {/* Contents Text positioned on the left tab */}
+          <div className="relative z-10 h-[52px] pl-7 flex items-center shrink-0">
+            <span
+              className="text-xl md:text-2xl font-black uppercase tracking-wider text-[#232323]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Contents
+            </span>
+          </div>
+
+          {/* Nested White Card containing links */}
+          <div
+            className="relative z-10 flex-grow px-4 pb-4 overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+            style={{
+              maxHeight: isOpen ? '460px' : '0px',
+              opacity: isOpen ? 1 : 0,
+              pointerEvents: isOpen ? 'auto' : 'none',
+            }}
+          >
+            <div className="bg-[#EFEFEA] border-2 border-[#232323] rounded-[18px] p-6 h-full">
+              <ul className="contents-list vertical-list flex flex-col divide-y-[1.5px] divide-[#232323]">
+                {items.map((item, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={item.href}
+                      className="block py-2 text-lg md:text-xl font-black text-[#232323] hover:text-[#9691FF] transition-colors"
+                      style={{ fontFamily: "var(--font-display)" }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* 2. FRONT FLAP (stays fixed at bottom, has concentric circles, right tab elevated) */}
-      <div 
-        className="front-flap absolute bottom-0 left-0 w-full h-[180px] z-20 pointer-events-none overflow-hidden"
-      >
-        <FrontFlapSVG />
+        {/* 2. FRONT FLAP (stays fixed at bottom, has concentric circles, right tab elevated) */}
+        <div
+          className="front-flap absolute bottom-0 left-0 w-full h-[180px] z-20 pointer-events-none overflow-hidden"
+        >
+          <FrontFlapSVG />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -96,10 +109,10 @@ function BackFlapSVG() {
   const folderShape = "M560.5 51.5C569.337 51.5 576.5 44.3366 576.5 35.5V803.5C576.5 812.337 569.337 819.5 560.5 819.5H17.5C8.66344 819.5 1.5 812.337 1.5 803.5V17.5C1.5 8.66344 8.66344 1.5 17.5 1.5H295.579C305.49 1.5 313.626 9.08755 314.5 18.7705V35.5C314.5 44.3366 321.663 51.5 330.5 51.5H560.5Z";
 
   return (
-    <svg 
-      viewBox="0 0 578 821" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg" 
+    <svg
+      viewBox="0 0 578 821"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       className="w-full h-full drop-shadow-sm"
       preserveAspectRatio="xMidYMin slice"
     >
@@ -113,21 +126,21 @@ function FrontFlapSVG() {
   const folderShape = "M560.5 1.5C569.337 1.5 576.5 8.66345 576.5 17.5V803.5C576.5 812.337 569.337 819.5 560.5 819.5H17.5C8.66344 819.5 1.5 812.337 1.5 803.5V67.5C1.5 58.6634 8.66344 51.5 17.5 51.5H295.579C305.49 51.4999 313.626 43.9124 314.5 34.2295V17.5C314.5 8.66344 321.663 1.5 330.5 1.5H560.5Z";
 
   return (
-    <svg 
-      viewBox="0 0 578 821" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg" 
+    <svg
+      viewBox="0 0 578 821"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       className="w-full h-full"
       preserveAspectRatio="xMidYMin slice"
     >
       {/* Folder Fill */}
       <path d={folderShape} fill="#9691FF" />
-      
+
       {/* Mask for Concentric Circles */}
       <mask id="front-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="578" height="821">
         <path d={folderShape} fill="#FFFFFF" />
       </mask>
-      
+
       {/* Concentric Circles Pattern */}
       <g mask="url(#front-mask)">
         <path d="M282.587 419.772C270.297 419.772 260.333 410.727 260.333 399.57C260.333 388.412 270.297 379.368 282.587 379.368C294.878 379.368 304.841 388.412 304.841 399.57C304.841 410.727 294.878 419.772 282.587 419.772Z" stroke="#232323" strokeWidth="19.2247" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -145,7 +158,7 @@ function FrontFlapSVG() {
         <path d="M282.586 819.344C27.2045 819.344 -179.823 631.405 -179.823 399.569C-179.823 167.734 27.2045 -20.2051 282.586 -20.2051C537.967 -20.2051 744.995 167.734 744.995 399.569C744.995 631.405 537.967 819.344 282.586 819.344Z" stroke="#232323" strokeWidth="19.2247" strokeLinecap="round" strokeLinejoin="round"></path>
         <path d="M282.586 852.64C6.94843 852.64 -216.5 649.794 -216.5 399.57C-216.5 149.346 6.94843 -53.5 282.586 -53.5C558.224 -53.5 781.672 149.346 781.672 399.57C781.672 649.794 558.224 852.64 282.586 852.64Z" stroke="#232323" strokeWidth="19.2247" strokeLinecap="round" strokeLinejoin="round"></path>
       </g>
-      
+
       {/* Outer border line matching exact tab curves */}
       <path d={folderShape} fill="none" stroke="#232323" strokeWidth="3" />
     </svg>

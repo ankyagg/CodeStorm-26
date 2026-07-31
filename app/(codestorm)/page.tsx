@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, type Variants, useScroll, useTransform } from "framer-motion";
 import { Calendar, Users, Award, Star, ChevronRight, ChevronDown } from "lucide-react";
@@ -120,6 +120,61 @@ const achievements = [
     desc: "Sleepless nights, cold coffee, and code that just works",
   },
 ];
+
+const HackathonDesc = ({ description }: { description: string }) => {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <>
+      <style>{`
+        .mobile-clamp-text {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          margin-bottom: 0.5rem !important;
+        }
+        .mobile-read-more {
+          display: inline-block;
+          color: var(--color-red);
+          font-size: 0.85rem;
+          font-weight: 600;
+          cursor: pointer;
+          background: none;
+          border: none;
+          padding: 0;
+          margin-bottom: 1.5rem;
+          text-align: left;
+        }
+        .mobile-read-more:hover {
+          text-decoration: underline;
+        }
+        @media (min-width: 769px) {
+          .mobile-clamp-text {
+            display: block !important;
+            -webkit-line-clamp: unset !important;
+            -webkit-box-orient: unset !important;
+            overflow: visible !important;
+            margin-bottom: 1.5rem !important;
+          }
+          .mobile-read-more {
+            display: none !important;
+          }
+        }
+      `}</style>
+      <p className={`hackathon-card__desc ${!expanded ? 'mobile-clamp-text' : ''}`}>
+        {description}
+      </p>
+      {!expanded && (
+        <button 
+          className="mobile-read-more" 
+          onClick={() => setExpanded(true)}
+        >
+          Read more
+        </button>
+      )}
+    </>
+  );
+};
 
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
@@ -268,7 +323,7 @@ export default function Home() {
                       </span>
                     </div>
 
-                    <p className="hackathon-card__desc">{hack.description}</p>
+                    <HackathonDesc description={hack.description} />
 
                     <div className="hackathon-card__highlights">
                       {hack.highlights.map((h, i) => (

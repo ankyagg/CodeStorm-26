@@ -5,6 +5,7 @@ import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Trophy, Award, Star, Zap, Code, Flame, Globe, Brain, Building2, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "../../../components/MobileNav";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -48,7 +49,7 @@ const winners: WinnerEntry[] = [
     track: "--------",
     prize: "--------",
     icon: <Award size={20} />,
-    image: "/winners/Codeissance-25.jpg",
+    image: "/Typography/Codeissance-25.jpg",
     domainWinners: [
       {
         domain: "Industry Domain",
@@ -98,39 +99,24 @@ const winners: WinnerEntry[] = [
   },
   {
     edition: "Technovation 2025",
-    team: "",
-    project: "",
+    team: "TesterOP",
+    project: "Crm",
     track: "",
-    prize: "",
+    prize: "NA",
     icon: <Star size={20} />,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    image: "/Typography/Technovation2025.png",
     domainWinners: [
       {
-        domain: "Domain 1",
-        label: "Domain 1",
-        name: "TBA",
-        prize: "₹XX,XXX",
-        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+        domain: "Final Year Project",
+        label: "Final Year Project",
+        name: "TesterOP",
+        prize: "₹NA",
+        photo: "/winners/Technovation2025-winners.png",
         icon: <Building2 size={18} />,
-      },
-      {
-        domain: "Domain 2",
-        label: "Domain 2",
-        name: "TBA",
-        prize: "₹XX,XXX",
-        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
-        icon: <Globe size={18} />,
-      },
-      {
-        domain: "Domain 3",
-        label: "Domain 3",
-        name: "TBA",
-        prize: "₹XX,XXX",
-        photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
-        icon: <Brain size={18} />,
       }
+
     ],
-    totalPrizePool: "₹50,000"
+    totalPrizePool: "₹NA"
   },
   {
     edition: "Codessiance 2024",
@@ -139,7 +125,7 @@ const winners: WinnerEntry[] = [
     track: "",
     prize: "",
     icon: <Code size={20} />,
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+    image: "/Typography/Codeissance2024.png",
     domainWinners: [
       {
         domain: "Offline Mode",
@@ -162,22 +148,61 @@ const winners: WinnerEntry[] = [
   },
   {
     edition: "Technovation 2024",
-    team: "--------",
-    project: "--------",
-    track: "--------",
-    prize: "--------",
+    team: "TesterOP",
+    project: "Crm",
+    track: "",
+    prize: "NA",
     icon: <Star size={20} />,
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    domainWinners: [
+      {
+        domain: "Final Year Project",
+        label: "Final Year Project",
+        name: "TesterOP",
+        prize: "₹NA",
+        photo: "/winners/Technovation2025-winners.png",
+        icon: <Building2 size={18} />,
+      }
+
+    ],
+    totalPrizePool: "₹NA"
   },
   {
     edition: "Codessiance 2023",
-    team: "--------",
-    project: "--------",
-    track: "--------",
-    prize: "--------",
-    icon: <Zap size={20} />,
-    image: "/winners/Codeissance-23.jpg"
-  }
+    team: "",
+    project: "",
+    track: "",
+    prize: "",
+    icon: <Code size={20} />,
+    image: "/Typography/Codissance2023.png",
+    domainWinners: [
+      {
+        domain: "",
+        label: "",
+        name: "",
+        prize: "",
+        photo: "/winners/Codeissance2023-winners1.jpg",
+        icon: <Building2 size={18} />,
+      },
+      {
+        domain: "",
+        label: "",
+        name: "",
+        prize: "",
+        photo: "/winners/Codeissance2023-winners2.jpg",
+        icon: <Globe size={18} />,
+      },
+      {
+        domain: "",
+        label: "",
+        name: "",
+        prize: "",
+        photo: "/winners/Codissance2023-winners3.jpg",
+        icon: <Globe size={18} />,
+      }
+    ],
+    totalPrizePool: "₹50,000"
+  },
 ];
 
 export default function WinnersPage() {
@@ -201,6 +226,7 @@ export default function WinnersPage() {
           <li><Link href="/practice" className="navbar__link">Practice</Link></li>
         </ul>
         <Link href="/codeissance" className="navbar__cta">Codeissance 2026</Link>
+        <MobileNav />
       </nav>
 
       <main style={{ paddingTop: "140px", paddingBottom: "100px", minHeight: "100vh" }}>

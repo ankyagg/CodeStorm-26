@@ -3,6 +3,7 @@ import TiltedCard from "../../../components/TiltedCard";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "../../../components/MobileNav";
 import "./about.css";
 
 /* ─── Committee Data ─── */
@@ -109,7 +110,7 @@ const COMMITTEES: Committee[] = [
         name: "Technical",
         members: [
           { name: "Aditya Haswani", role: "Technical JCOM", image: "AdityaHaswani_JCOM.jpg", github: "https://github.com/AadityaHaswani", linkedin: "https://www.linkedin.com/in/aditya-haswani-095209378/" },
-          { name: "Sanskar Jadhav", role: "Technical JCOM", image: "SanskarJadhav_JCOM.jpg", github: "https://github.com/jadhavsanskar7432-lang", linkedin: "https://www.linkedin.com/in/sanskar-jadhav-a6b76a370/" },
+          { name: "Sanskar Jadhav", role: "Technical JCOM", image: "SanskarJadhav.png", github: "https://github.com/jadhavsanskar7432-lang", linkedin: "https://www.linkedin.com/in/sanskar-jadhav-a6b76a370/" },
         ],
       },
       {
@@ -125,7 +126,7 @@ const COMMITTEES: Committee[] = [
         name: "Design",
         members: [
           { name: "Khushnuma Vimadalal", role: "Design JCOM", image: "KhushnumaVimadalal_JCOM.jpg", github: "https://share.google/upWMtZmouQZr547Ol", linkedin: "https://www.linkedin.com/in/khushnuma-vimadalal-96173341a?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
-          { name: "Piyush Tehalani", role: "Design JCOM", image: "PiyushTehlani_JCOM.jpg", github: "https://github.com/GeekyPiyushh", linkedin: "http://www.linkedin.com/in/piyush-tehalani" },
+          { name: "Piyush Tehalani", role: "Design JCOM", image: "PiyushTehalani.png", github: "https://github.com/GeekyPiyushh", linkedin: "http://www.linkedin.com/in/piyush-tehalani" },
           { name: "Pahal Killekar", role: "Design JCOM", image: "PahalKillekar_JCOM.jpg", github: "https://github.com/pahal5", linkedin: "http://www.linkedin.com/in/pahal-killekar-b80953306" },
           { name: "Sushant Raghuvanshi", role: "Design JCOM", image: "SushantRaghuvanshi_JCOM.jpg", github: "https://github.com/sushantgit-cyber", linkedin: "https://www.linkedin.com/in/sushant-raghuvanshi-2a0309386?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
         ],
@@ -522,6 +523,7 @@ export default function AboutPage() {
           <li><Link href="/practice" className="navbar__link">Practice</Link></li>
         </ul>
         <Link href="/codeissance" className="navbar__cta">Codeissance 2026</Link>
+        <MobileNav />
       </nav>
 
       <main>

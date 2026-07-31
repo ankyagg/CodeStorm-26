@@ -1,0 +1,41 @@
+/* ═══════════════════════════════════════════════
+   Team Page — Grid layout for CommitteeCards
+   ═══════════════════════════════════════════════ */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+.team-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.team-grid__label {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+@media (max-width: 740px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .team-grid__item {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,220 @@
+/* ═══════════════════════════════════════════════
+   Codeissance 2026 — Coming Soon Teaser
+   Spotify Wrapped aesthetic · Black + Green/Pink
+   ═══════════════════════════════════════════════ */
+
+/* ─── Page shell ─── */
+.ci-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ─── Background layer ─── */
+.ci-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ambient glow orbs */
+.ci-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  will-change: transform;
+}
+
+.ci-orb--green {
+  width: 520px;
+  height: 520px;
+  top: -10%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(29, 185, 84, 0.28) 0%, transparent 70%);
+}
+
+.ci-orb--pink {
+  width: 480px;
+  height: 480px;
+  bottom: -6%;
+  right: -6%;
+  background: radial-gradient(circle, rgba(224, 64, 251, 0.22) 0%, transparent 70%);
+}
+
+.ci-orb--orange {
+  width: 400px;
+  height: 400px;
+  top: 55%;
+  left: 55%;
+  background: radial-gradient(circle, rgba(255, 140, 50, 0.12) 0%, transparent 70%);
+}
+
+/* Subtle film-grain overlay */
+.ci-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  pointer-events: none;
+}
+
+/* ─── Minimal nav ─── */
+.ci-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.ci-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.ci-nav__wordmark {
+  font-family: var(--font-heading, 'Morington', sans-serif);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Hero ─── */
+.ci-hero {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 2rem 6rem;
+}
+
+.ci-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Eyebrow label */
+.ci-eyebrow {
+  font-family: var(--font-heading, 'Morington', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #1DB954;
+  margin-bottom: 1.2rem;
+}
+
+/* Main headline */
+.ci-headline {
+  font-family: var(--font-heading, 'Morington', sans-serif);
+  font-weight: 900;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.ci-headline__code {
+  display: block;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #1DB954 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ci-headline__year {
+  display: block;
+  font-size: 0.85em;
+  background: linear-gradient(135deg, #1DB954 0%, #E040FB 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 40px rgba(29, 185, 84, 0.35));
+}
+
+/* Coming soon */
+.ci-coming {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* Teaser tagline */
+.ci-teaser {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #1DB954;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+/* Pill badge */
+.ci-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  background: rgba(29, 185, 84, 0.08);
+  border: 1px solid rgba(29, 185, 84, 0.35);
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.06em;
+}
+
+.ci-pill__icon {
+  color: #1DB954;
+  font-size: 0.95rem;
+  animation: ci-spin 4s linear infinite;
+}
+
+@keyframes ci-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  .ci-nav {
+    padding: 1rem 1.25rem;
+  }
+
+  .ci-nav__wordmark {
+    font-size: 1.1rem;
+  }
+
+  .ci-hero {
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  .ci-coming {
+    font-size: 1.2rem;
+  }
+
+  .ci-teaser {
+    font-size: 0.92rem;
+  }
+}

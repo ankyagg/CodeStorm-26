@@ -565,9 +565,9 @@ export default function AboutPage() {
         <section className="about-stats" id="stats-section" aria-label="CodeStorm statistics">
           <div className="ab-section__container">
             <div className="stats__grid">
-              <StatCard target={10} label="Events Hosted" plus delay={0} />
-              <StatCard target={100} label="Teams Registered" plus delay={0.12} />
-              <StatCard target={20} label="Teams Selected" delay={0.24} />
+              <StatCard target={3} label="Events Hosted" plus delay={0} />
+              <StatCard target={400} label="Teams Registered" plus delay={0.12} />
+              <StatCard target={50} label="Teams Selected" delay={0.24} />
               <StatCard target={3} label="Domains" plus delay={0.36} />
             </div>
           </div>

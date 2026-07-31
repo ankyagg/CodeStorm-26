@@ -144,7 +144,7 @@ export default function Home() {
             overflow:hidden and its own opaque background, this masks the
             page-wide Aurora within the hero bounds without touching Aurora
             anywhere else on the page. */}
-        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}>
           <Vortex
             background="#000000"
             topRadius={380}

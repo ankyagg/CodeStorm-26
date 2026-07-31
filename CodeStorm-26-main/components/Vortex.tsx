@@ -922,9 +922,6 @@ function createVortex(
 
   function step(now: number) {
     frame = requestAnimationFrame(step);
-    if (tick % 100 === 0) {
-      console.log("VORTEX: step() running", { now, running: cfgRef.current.running, dotCount });
-    }
     const cfg = cfgRef.current;
     const dt = Math.min((now - lastTime) / 1000, 0.04);
     lastTime = now;
@@ -1161,7 +1158,7 @@ export default function Vortex(props: VortexProps) {
 
     function init() {
       try {
-        apiRef.current = createVortex(canvas, container, configRef);
+        apiRef.current = createVortex(canvas, container as HTMLElement, configRef);
       } catch (e) {
         console.error("VORTEX INIT FAILED", e);
         // WebGL unavailable — fail silently to a transparent canvas.

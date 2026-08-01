@@ -37,7 +37,7 @@ const COMMITTEES: Committee[] = [
       {
         name: "Faculty",
         members: [
-          { name: "Anjali Malviya", role: "Head of Department", image: "/anjali-malviya.jpg", linkedin: "https://www.linkedin.com/in/dr-anjali-malviya-29582923" },
+          { name: "Anjali Malviya", role: "Head of Department", image: "/placeholder.jpg", linkedin: "https://www.linkedin.com/in/dr-anjali-malviya-29582923" },
           { name: "Shanthi Therese", role: "Teacher", image: "/shanthi-therese.jpg", linkedin: "https://www.linkedin.com/in/dr-shanthi-therese-s-484b13b1/" },
           { name: "Sheetal Gondal", role: "Teacher", image: "/sheetal-gondal.png", linkedin: "https://www.linkedin.com/in/sheetal-gondal-719585118" },
           { name: "Geeta Karande", role: "Teacher", image: "/geeta-karande.png", linkedin: "https://www.linkedin.com/in/geeta-karande-08a5811b4" },

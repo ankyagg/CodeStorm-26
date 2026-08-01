@@ -19,7 +19,7 @@ export const DOMAINS: Domain[] = [
     name: "Web / App Development",
     description: "Build stunning web or mobile applications that solve real problems.",
     teamSlots: "2–4 members",
-    prize: "₹20,000", // TODO: Confirm
+    prize: "TBD", // TODO: Confirm
     icon: "Globe",
   },
   {
@@ -27,7 +27,7 @@ export const DOMAINS: Domain[] = [
     name: "AI / ML",
     description: "Leverage artificial intelligence and machine learning to innovate.",
     teamSlots: "2–4 members",
-    prize: "₹20,000", // TODO: Confirm
+    prize: "TBD", // TODO: Confirm
     icon: "Brain",
   },
   {
@@ -35,7 +35,7 @@ export const DOMAINS: Domain[] = [
     name: "Industry Track",
     description: "Tackle real-world industry challenges with creative tech solutions.",
     teamSlots: "2–4 members",
-    prize: "₹20,000", // TODO: Confirm
+    prize: "TBD", // TODO: Confirm
     icon: "Factory",
   },
 ];
@@ -99,7 +99,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-cost",
     question: "Is there a registration fee?",
     answer:
-      "Participation details and any applicable fees will be announced on the registration platform. Stay tuned to our socials for updates.",
+      "The registration is completely free.But once you are selected for the hackathon there will be an entry free of Rs.500",
   },
   {
     id: "faq-apply",
@@ -111,7 +111,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-prizes",
     question: "What are the prizes?",
     answer:
-      "A total prize pool of ₹60,000+ across all tracks, along with swag, certificates, and opportunities with our sponsor partners.", // TODO: Confirm amount
+      "Official winner trophies across all tracks, along with exclusive swag kits, certificates, and opportunities with our sponsor partners.", // TODO: Confirm amount
   },
   {
     id: "faq-nocode",

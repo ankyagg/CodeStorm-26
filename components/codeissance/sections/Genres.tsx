@@ -108,15 +108,6 @@ export default function Genres() {
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
         <div ref={headerRef} className="mb-24 text-center opacity-0 flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#1DB954]/30 bg-[#1DB954]/10 px-5 py-2 mb-8">
-            <Headphones className="h-4 w-4 text-[#1DB954]" />
-            <span
-              className="font-bold text-[#1DB954] text-sm tracking-wide"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Curated for you
-            </span>
-          </div>
 
           <h2
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tight text-white"

@@ -257,7 +257,7 @@ export default function Outro() {
               <span className="text-[#1DB954]">•</span>
               <span>24 Hours</span>
               <span className="text-[#1DB954]">•</span>
-              <span>₹60,000+</span>
+              <span>Win Trophies &amp; Swag</span>
             </div>
           ))}
         </div>

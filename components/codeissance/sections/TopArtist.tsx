@@ -1,19 +1,42 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { Trophy, Medal, Award, Sparkles } from "lucide-react";
+import Image from "next/image";
+import {
+  Trophy,
+  Disc,
+  Radio,
+  Gift,
+  ExternalLink,
+} from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CheckeredPattern, ConcentricCircles, VerticalBars } from "@/components/codeissance/ui/DecorativePatterns";
+import {
+  CheckeredPattern,
+  ConcentricCircles,
+  VerticalBars,
+} from "@/components/codeissance/ui/DecorativePatterns";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 const prizes = [
-  { rank: 1, label: "Web/App Dev", domain: "Web & App Development", amount: "₹20,000", icon: Trophy, color: "#1DB954" },
-  { rank: 2, label: "AIML", domain: "Artificial Intelligence & Machine Learning", amount: "₹20,000", icon: Medal, color: "#8B7CFF" },
-  { rank: 3, label: "Industry", domain: "Industry Innovation", amount: "₹20,000", icon: Award, color: "#FF4632" },
+  {
+    rank: 1,
+    domain: "Web & App Development",
+    image: "/webPool.png",
+  },
+  {
+    rank: 2,
+    domain: "AI & Machine Learning",
+    image: "/aimlPool.png",
+  },
+  {
+    rank: 3,
+    domain: "Industry Innovation",
+    image: "/industryPool.png",
+  },
 ];
 
 export default function TopArtist() {
@@ -63,28 +86,27 @@ export default function TopArtist() {
     <section
       ref={sectionRef}
       id="prizes"
-      className="section-light grain-overlay relative overflow-hidden py-24 md:py-36"
-      style={{ backgroundColor: "#EBE6DF" }}
+      className="section-dark grain-overlay relative overflow-hidden py-24 md:py-36 bg-[#121212] text-white select-none"
     >
       {/* Decorative: Warped Checkered — top left */}
-      <div className="absolute -top-[5%] -left-[8%] opacity-[0.06] pointer-events-none scale-125 rotate-[-8deg]">
+      <div className="absolute -top-[5%] -left-[8%] opacity-[0.04] pointer-events-none scale-125 rotate-[-8deg]">
         <CheckeredPattern
           cols={8}
           rows={12}
           size={50}
-          color1="#C8A200"
+          color1="#1DB954"
           color2="transparent"
           warp
         />
       </div>
 
       {/* Decorative: Concentric Circles — bottom right */}
-      <div className="absolute -bottom-[25%] -right-[20%] w-[50vw] h-[50vw] md:w-[35vw] md:h-[35vw] opacity-[0.06] pointer-events-none">
+      <div className="absolute -bottom-[25%] -right-[20%] w-[50vw] h-[50vw] md:w-[35vw] md:h-[35vw] opacity-[0.04] pointer-events-none">
         <ConcentricCircles
           size={700}
           rings={10}
-          baseColor="#C8A200"
-          altColor="#EBE6DF"
+          baseColor="#1DB954"
+          altColor="#121212"
           highlightRing={2}
           highlightColor="#1DB954"
         />
@@ -92,95 +114,76 @@ export default function TopArtist() {
 
       {/* Decorative: Vertical Bars — right edge */}
       <div className="absolute top-1/2 -translate-y-1/2 right-6 opacity-10 pointer-events-none hidden lg:block rotate-90">
-        <VerticalBars bars={4} color="#1A1A1A" className="h-20" />
+        <VerticalBars bars={4} color="#FFFFFF" className="h-20" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-
         {/* Header */}
-        <div ref={headerRef} className="mb-20 max-w-3xl opacity-0">
+        <div ref={headerRef} className="mb-8 max-w-4xl opacity-0">
+
           <h2
-            className="text-3xl sm:text-6xl md:text-7xl font-normal leading-[1.1] text-black tracking-tight"
-            style={{ fontFamily: "var(--font-body)" }}
+            className="text-4xl sm:text-6xl md:text-7xl font-black leading-[1.08] text-white tracking-tight"
+            style={{ fontFamily: "var(--font-display)" }}
           >
-            Codeissance &apos;26:
-            <strong className="font-black text-black block mt-2">
-              2026’s Global Hackathon Categories & Prize Pool
-            </strong>
+            Prize Pool<br />
+
           </h2>
 
-          <div className="mt-8 flex items-center gap-4">
-           
-            <div className="flex items-center gap-2 px-4 py-2 bg-black/5 rounded-full">
-              <Sparkles className="w-5 h-5 text-[#1DB954]" />
-              <span className="text-sm font-black text-black">
-                ₹60,000+ Total Pool
-              </span>
-            </div>
-          </div>
+
         </div>
 
-        {/* Prize Pool Grid */}
+        {/* Prize Pool Display — Pure Uncropped Images Only (No Modals) */}
         <div
           ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start"
         >
           {prizes.map((prize) => {
-            const IconComp = prize.icon;
-
             return (
               <div
                 key={prize.rank}
-                className="prize-card flex flex-col justify-between rounded-2xl p-8 opacity-0 transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-white text-black border border-black/10"
+                className="prize-card group relative opacity-0"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-8">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: "rgba(0,0,0,0.05)",
-                      }}
-                    >
-                      <IconComp
-                        className="w-6 h-6"
-                        style={{ color: prize.color }}
-                      />
-                    </div>
-
-                    <span
-                      className="text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-black/5 text-black"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {prize.label}
-                    </span>
-                  </div>
-
-                  <h3
-                    className="text-2xl font-black mb-2"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {prize.domain}
-                  </h3>
-                </div>
-
-                <div className="mt-12 pt-6 border-t border-current/10 flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase opacity-60">
-                    Cash Prize
-                  </span>
-
-                  <span
-                    className="text-3xl font-black"
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      color: prize.color,
-                    }}
-                  >
-                    {prize.amount}
-                  </span>
-                </div>
+                <Image
+                  src={prize.image}
+                  alt={prize.domain}
+                  width={800}
+                  height={1000}
+                  className="w-full h-auto object-contain rounded-2xl shadow-2xl"
+                  priority
+                />
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom Spotify Action Banner */}
+        <div className="mt-16 p-8 rounded-3xl bg-[#181818] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+          <div className="flex items-center gap-4 relative z-10">
+            <div className="w-14 h-14 rounded-full bg-[#1DB954]/20 border border-[#1DB954]/40 flex items-center justify-center shrink-0">
+              <Disc className="w-7 h-7 text-[#1DB954] animate-spin-slow" />
+            </div>
+            <div>
+              <h4
+                className="text-lg font-black text-white"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Ready to release your top track at Codeissance &apos;26?
+              </h4>
+              <p className="text-xs text-white/60 font-medium">
+                Showcase your skills across 3 main competition categories.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://unstop.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 shrink-0 px-6 py-3.5 rounded-full bg-[#1DB954] hover:bg-[#1ED760] text-black font-extrabold text-xs uppercase tracking-widest transition-all duration-300 hover:scale-105 flex items-center gap-2"
+          >
+            <span>Register Track on Unstop</span>
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

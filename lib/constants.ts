@@ -99,7 +99,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-cost",
     question: "Is there a registration fee?",
     answer:
-      "Participation details and any applicable fees will be announced on the registration platform. Stay tuned to our socials for updates.",
+      "The registration is completely free.But once you are selected for the hackathon there will be an entry free of Rs.500",
   },
   {
     id: "faq-apply",

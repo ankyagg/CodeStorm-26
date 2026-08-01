@@ -24,7 +24,7 @@ export default function Home() {
         <Genres />
         <Timeline />
         <TopArtist />
-        <InRotation />
+        {/* <InRotation /> */}
         <Recap />
         <Outro />
         <Footer />

@@ -117,13 +117,13 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-nocode",
     question: "I'm a beginner — can I still join?",
     answer:
-      "Absolutely! Codessiance welcomes hackers of all skill levels. We'll have mentors available throughout the event to help guide you.",
+      "Absolutely! Codeissance welcomes hackers of all skill levels. We'll have mentors available throughout the event to help guide you.",
   },
   {
     id: "faq-remote",
     question: "Is it online or offline?",
     answer:
-      "Codessiance '26 is a fully offline, in-person hackathon held at TSEC campus. You'll need to be present for the entire 24-hour duration.",
+      "Codeissance '26 is a fully offline, in-person hackathon held at TSEC campus. You'll need to be present for the entire 24-hour duration.",
   },
 ];
 

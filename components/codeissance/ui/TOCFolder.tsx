@@ -52,9 +52,9 @@ export default function TOCFolder({
           </div>
 
           {/* Contents Text positioned on the left tab */}
-          <div className="relative z-10 h-[52px] pl-7 flex items-center shrink-0">
+          <div className="relative z-10 h-[34px] md:h-[52px] pl-5 md:pl-7 flex items-center shrink-0">
             <span
-              className="text-xl md:text-2xl font-black uppercase tracking-wider text-[#232323]"
+              className="text-lg md:text-2xl font-black uppercase tracking-wider text-[#232323]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Contents

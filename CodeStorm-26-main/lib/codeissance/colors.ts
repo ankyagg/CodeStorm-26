@@ -1,5 +1,5 @@
 /**
- * Codessiance '26 — Color Token Map
+ * Codeissance '26 — Color Token Map
  * Mirrors globals.css CSS variables for use in JS/TS (GSAP, Three.js, etc.)
  */
 

@@ -25,6 +25,15 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+/**
+ * True Spotify palette:
+ * Background: #121212 (Spotify black)
+ * Card:       #181818 / #1A1A1A (Spotify card surface)
+ * Accent:     #1DB954 (Spotify green)
+ * Text:       #FFFFFF / #B3B3B3 (Spotify muted grey)
+ * Green reads correctly against black — that's the actual Spotify
+ * pairing, unlike green-on-cream which looks off-brand.
+ */
 
 export default function Recap() {
 
@@ -139,14 +148,14 @@ id="faq"
 className="
 relative
 overflow-hidden
-bg-[#EBE6DF]
+bg-[#121212]
 py-28
-text-[#121212]
+text-white
 "
 >
 
 
-{/* Background Spotify style */}
+{/* Background Spotify-style glow */}
 
 <div className="absolute inset-0 overflow-hidden">
 
@@ -160,7 +169,7 @@ absolute
 h-[500px]
 w-[500px]
 rounded-full
-bg-[#1DB954]/15
+bg-[#1DB954]/20
 blur-[130px]
 "
 />
@@ -176,7 +185,7 @@ top-40
 h-[420px]
 w-[420px]
 rounded-full
-bg-[#191414]/10
+bg-[#1DB954]/10
 blur-[150px]
 "
 />
@@ -213,7 +222,7 @@ w-[45vw]
 h-[45vw]
 md:w-[30vw]
 md:h-[30vw]
-opacity-[0.06]
+opacity-[0.08]
 pointer-events-none
 "
 >
@@ -222,9 +231,9 @@ pointer-events-none
 size={600}
 rings={10}
 baseColor="#1DB954"
-altColor="#EBE6DF"
+altColor="#121212"
 highlightRing={2}
-highlightColor="#191414"
+highlightColor="#FFFFFF"
 />
 
 </div>
@@ -238,7 +247,7 @@ className="
 absolute
 -bottom-[10%]
 -left-[5%]
-opacity-[0.04]
+opacity-[0.06]
 pointer-events-none
 rotate-[12deg]
 scale-110
@@ -266,7 +275,7 @@ absolute
 top-1/2
 -translate-y-1/2
 right-8
-opacity-[0.08]
+opacity-[0.1]
 pointer-events-none
 hidden
 lg:block
@@ -278,7 +287,7 @@ rows={6}
 cols={3}
 dotSize={12}
 gap={14}
-color="#191414"
+color="#1DB954"
 />
 
 </div>
@@ -322,8 +331,8 @@ items-center
 gap-3
 rounded-full
 border
-border-[#121212]/10
-bg-white/60
+border-white/10
+bg-white/5
 px-6
 py-2
 backdrop-blur-xl
@@ -348,7 +357,7 @@ text-sm
 uppercase
 tracking-[0.4em]
 font-semibold
-text-[#121212]
+text-white
 "
 >
 FAQ
@@ -371,7 +380,7 @@ md:text-8xl
 font-black
 tracking-[-0.05em]
 leading-none
-text-[#121212]
+text-white
 "
 >
 
@@ -391,7 +400,7 @@ mx-auto
 mt-8
 max-w-2xl
 text-lg
-text-[#555555]
+text-[#B3B3B3]
 "
 >
 
@@ -432,13 +441,13 @@ group
 overflow-hidden
 rounded-[32px]
 border
-border-[#121212]/10
-bg-[#F8F5EF]
-shadow-[0_15px_45px_rgba(18,18,18,0.08)]
+border-white/10
+bg-[#181818]
+shadow-[0_15px_45px_rgba(0,0,0,0.4)]
 transition-all
 duration-500
-hover:border-[#1DB954]
-hover:shadow-[0_20px_60px_rgba(29,185,84,0.15)]
+hover:border-[#1DB954]/60
+hover:shadow-[0_20px_60px_rgba(29,185,84,0.2)]
 "
 >
 
@@ -493,7 +502,7 @@ bg-[#1DB954]
 text-lg
 font-black
 text-[#121212]
-shadow-[0_8px_25px_rgba(29,185,84,0.25)]
+shadow-[0_8px_25px_rgba(29,185,84,0.35)]
 "
 >
 
@@ -516,7 +525,7 @@ text-sm
 uppercase
 tracking-[0.35em]
 font-semibold
-text-[#555555]
+text-[#B3B3B3]
 "
 >
 
@@ -535,7 +544,7 @@ text-xl
 md:text-2xl
 font-bold
 leading-tight
-text-[#121212]
+text-white
 transition-colors
 group-hover:text-[#1DB954]
 "
@@ -574,8 +583,8 @@ mb-5
 sm:mb-8
 rounded-3xl
 border
-border-[#121212]/10
-bg-[#EBE6DF]
+border-white/10
+bg-[#121212]
 p-5
 sm:p-7
 "
@@ -586,7 +595,7 @@ sm:p-7
 className="
 text-lg
 leading-8
-text-[#555555]
+text-[#B3B3B3]
 "
 >
 
@@ -632,12 +641,12 @@ flex-col
 items-center
 rounded-[40px]
 border
-border-[#121212]/10
-bg-white/70
+border-white/10
+bg-white/5
 px-10
 py-10
 backdrop-blur-xl
-shadow-[0_20px_60px_rgba(18,18,18,0.08)]
+shadow-[0_20px_60px_rgba(0,0,0,0.4)]
 "
 >
 
@@ -648,7 +657,7 @@ text-3xl
 md:text-5xl
 font-black
 tracking-tight
-text-[#121212]
+text-white
 "
 >
 
@@ -664,7 +673,7 @@ className="
 mt-4
 max-w-xl
 text-lg
-text-[#555555]
+text-[#B3B3B3]
 "
 >
 
@@ -689,8 +698,8 @@ text-[#121212]
 transition-all
 duration-300
 hover:scale-105
-hover:bg-[#18a94d]
-hover:shadow-[0_12px_40px_rgba(29,185,84,0.35)]
+hover:bg-[#1ED760]
+hover:shadow-[0_12px_40px_rgba(29,185,84,0.4)]
 "
 ><a href="https://chat.whatsapp.com/EXAMPLE" target="_blank" rel="noopener noreferrer">
 

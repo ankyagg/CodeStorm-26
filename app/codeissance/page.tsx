@@ -11,7 +11,7 @@ import Footer from "@/components/codeissance/sections/Footer";
 import Loader from "@/components/codeissance/loader/Loader";
 
 /**
- * Codessiance '26 — Main Page
+ * Codeissance '26 — Main Page
  * Exact Spotify 2025 Wrapped Newsroom Layout
  */
 export default function Home() {

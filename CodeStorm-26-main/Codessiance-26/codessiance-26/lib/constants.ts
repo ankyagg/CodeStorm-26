@@ -1,5 +1,5 @@
 /**
- * Codessiance '26 — Data Constants
+ * Codeissance '26 — Data Constants
  * All typed content for domains, timeline, sponsors, and FAQ.
  */
 
@@ -117,13 +117,13 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-nocode",
     question: "I'm a beginner — can I still join?",
     answer:
-      "Absolutely! Codessiance welcomes hackers of all skill levels. We'll have mentors available throughout the event to help guide you.",
+      "Absolutely! Codeissance welcomes hackers of all skill levels. We'll have mentors available throughout the event to help guide you.",
   },
   {
     id: "faq-remote",
     question: "Is it online or offline?",
     answer:
-      "Codessiance '26 is a fully offline, in-person hackathon held at TSEC campus. You'll need to be present for the entire 24-hour duration.",
+      "Codeissance '26 is a fully offline, in-person hackathon held at TSEC campus. You'll need to be present for the entire 24-hour duration.",
   },
 ];
 
@@ -154,7 +154,7 @@ export interface SectionMeta {
 }
 
 export const SECTIONS: SectionMeta[] = [
-  { id: "hero", label: "Intro", wrappedTitle: "Codessiance Wrapped '26" },
+  { id: "hero", label: "Intro", wrappedTitle: "Codeissance Wrapped '26" },
   { id: "genres", label: "Your Top Genres", wrappedTitle: "Your Top Genres" },
   { id: "artists", label: "Featured Artists", wrappedTitle: "Featured Artists" },
   { id: "timeline", label: "Minutes Listened", wrappedTitle: "Minutes Listened" },

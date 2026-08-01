@@ -74,7 +74,7 @@ export function TopGenresCard({
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 rounded-full bg-[#1DB954]" />
           <span className="text-[10px] font-black tracking-widest uppercase">
-            CODESSiANCE.COM/WRAPPED
+            CODEISSiANCE.COM/WRAPPED
           </span>
         </div>
         <span className="text-[10px] font-bold opacity-60">2026</span>
@@ -129,7 +129,7 @@ export function ClubFavouriteCard({
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 rounded-full bg-[#1DB954]" />
           <span className="text-[10px] font-black tracking-widest uppercase">
-            CODESSiANCE.COM/WRAPPED
+            CODEISSiANCE.COM/WRAPPED
           </span>
         </div>
         <span className="text-[10px] font-bold text-white/60">2026</span>

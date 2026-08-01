@@ -1,4 +1,4 @@
-# Codessiance '26 — "Hack Wrapped" 
+# Codeissance '26 — "Hack Wrapped" 
 ### Build Specification & Agent Prompt Pack
 **Event:** TSEC CodeStorm's flagship 24-hour offline hackathon
 **Theme:** Spotify Wrapped — the hackathon told as your year-end music wrap
@@ -9,7 +9,7 @@
 
 ## 0. Concept in one line
 
-The site *is* a Spotify Wrapped playback. You don't "scroll a webpage" — you **press play** on Codessiance, and each section is a Wrapped "slide" (Top Artist → Top Genre → Minutes Listened, etc., remapped to Domains → Timeline → Prizes → Sponsors → FAQ). A persistent music-player bar at the bottom drives a "track" whose progress = how far you've scrolled through the event experience, and every section transition plays the same abstract-blob morph transition Spotify Wrapped uses between slides.
+The site *is* a Spotify Wrapped playback. You don't "scroll a webpage" — you **press play** on Codeissance, and each section is a Wrapped "slide" (Top Artist → Top Genre → Minutes Listened, etc., remapped to Domains → Timeline → Prizes → Sponsors → FAQ). A persistent music-player bar at the bottom drives a "track" whose progress = how far you've scrolled through the event experience, and every section transition plays the same abstract-blob morph transition Spotify Wrapped uses between slides.
 
 ---
 
@@ -61,7 +61,7 @@ Each major section should get **one duotone gradient identity** (like real Wrapp
 | Old (One Piece) | New (Wrapped) | Purpose |
 |---|---|---|
 | Loading | **Loading / "Buffering your year"** | Custom loader, see §4.0 |
-| Home/Hero | **Intro — "Codessiance Wrapped '26"** | Press Play hero |
+| Home/Hero | **Intro — "Codeissance Wrapped '26"** | Press Play hero |
 | Domains | **"Your Top Genres"** | Hackathon tracks/domains as genre cards |
 | Crew Recruitment | **"Featured Artists" / Team Recruitment** | CodeStorm committee/organizer showcase |
 | Timeline | **"Minutes Listened" — Event Timeline** | 24-hr schedule as a continuous playing track |
@@ -90,8 +90,8 @@ Deployment:     Vercel
 
 Key packages to install:
 ```bash
-npx create-next-app@latest codessiance-26 --typescript --tailwind --app --eslint
-cd codessiance-26
+npx create-next-app@latest codeissance-26 --typescript --tailwind --app --eslint
+cd codeissance-26
 npx shadcn@latest init
 npm i gsap @gsap/react lenis
 npm i three @react-three/fiber @react-three/drei
@@ -109,11 +109,11 @@ npm i framer-motion   # optional, only if React Bits components require it
 - Below it, a line of text that cycles like Wrapped's loading copy: "Counting your commits…", "Analyzing your caffeine intake…", "Mixing your hackathon playlist…".
 - On 100%, ring collapses into a green dot, dot expands to fill screen (GSAP scale to `9999px` clip-path circle), revealing Hero underneath — this is the classic Spotify Wrapped "burst open" transition.
 
-### 4.1 Hero / Intro — "Codessiance Wrapped '26"
+### 4.1 Hero / Intro — "Codeissance Wrapped '26"
 - Full-viewport, deep black→green radial gradient background.
 - 3D glassy element (react-three-fiber): a large frosted-glass rotating shape (torus/blob using `MeshTransmissionMaterial`) slowly rotating behind the headline, mouse-parallax on desktop.
 - Headline: giant Wrapped-style stat card treatment — "24 HOURS. 1 CAMPUS. YOUR STORY." (big display numerals like the Wrapped "You listened to X minutes" card).
-- Sub-copy: one line about Codessiance '26 + dates + TSEC CodeStorm.
+- Sub-copy: one line about Codeissance '26 + dates + TSEC CodeStorm.
 - Primary CTA: pill button "▶ Press Play to Register" → scrolls to outro/registration or links to Unstop (external, same as last year).
 - Secondary CTA (ghost): "Scroll to explore your wrap ↓"
 - A visible "now playing" strip at the very bottom (this is actually the persistent player, see §5).
@@ -144,11 +144,11 @@ npm i framer-motion   # optional, only if React Bits components require it
 
 ### 4.7 "Your Recap" — FAQ
 - shadcn `Accordion`, styled dark, green accent on expand icon.
-- Section framed as "frequently played questions" — keep copy from last year (participation, cost, application, prizes, no-code-experience, remote/offline) updated for TSEC/Codessiance '26 specifics.
+- Section framed as "frequently played questions" — keep copy from last year (participation, cost, application, prizes, no-code-experience, remote/offline) updated for TSEC/Codeissance '26 specifics.
 
 ### 4.8 Outro — "Add to Playlist" / Register + Footer
 - Final full-viewport duotone (loops back to green/black, closing the "wrap" narrative).
-- Big CTA replicating Wrapped's shareable summary card aesthetic: a stat-card mockup of "Your Codessiance Wrap" (e.g., "Top Genre: AI/ML", "Duration: 24 Hours", "Prize Pool: ₹XX,000") with a "Register Now →" button styled like Wrapped's share button.
+- Big CTA replicating Wrapped's shareable summary card aesthetic: a stat-card mockup of "Your Codeissance Wrap" (e.g., "Top Genre: AI/ML", "Duration: 24 Hours", "Prize Pool: ₹XX,000") with a "Register Now →" button styled like Wrapped's share button.
 - Footer: quick links, contact, social icons (Instagram/LinkedIn/X), copyright — reuse last year's footer content, restyle to dark Spotify chrome.
 
 ---
@@ -251,7 +251,7 @@ Copy each block below as a separate message to your coding agent, in order. Each
 
 ### Prompt — Phase 0
 ```
-Set up a new Next.js 14 App Router project in TypeScript called "codessiance-26".
+Set up a new Next.js 14 App Router project in TypeScript called "codeissance-26".
 Install and configure: Tailwind CSS, shadcn/ui (init with the "slate" base then override
 tokens), GSAP + @gsap/react + ScrollTrigger, Lenis for smooth scroll, three.js with
 @react-three/fiber and @react-three/drei, lucide-react.
@@ -284,7 +284,7 @@ fully responsive (mobile-first) versions of these sections as separate component
 /components/sections, and compose them in order on app/page.tsx:
 
 1. Hero.tsx — "Your Top Genres" full-bleed headline treatment: giant stat-style headline
-   "24 HOURS. 1 CAMPUS. YOUR STORY.", one-line subcopy about Codessiance '26 by TSEC CodeStorm,
+   "24 HOURS. 1 CAMPUS. YOUR STORY.", one-line subcopy about Codeissance '26 by TSEC CodeStorm,
    a primary pill CTA button ("Press Play to Register") and a ghost secondary CTA
    ("Scroll to explore your wrap"). Leave a labeled placeholder div for a future 3D canvas.
 
@@ -311,7 +311,7 @@ fully responsive (mobile-first) versions of these sections as separate component
    Powered By, Partners) with placeholder logo boxes. Blue/green duotone.
 
 7. Recap.tsx — "Your Recap" FAQ using shadcn Accordion, dark styled, green accent, with these
-   Q&As (edit copy for Codessiance '26/TSEC specifics): who can participate, cost, how to apply,
+   Q&As (edit copy for Codeissance '26/TSEC specifics): who can participate, cost, how to apply,
    prizes, no-code-experience-needed, is it remote (answer: fully offline/in-person).
 
 8. Outro.tsx — final CTA styled like a shareable Wrapped summary card (stat rows: Top Genre,
@@ -456,7 +456,7 @@ Final polish pass across the whole site:
 - Confirm prefers-reduced-motion is respected everywhere motion was added in Phases 3-6.
 - Replace all TODO placeholder copy, sponsor logos, committee photos, and confirmed
   domains/timeline/prize figures with final content.
-- Add metadata: page title "Codessiance '26 | TSEC CodeStorm", description, and an Open Graph
+- Add metadata: page title "Codeissance '26 | TSEC CodeStorm", description, and an Open Graph
   image styled like a Spotify Wrapped share card (dark background, big stat, green accent) for
   social link previews. Add favicon.
 - Do a final cross-browser check (Chrome, Safari, Firefox) especially for the
@@ -468,7 +468,7 @@ Final polish pass across the whole site:
 
 ## 11. Open Items to Confirm Before/During Build
 
-- [ ] Pull exact hex codes + component specs from the shared Spotify Figma community file (colors above are Spotify's public brand values as a safe fallback — the Figma may have Codessiance-specific adaptations).
+- [ ] Pull exact hex codes + component specs from the shared Spotify Figma community file (colors above are Spotify's public brand values as a safe fallback — the Figma may have Codeissance-specific adaptations).
 - [ ] Confirm final domain list + team slots + prize amounts for '26 (used placeholders from '25).
 - [ ] Confirm final 24-hr schedule/timeline for '26.
 - [ ] Confirm sponsor list and logo assets for '26.
@@ -487,4 +487,4 @@ Final polish pass across the whole site:
 - Player bar's scroll-progress + timestamp updates smoothly across the whole page.
 - 3D glass elements render without blocking initial paint and respect reduced-motion.
 - Lighthouse mobile performance ≥ 85, accessibility ≥ 90.
-- All placeholder/TODO content replaced with confirmed Codessiance '26 details.
+- All placeholder/TODO content replaced with confirmed Codeissance '26 details.

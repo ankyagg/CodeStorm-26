@@ -33,7 +33,7 @@ const tickerItems = [
 
 const hackathons = [
   {
-    title: "Codessiance 2023",
+    title: "Codeissance 2023",
     tagline: "Where It All Began",
     date: "March 2023",
     participants: "500+",
@@ -49,7 +49,7 @@ const hackathons = [
     image: "/Codeissance23.jpeg"
   },
   {
-    title: "Codessiance 2024",
+    title: "Codeissance 2024",
     tagline: "The Evolution",
     date: "September 2024",
     participants: "1100+",
@@ -79,7 +79,7 @@ const hackathons = [
     image: "/technovation2025.jpg"
   },
   {
-    title: "Codessiance 2025",
+    title: "Codeissance 2025",
     tagline: "The Spectacle",
     date: "September 2025",
     participants: "1600+",
@@ -258,8 +258,7 @@ export default function Home() {
 
         </motion.div>
 
-        {/* Scroll-down indicator — mirrors .about-hero__scroll pattern */}
-        <ChevronDown size={32} className="hero__scroll" aria-hidden="true" style={{ position: "relative", zIndex: 2 }} />
+
       </section>
 
       {/* ═══════════════ TICKER MARQUEE ═══════════════ */}
@@ -357,7 +356,7 @@ export default function Home() {
           >
             <span className="participant-quote__mark">&ldquo;</span>
             <p>I came for the prize money. I stayed because I actually built something I was proud of for the first time.</p>
-            <cite>— Anonymous participant, Codessiance 2023</cite>
+            <cite>— Anonymous participant, Codeissance 2023</cite>
           </motion.blockquote>
         </div>
       </section>

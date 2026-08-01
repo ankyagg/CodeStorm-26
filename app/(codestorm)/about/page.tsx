@@ -37,10 +37,10 @@ const COMMITTEES: Committee[] = [
       {
         name: "Faculty",
         members: [
-          { name: "Anjali Malviya", role: "Head of Department", image: U("photo-1560250097-0b93528c311a"), github: "https://github.com/morgandavies", linkedin: "https://linkedin.com/in/morgandavies" },
-          { name: "Shanthi Therese", role: "Teacher", image: U("photo-1573496359142-b8d87734a5a2"), github: "https://github.com/elenaruiz", linkedin: "https://linkedin.com/in/elenaruiz" },
-          { name: "Sheetal Gondal", role: "Teacher", image: U("photo-1560250097-0b93528c311a"), github: "https://github.com/morgandavies", linkedin: "https://linkedin.com/in/morgandavies" },
-          { name: "Geeta Karande", role: "Teacher", image: U("photo-1560250097-0b93528c311a"), github: "https://github.com/morgandavies", linkedin: "https://linkedin.com/in/morgandavies" },
+          { name: "Anjali Malviya", role: "Head of Department", image: "/anjali-malviya.jpg", linkedin: "https://www.linkedin.com/in/dr-anjali-malviya-29582923" },
+          { name: "Shanthi Therese", role: "Teacher", image: "/shanthi-therese.jpg", linkedin: "https://www.linkedin.com/in/dr-shanthi-therese-s-484b13b1/" },
+          { name: "Sheetal Gondal", role: "Teacher", image: "/sheetal-gondal.png", linkedin: "https://www.linkedin.com/in/sheetal-gondal-719585118" },
+          { name: "Geeta Karande", role: "Teacher", image: "/geeta-karande.png", linkedin: "https://www.linkedin.com/in/geeta-karande-08a5811b4" },
         ],
       },
     ],
@@ -547,9 +547,9 @@ export default function AboutPage() {
           <div className="about-hero__content">
             <span className="ab-section__label" data-reveal>The Story</span>
 
-            <div className="about-hero__banner" data-reveal style={{ "--reveal-delay": "0.3s" } as React.CSSProperties}>
-              <img src="/codestorm-banner.png" alt="CODESTORM" className="about-hero__banner-img" />
-            </div>
+            <h1 className="heading-xl codestorm-title" data-reveal style={{ "--reveal-delay": "0.3s", marginBottom: 0 } as React.CSSProperties}>
+              <span className="c1">C</span><span className="c2">O</span><span className="c3">D</span><span className="c4">E</span><span className="c5">S</span><span className="c6">T</span><span className="c7">O</span><span className="c8">R</span><span className="c9">M</span>
+            </h1>
 
             <p className="ab-text-body about-hero__subtitle" data-reveal style={{ "--reveal-delay": "1.4s" } as React.CSSProperties}>
               TSEC CodeStorm stands out as a unique platform to help develop coding and presentation skills.
@@ -558,7 +558,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <i className="fa-solid fa-chevron-down about-hero__scroll" aria-hidden="true" />
+
         </section>
 
         {/* ═══ Statistics ═══ */}
@@ -663,7 +663,7 @@ export default function AboutPage() {
                     style={
                       member.image === "/aryan-pathare.jpg" ? { objectPosition: "center 25%" } :
                         member.image === "/PriyankaPatil_SCOM.jpg" || member.image === "PriyankaPatil_SCOM.jpg" ? { objectPosition: "center 15%" } :
-                          member.image === "/KhushnumaVimadalal_JCOM.jpg" || member.image === "KhushnumaVimadalal_JCOM.jpg" ? { objectPosition: "center 80%" } :
+                          member.image === "/KhushnumaVimadalal_JCOM.jpg" || member.image === "KhushnumaVimadalal_JCOM.jpg" ? { objectPosition: "center 45%" } :
                             member.image === "saarthak-patil.jpg" || member.image === "/saarthak-patil.jpg" ? { objectPosition: "center 30%" } :
                               undefined
                     }

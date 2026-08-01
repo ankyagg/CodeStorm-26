@@ -16,7 +16,6 @@ import "./ProblemGrid.css";
 
 export default function ProblemGrid() {
   const [activeYear, setActiveYear] = useState<Year>(2025);
-  const [activeFilter, setActiveFilter] = useState<Domain | "All">("All");
   const [expandedDomain, setExpandedDomain] = useState<Domain | null>(null);
   const [selectedProblem, setSelectedProblem] = useState<HackathonProblem | null>(null);
 
@@ -34,43 +33,25 @@ export default function ProblemGrid() {
     }
   }, [activeYearIndex]);
 
-  /* ─── Domain Tab Slider ─── */
-  const tabBtnRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const sliderRef = useRef<HTMLSpanElement>(null);
-  const activeIndex = FILTER_OPTIONS.indexOf(activeFilter);
 
-  const updateDomainSlider = useCallback(() => {
-    const btn = tabBtnRefs.current[activeIndex];
-    const slider = sliderRef.current;
-    if (btn && slider) {
-      slider.style.width = btn.offsetWidth + "px";
-      slider.style.transform = "translateX(" + btn.offsetLeft + "px)";
-    }
-  }, [activeIndex]);
 
   useEffect(() => {
     updateYearSlider();
-    updateDomainSlider();
     const handleResize = () => {
       updateYearSlider();
-      updateDomainSlider();
     };
     window.addEventListener("resize", handleResize);
     if (document.fonts?.ready) {
       document.fonts.ready.then(handleResize);
     }
     return () => window.removeEventListener("resize", handleResize);
-  }, [updateYearSlider, updateDomainSlider]);
+  }, [updateYearSlider]);
 
   /* ─── Data Filtering & Grouping ─── */
   const yearProblems = hackathonProblems.filter((p) => p.year === activeYear);
 
-  // The domains to render. If "All", render all domains present in the selected year.
-  // Otherwise, render only the active filter (if it exists for that year).
-  const domainsToRender: Domain[] =
-    activeFilter === "All"
-      ? Array.from(new Set(yearProblems.map((p) => p.domain)))
-      : [activeFilter];
+  // Render all domains present in the selected year.
+  const domainsToRender: Domain[] = Array.from(new Set(yearProblems.map((p) => p.domain)));
 
   return (
     <section className="pg-section" id="past-problems">
@@ -105,35 +86,7 @@ export default function ProblemGrid() {
         </div>
       </div>
 
-      {/* Domain Filter Tabs */}
-      <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-        <div className="pg-tabs" role="tablist" aria-label="Domain filter">
-          <span
-            className="pg-tabs__slider"
-            ref={sliderRef}
-            aria-hidden="true"
-            style={{ transition: "transform 0.4s cubic-bezier(0.22,1,0.36,1), width 0.4s cubic-bezier(0.22,1,0.36,1)" }}
-          />
-          {FILTER_OPTIONS.map((option, i) => (
-            <button
-              key={option}
-              className={`pg-tabs__btn${activeFilter === option ? " is-active" : ""}`}
-              role="tab"
-              aria-selected={activeFilter === option}
-              type="button"
-              ref={(el) => {
-                tabBtnRefs.current[i] = el;
-              }}
-              onClick={() => {
-                setActiveFilter(option);
-                setExpandedDomain(null); // close on filter switch
-              }}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </div>
+
 
       {/* Domain Groups (Decks container) */}
       <div className="pg-decks-container">

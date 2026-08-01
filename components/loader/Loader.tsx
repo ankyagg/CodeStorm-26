@@ -22,7 +22,7 @@ export default function Loader() {
   useEffect(() => {
     // Session guard — only play once per session
     if (typeof window !== "undefined") {
-      if (sessionStorage.getItem("codessiance-loaded")) {
+      if (sessionStorage.getItem("codeissance-loaded")) {
         setShouldRender(false);
         return;
       }
@@ -74,7 +74,7 @@ export default function Loader() {
     const tl = gsap.timeline({
       onComplete: () => {
         clearInterval(textInterval);
-        sessionStorage.setItem("codessiance-loaded", "true");
+        sessionStorage.setItem("codeissance-loaded", "true");
         document.body.style.overflow = "";
 
         // Burst-open transition

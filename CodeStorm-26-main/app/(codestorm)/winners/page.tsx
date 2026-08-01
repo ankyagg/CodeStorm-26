@@ -43,7 +43,7 @@ interface WinnerEntry {
 
 const winners: WinnerEntry[] = [
   {
-    edition: "Codessiance 2025",
+    edition: "Codeissance 2025",
     team: "--------",
     project: "--------",
     track: "--------",
@@ -134,7 +134,7 @@ const winners: WinnerEntry[] = [
     totalPrizePool: "₹50,000"
   },
   {
-    edition: "Codessiance 2024",
+    edition: "Codeissance 2024",
     team: "",
     project: "",
     track: "",
@@ -171,7 +171,7 @@ const winners: WinnerEntry[] = [
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
   },
   {
-    edition: "Codessiance 2023",
+    edition: "Codeissance 2023",
     team: "--------",
     project: "--------",
     track: "--------",

@@ -1,5 +1,5 @@
 /**
- * Codessiance '26 — Data Constants
+ * Codeissance '26 — Data Constants
  * All typed content for domains, timeline, sponsors, and FAQ.
  */
 
@@ -154,7 +154,7 @@ export interface SectionMeta {
 }
 
 export const SECTIONS: SectionMeta[] = [
-  { id: "hero", label: "Intro", wrappedTitle: "Codessiance Wrapped '26" },
+  { id: "hero", label: "Intro", wrappedTitle: "Codeissance Wrapped '26" },
   { id: "genres", label: "Your Top Genres", wrappedTitle: "Your Top Genres" },
   { id: "artists", label: "Featured Artists", wrappedTitle: "Featured Artists" },
   { id: "timeline", label: "Minutes Listened", wrappedTitle: "Minutes Listened" },

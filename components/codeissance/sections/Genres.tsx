@@ -339,7 +339,9 @@ export default function Genres() {
                     {/* CTA */}
                     <div className="mt-8">
                       <a
-                        href="#outro"
+                        href="https://unstop.com/p/codessiance-2026-thadomal-shahani-engineering-college-tsec-mumbai-1729289"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setActiveDomain(null)}
                         className="inline-flex items-center gap-2 rounded-full px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105"
                         style={{

@@ -187,52 +187,34 @@ export default function Outro() {
             TSEC CODESTORM PRESENTS
           </p>
 
-          <h2
-            className="
-              text-[15vw]
-              md:text-[10rem]
-              leading-none
-              font-black
-              tracking-[-0.06em]
-              uppercase
-              text-black
-              transition-all duration-300
-              [-webkit-text-stroke:2px_transparent]
-              hover:text-[#EBE6DF]
-              hover:[-webkit-text-stroke:2px_black]
-            "
-          >
-            REGISTER
-            <br />
-            NOW
-          </h2>
-
           <a
-            href="#"
-            className="
-              inline-flex
-              items-center
-              gap-3
-              mt-12
-              rounded-full
-              bg-black
-              text-white
-              px-10
-              py-5
-              text-lg
-              font-bold
-              transition-all
-              duration-300
-              hover:scale-105
-              hover:bg-white
-              hover:text-black
-              shadow-[0_25px_80px_rgba(0,0,0,.25)]
-            "
+            href="https://unstop.com/p/codessiance-2026-thadomal-shahani-engineering-college-tsec-mumbai-1729289"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block group cursor-pointer"
           >
-            Register Today
-
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <h2
+              className="
+                text-[15vw]
+                md:text-[10rem]
+                leading-none
+                font-black
+                tracking-[-0.06em]
+                uppercase
+                text-black
+                transition-all duration-300
+                [-webkit-text-stroke:2px_transparent]
+                hover:text-[#EBE6DF]
+                hover:[-webkit-text-stroke:2px_black]
+              "
+            >
+              REGISTER
+              <br />
+              NOW
+            </h2>
           </a>
+
+
 
         </div>
 

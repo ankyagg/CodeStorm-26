@@ -176,7 +176,7 @@ export default function TopArtist() {
           </div>
 
           <a
-            href="https://unstop.com"
+            href="https://unstop.com/p/codessiance-2026-thadomal-shahani-engineering-college-tsec-mumbai-1729289"
             target="_blank"
             rel="noopener noreferrer"
             className="relative z-10 shrink-0 px-6 py-3.5 rounded-full bg-[#1DB954] hover:bg-[#1ED760] text-black font-extrabold text-xs uppercase tracking-widest transition-all duration-300 hover:scale-105 flex items-center gap-2"

@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
-  Anchor,
   Home,
   Layers,
   Users,
@@ -40,7 +40,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-black text-white pt-10 sm:pt-16 pb-8 sm:pb-12 px-6 sm:px-10 lg:px-16 border-t border-white/10 font-sans">
+    <footer
+      className="w-full bg-black text-white pt-10 sm:pt-16 pb-8 sm:pb-12 px-6 sm:px-10 lg:px-16 border-t border-white/10"
+      style={{ fontFamily: "var(--font-body)" }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Main Grid Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 mb-12 sm:mb-16 items-start">
@@ -48,8 +51,17 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="sm:col-span-2 lg:col-span-3 flex flex-col items-start gap-3">
             <a href="#" className="flex items-center gap-2.5 group">
-              <Anchor className="w-7 h-7 sm:w-8 sm:h-8 text-white transition-transform group-hover:scale-105" />
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-white font-serif">
+              <Image
+                src="/logo.png"
+                alt="CodeStorm Logo"
+                width={32}
+                height={32}
+                className="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-md transition-transform group-hover:scale-105"
+              />
+              <span
+                className="text-xl sm:text-2xl font-black tracking-tight text-white"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
                 CodeStorm
               </span>
             </a>
@@ -221,12 +233,7 @@ export default function Footer() {
                 </a>
               </div>
 
-              <button
-                onClick={() => scrollTo("outro")}
-                className="w-full sm:w-auto bg-white text-black font-bold text-sm sm:text-base px-6 py-3 rounded-full hover:scale-105 transition-transform active:scale-95 text-center shadow-lg"
-              >
-                Register Now
-              </button>
+
             </div>
           </div>
         </div>

@@ -100,7 +100,7 @@ export default function Intro() {
               <DotGrid rows={4} cols={6} dotSize={22} gap={14} color="#1A1A1A" />
             </div>
             {/* translate-y only on lg+ so it doesn't break mobile layout */}
-            <div className="lg:translate-y-35">
+            <div className="lg:translate-y-36">
               <TOCFolder items={TOC_ITEMS} />
             </div>
           </div>
@@ -110,10 +110,15 @@ export default function Intro() {
 
       {/*Register Button 1*/}
       <div className="relative z-30 flex justify-start ml-2 mt-6 lg:mt-0 lg:absolute lg:right-6 pointer-events-auto">
-        <a href="#outro" className="block relative w-62 h-62 sm:w-34 sm:h-36 lg:w-64 lg:h-64 group translate-x-12 sm:-translate-x-[6rem] -translate-y-[3rem] lg:translate-y-4">
-          
+        <a
+          href="https://unstop.com/p/codessiance-2026-thadomal-shahani-engineering-college-tsec-mumbai-1729289"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block relative w-62 h-62 sm:w-34 sm:h-36 lg:w-64 lg:h-64 group translate-x-12 sm:-translate-x-[6rem] translate-y-[3rem] lg:translate-y-4"
+        >
+
           {/* Register Now pointing block */}
-          <div className="absolute -top-4 left-6 sm:-top-12 sm:right-auto sm:-left-8 lg:-top-16 lg:-left-12 z-40 flex flex-col items-center pointer-events-none group-hover:-translate-y-2 group-hover:-translate-x-2 transition-transform duration-300">
+          <div className="absolute -top-8 left-6 sm:-top-12 sm:right-auto sm:-left-8 lg:-top-10 lg:-left-12 z-40 flex flex-col items-center pointer-events-none group-hover:-translate-y-2 group-hover:-translate-x-2 transition-transform duration-300">
             <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 sm:px-5 sm:py-2.5 bg-[#1A1A1A] shadow-[5px_5px_0px_0px_rgba(255,70,50,1)] transform -rotate-[4deg]">
               <span className="w-2.5 h-2.5 rounded-full bg-[#1DB954] animate-pulse"></span>
               <p
@@ -124,9 +129,9 @@ export default function Intro() {
               </p>
             </div>
             {/* Arrow pointing down-right */}
-            <svg 
-              className="w-8 h-8 sm:w-10 sm:h-10 text-[#1A1A1A] transform -rotate-[30deg] mt-1 ml-6 sm:ml-10 drop-shadow-[2px_2px_0px_rgba(255,70,50,1)]" 
-              fill="currentColor" 
+            <svg
+              className="w-8 h-8 sm:w-10 sm:h-10 text-[#1A1A1A] transform -rotate-[30deg] mt-1 ml-6 sm:ml-10 drop-shadow-[2px_2px_0px_rgba(255,70,50,1)]"
+              fill="currentColor"
               viewBox="0 0 24 24"
             >
               <path d="M12 21.5L20.5 13H15V2.5H9V13H3.5L12 21.5Z" />

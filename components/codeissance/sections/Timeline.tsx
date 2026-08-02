@@ -38,6 +38,34 @@ export default function Timeline() {
   const cardRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const stRef = useRef<globalThis.ScrollTrigger | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const activeIndexRef = useRef(0);
+  activeIndexRef.current = activeIndex;
+
+  const resetInactivityTimer = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+
+    const st = stRef.current;
+    if (!st || !st.isActive) return;
+
+    if (st.progress > 0 && st.progress < 0.95 && activeIndexRef.current < TOTAL - 1) {
+      timerRef.current = setTimeout(() => {
+        const currentSt = stRef.current;
+        if (!currentSt || !currentSt.isActive) return;
+        const nextIdx = activeIndexRef.current + 1;
+        if (nextIdx < TOTAL) {
+          const targetProgress = (nextIdx + 0.1) / TOTAL;
+          const targetY = currentSt.start + (currentSt.end - currentSt.start) * targetProgress;
+          window.scrollTo({ top: targetY, behavior: "smooth" });
+        }
+      }, 2000);
+    }
+  };
+
   useEffect(() => {
     if (!cardRef.current) return;
     gsap.fromTo(
@@ -48,9 +76,23 @@ export default function Timeline() {
   }, [activeIndex]);
 
   useEffect(() => {
+    const handleUserScroll = () => {
+      resetInactivityTimer();
+    };
+    window.addEventListener("scroll", handleUserScroll, { passive: true });
+    window.addEventListener("wheel", handleUserScroll, { passive: true });
+    window.addEventListener("touchmove", handleUserScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleUserScroll);
+      window.removeEventListener("wheel", handleUserScroll);
+      window.removeEventListener("touchmove", handleUserScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     const ctx = gsap.context(() => {
       const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-      ScrollTrigger.create({
+      const st = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top", // Pin exactly at the top of the viewport
         end: `+=${TOTAL * (isMobile ? 650 : 500)}`, // Distance per card so single swipe moves 1 card
@@ -67,11 +109,23 @@ export default function Timeline() {
         onUpdate: (self) => {
           const idx = Math.min(TOTAL - 1, Math.floor(self.progress * TOTAL));
           setActiveIndex(idx);
+          resetInactivityTimer();
+        },
+        onToggle: (self) => {
+          if (!self.isActive && timerRef.current) {
+            clearTimeout(timerRef.current);
+            timerRef.current = null;
+          }
         },
       });
+
+      stRef.current = st;
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      ctx.revert();
+    };
   }, []);
 
   const event = TIMELINE_EVENTS[activeIndex];
@@ -107,15 +161,16 @@ export default function Timeline() {
       >
 
         {/* Top Header */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
           <div>
             <h2
               className="text-2xl sm:text-5xl md:text-6xl font-normal leading-tight text-black tracking-tight"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              The <strong className="font-black text-black">Top Lists</strong> of 2026
+              The <strong className="font-black text-black">TimeLine</strong> of 2026
             </h2>
           </div>
+
 
         </div>
 

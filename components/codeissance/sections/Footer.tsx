@@ -144,7 +144,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+918850967604"
+                  href="tel:+919082067720"
                   className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors"
                 >
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">
@@ -155,7 +155,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+917039954217"
+                  href="tel:+919892677787"
                   className="flex items-center gap-2.5 sm:gap-3 group text-white font-bold hover:text-[#1DB954] transition-colors"
                 >
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/30 group-hover:border-[#1DB954] flex items-center justify-center transition-colors shrink-0">

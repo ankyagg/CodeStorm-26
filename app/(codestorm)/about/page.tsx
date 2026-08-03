@@ -141,7 +141,7 @@ const COMMITTEES: Committee[] = [
         name: "SMM",
         members: [
           { name: "Dixit Bind", role: "SMM JCOM", image: "/dixit-bind.jpg", github: "https://github.com/dixitbind", linkedin: "https://linkedin.com/in/dixitbind" },
-          { name: "Parv Jain", role: "SMM JCOM", image: "/parv-jain.jpg", github: "https://github.com/parvxg", linkedin: "https://www.linkedin.com/in/parv-jain-" }
+          { name: "Parv Jain", role: "SMM JCOM", image: "/parv-jain.jpg", github: "https://github.com/parvxg", linkedin: "https://www.linkedin.com/in/parv-jain-5225a5425" }
         ],
       },
       {

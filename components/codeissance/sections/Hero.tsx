@@ -138,7 +138,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Powered By — Choice TechLab */}
+        {/* Powered By — Sponsors */}
         <div className="mt-6 text-center z-20 mx-4">
           <div className="inline-flex flex-col items-center justify-center gap-3 sm:gap-4 px-6 sm:px-10 py-3 sm:py-5 bg-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(139,124,255,1)] hover:-translate-y-1 transition-transform border border-transparent">
             <p
@@ -147,17 +147,23 @@ export default function Hero() {
             >
               Powered by
             </p>
-            <img
-              src="/sponsors/choice.png"
-              alt="Choice TechLab"
-              style={{
-                height: "52px",
-                width: "auto",
-                objectFit: "contain",
-                borderRadius: "6px",
-              }}
-              draggable={false}
-            />
+            {/* Logos row */}
+            <div className="flex items-center gap-5 sm:gap-7">
+              <img
+                src="/sponsors/choice.png"
+                alt="Choice TechLab"
+                style={{ height: "52px", width: "auto", objectFit: "contain", borderRadius: "6px" }}
+                draggable={false}
+              />
+              {/* Divider */}
+              <div style={{ width: "1px", height: "40px", backgroundColor: "rgba(255,255,255,0.2)" }} />
+              <img
+                src="/sponsors/unstop.png"
+                alt="Unstop"
+                style={{ height: "52px", width: "auto", objectFit: "contain", borderRadius: "6px" }}
+                draggable={false}
+              />
+            </div>
           </div>
         </div>
 

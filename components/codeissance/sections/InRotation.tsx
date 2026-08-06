@@ -71,32 +71,121 @@ export default function InRotation() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        
-        {/* Editorial Feature Header matching Spotify Section 4 */}
-        <div ref={headerRef} className="mb-20 max-w-3xl opacity-0">
+
+        {/* Section Header */}
+        <div ref={headerRef} className="mb-16 max-w-3xl opacity-0">
+          <p
+            className="text-xs uppercase tracking-[0.3em] font-semibold mb-4"
+            style={{ color: "#1DB954", fontFamily: "var(--font-body)" }}
+          >
+            Powering Codeissance
+          </p>
           <h2
             className="text-3xl sm:text-6xl md:text-7xl font-normal leading-[1.1] text-white tracking-tight"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Find Your <strong className="font-black text-white block mt-2">Codeissance Club</strong>
+            Our <strong className="font-black text-white block mt-2">Sponsors</strong>
           </h2>
-
         </div>
 
-        {/* Content Layout: Sponsors Full Width */}
-        <div ref={gridRef} className="w-full overflow-hidden py-10 opacity-0">
-          <LogoLoop
-            logos={[
-              { src: "/sponsors/sponsor-1.svg", alt: "Sponsor 1" },
-              { src: "/sponsors/sponsor-2.svg", alt: "Sponsor 2" },
-              { src: "/sponsors/sponsor-3.svg", alt: "Sponsor 3" },
-              { src: "/sponsors/sponsor-4.svg", alt: "Sponsor 4" }
-            ]}
-            speed={50}
-            direction="left"
-            logoHeight={100}
-            gap={32}
-          />
+        {/* Title Sponsor + Partners */}
+        <div ref={gridRef} className="opacity-0">
+
+          {/* Title Sponsor */}
+          <div className="mb-16">
+            <p
+              className="text-sm uppercase tracking-[0.4em] font-bold mb-8 text-center"
+              style={{ color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-body)" }}
+            >
+              Title Sponsor
+            </p>
+            <div className="flex justify-center items-center">
+              <div
+                className="relative flex items-center justify-center rounded-2xl px-14 py-10 transition-all duration-500 hover:scale-105"
+                style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  boxShadow: "0 0 60px rgba(29,185,84,0.08), inset 0 1px 0 rgba(255,255,255,0.05)",
+                }}
+              >
+                {/* Subtle glow ring */}
+                <div
+                  className="absolute inset-0 rounded-2xl pointer-events-none"
+                  style={{
+                    background: "radial-gradient(ellipse at 50% 0%, rgba(29,185,84,0.12) 0%, transparent 70%)",
+                  }}
+                />
+                <img
+                  src="/sponsors/choice.png"
+                  alt="Choice TechLab — Title Sponsor"
+                  style={{
+                    height: "90px",
+                    width: "auto",
+                    objectFit: "contain",
+                    borderRadius: "10px",
+                  }}
+                  draggable={false}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center gap-6 mb-12">
+            <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.12)" }} />
+            <p
+              className="text-sm uppercase tracking-[0.4em] font-bold whitespace-nowrap"
+              style={{ color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-body)" }}
+            >
+              Partners
+            </p>
+            <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.12)" }} />
+          </div>
+
+          {/* Animated Partners LogoLoop */}
+          <div className="w-full overflow-hidden py-6">
+            <LogoLoop
+              logos={[
+                { src: "/sponsors/unstop.png", alt: "Unstop" },
+                { src: "/sponsors/protech.png", alt: "Protech" },
+              ]}
+              speed={50}
+              direction="left"
+              logoHeight={90}
+              gap={80}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#1A1A1A"
+              renderItem={(item) => (
+                <div
+                  style={{
+                    width: "240px",
+                    height: "90px",
+                    backgroundColor: "#ffffff",
+                    borderRadius: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    overflow: "hidden",
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
+                    padding: "12px 20px",
+                  }}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt ?? ""}
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      objectFit: "contain",
+                    }}
+                    draggable={false}
+                  />
+                </div>
+              )}
+            />
+          </div>
         </div>
       </div>
     </section>

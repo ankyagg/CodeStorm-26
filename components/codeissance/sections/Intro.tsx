@@ -14,7 +14,7 @@ const TOC_ITEMS = [
   { label: "Hackathon Domains", href: "#genres" },
   { label: "24-Hour Schedule", href: "#timeline" },
   { label: "Grand Prize Pool", href: "#prizes" },
-  { label: "Our Sponsors", href: "/codeissance" },
+  { label: "Our Sponsors", href: "#sponsors" },
   { label: "FAQs", href: "#recap" },
   { label: "Register Now", href: "#outro" },
 ];

@@ -119,12 +119,12 @@ export default function Hero() {
               </div>
 
               {/* Title Banner Box */}
-              <div className="relative w-full sm:w-auto bg-[#1A1A1A] border-4 border-[#1DB954] text-[#F0EDEA] px-4 sm:px-14 md:px-24 py-6 sm:py-12 shadow-[8px_8px_0px_0px_rgba(29,185,84,1)] sm:shadow-[12px_12px_0px_0px_rgba(29,185,84,1)] overflow-hidden transition-transform hover:-translate-y-2 hover:-translate-x-2 text-center">
+              <div className="relative w-full sm:w-auto bg-[#1A1A1A] border-4 border-[#1DB954] text-[#F0EDEA] px-1.5 sm:px-14 md:px-24 py-5 sm:py-12 shadow-[8px_8px_0px_0px_rgba(29,185,84,1)] sm:shadow-[12px_12px_0px_0px_rgba(29,185,84,1)] overflow-hidden transition-transform hover:-translate-y-2 hover:-translate-x-2 text-center flex justify-center items-center">
                 <h1
-                  className="relative z-10 text-5xl sm:text-7xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none break-words text-center"
+                  className="relative z-10 text-[clamp(2.2rem,9.5vw,10rem)] sm:text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none text-center whitespace-nowrap"
                   style={{
                     fontFamily: "var(--font-display)",
-                    letterSpacing: "-0.02em",
+                    letterSpacing: "-0.03em",
                   }}
                 >
                   Codeissance

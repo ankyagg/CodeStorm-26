@@ -23,11 +23,12 @@ export function useLenisGSAP() {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Initialize Lenis
+    // Initialize Lenis with normalized wheel & touch multipliers to fix high DPI / hyper-sensitive scroll
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      touchMultiplier: 2,
+      wheelMultiplier: 0.75,
+      touchMultiplier: 1.2,
       infinite: false,
     });
 
@@ -37,10 +38,11 @@ export function useLenisGSAP() {
     lenis.on("scroll", ScrollTrigger.update);
 
     // Add Lenis's requestAnimationFrame to GSAP's ticker
-    // This ensures Lenis and GSAP animations stay in perfect sync
-    gsap.ticker.add((time: number) => {
-      lenis.raf(time * 1000); // GSAP ticker uses seconds, Lenis uses ms
-    });
+    const updateLenis = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(updateLenis);
 
     // Disable GSAP's lag smoothing so scroll-linked animations stay precise
     gsap.ticker.lagSmoothing(0);
@@ -48,7 +50,7 @@ export function useLenisGSAP() {
     // Cleanup on unmount
     return () => {
       lenis.destroy();
-      gsap.ticker.remove(lenis.raf as unknown as gsap.TickerCallback);
+      gsap.ticker.remove(updateLenis);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);

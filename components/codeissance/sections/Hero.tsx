@@ -45,7 +45,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative z-20 overflow-visible bg-[#EBE6DF] min-h-[90vh] flex items-center justify-center py-12 md:py-20"
+      className="relative z-20 overflow-visible bg-[#EBE6DF] min-h-screen flex items-center justify-center py-10 md:py-16"
     >
       {/* Figma Pattern 1: Concentric Circles (Green Highlight) */}
       <div
@@ -68,23 +68,47 @@ export default function Hero() {
         <CheckeredPattern cols={10} rows={10} size={50} color1="#1A1A1A" color2="transparent" warp={true} />
       </div>
 
-
-
       {/* Main Hero Content */}
       <div
         ref={containerRef}
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center opacity-0"
+        className="relative z-10 w-full max-w-7xl mx-auto px-3 sm:px-6 flex flex-col items-center justify-center opacity-0 py-6"
       >
+        {/* Powered By — Top Eyebrow Badge */}
+        <div className="mb-20 md:mb-5 text-center z-20 mx-4">
+          <div className="inline-flex flex-col items-center justify-center gap-2 sm:gap-2.5 px-6 sm:px-9 py-2.5 sm:py-3.5 bg-[#1A1A1A] shadow-[6px_6px_0px_0px_rgba(139,124,255,1)] hover:-translate-y-1 transition-transform border border-transparent">
+            <span
+              className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#F0EDEA]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Powered by
+            </span>
+            <div className="flex items-center gap-4 sm:gap-6">
+              <img
+                src="/sponsors/choice.png"
+                alt="Choice TechLab"
+                style={{ height: "32px", width: "auto", objectFit: "contain", borderRadius: "4px" }}
+                draggable={false}
+              />
+              <div style={{ width: "1px", height: "20px", backgroundColor: "rgba(255,255,255,0.2)" }} />
+              <img
+                src="/sponsors/unstop.png"
+                alt="Unstop"
+                style={{ height: "32px", width: "auto", objectFit: "contain", borderRadius: "4px" }}
+                draggable={false}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Center Title Group */}
         <div className="relative w-full flex flex-col items-center justify-center">
 
+          {/* Main Title Block — Full Width on Mobile, Snug fit on Desktop */}
+          <div className="relative z-10 my-5 md:my-12 w-full sm:w-auto flex justify-center perspective-1000 -mt-4 md:mt-5">
+            <div className="group relative w-full sm:w-auto flex justify-center">
 
-
-          {/* Main Title Block */}
-          <div className="relative z-10 my-16 md:my-24 w-full flex justify-center perspective-1000">
-            <div className="group relative">
-              
               {/* Date Tag - Top Right of Banner */}
-              <div className="absolute -top-6 -right-2 md:-top-8 md:-right-8 z-30 inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-[#1A1A1A] shadow-[6px_6px_0px_0px_rgba(255,70,50,1)] hover:-translate-y-1 transition-transform border border-transparent transform rotate-[4deg]">
+              <div className="absolute -top-6 -right-1 sm:-top-8 sm:-right-8 z-30 inline-flex items-center justify-center gap-2 px-3.5 py-1.5 sm:px-6 sm:py-3 bg-[#1A1A1A] shadow-[4px_4px_0px_0px_rgba(255,70,50,1)] sm:shadow-[6px_6px_0px_0px_rgba(255,70,50,1)] hover:-translate-y-1 transition-transform border border-transparent transform rotate-[4deg]">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#1DB954] animate-pulse"></span>
                 <p
                   className="text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-[#F0EDEA]"
@@ -94,9 +118,10 @@ export default function Hero() {
                 </p>
               </div>
 
-              <div className="relative bg-[#1A1A1A] border-4 border-[#1DB954] text-[#F0EDEA] px-8 sm:px-14 md:px-24 py-8 sm:py-12 shadow-[12px_12px_0px_0px_rgba(29,185,84,1)] overflow-hidden transition-transform hover:-translate-y-2 hover:-translate-x-2">
+              {/* Title Banner Box */}
+              <div className="relative w-full sm:w-auto bg-[#1A1A1A] border-4 border-[#1DB954] text-[#F0EDEA] px-4 sm:px-14 md:px-24 py-6 sm:py-12 shadow-[8px_8px_0px_0px_rgba(29,185,84,1)] sm:shadow-[12px_12px_0px_0px_rgba(29,185,84,1)] overflow-hidden transition-transform hover:-translate-y-2 hover:-translate-x-2 text-center">
                 <h1
-                  className="relative z-10 text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none break-words"
+                  className="relative z-10 text-5xl sm:text-7xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none break-words text-center"
                   style={{
                     fontFamily: "var(--font-display)",
                     letterSpacing: "-0.02em",
@@ -110,10 +135,10 @@ export default function Hero() {
 
           {/* Bold 26 Overlay */}
           <div
-            className="absolute -bottom-8 md:-bottom-16 right-[5%] md:right-[15%] pointer-events-none select-none z-20 transform rotate-[-4deg]"
+            className="absolute -bottom-8 md:-bottom-16 right-[2%] sm:right-[8%] md:right-[15%] pointer-events-none select-none z-20 transform rotate-[-4deg]"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(6rem, 16vw, 14rem)",
+              fontSize: "clamp(6rem, 16vw, 12rem)",
               fontWeight: "900",
               color: "#FF4632",
               lineHeight: 0.8,
@@ -125,7 +150,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Subtitle tag */}
+        {/* Bottom Subtitle Tag */}
         <div className="mt-16 md:mt-24 text-center z-20 mx-4">
           <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 px-4 sm:px-8 py-2 sm:py-4 bg-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(255,70,50,1)] hover:-translate-y-1 transition-transform border border-transparent">
             <span className="w-3 h-3 rounded-full bg-[#1DB954] animate-pulse"></span>
@@ -135,35 +160,6 @@ export default function Hero() {
             >
               TSEC CodeStorm • 24-Hour Offline Hackathon
             </p>
-          </div>
-        </div>
-
-        {/* Powered By — Sponsors */}
-        <div className="mt-6 text-center z-20 mx-4">
-          <div className="inline-flex flex-col items-center justify-center gap-3 sm:gap-4 px-6 sm:px-10 py-3 sm:py-5 bg-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(139,124,255,1)] hover:-translate-y-1 transition-transform border border-transparent">
-            <p
-              className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#F0EDEA]"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Powered by
-            </p>
-            {/* Logos row */}
-            <div className="flex items-center gap-5 sm:gap-7">
-              <img
-                src="/sponsors/choice.png"
-                alt="Choice TechLab"
-                style={{ height: "52px", width: "auto", objectFit: "contain", borderRadius: "6px" }}
-                draggable={false}
-              />
-              {/* Divider */}
-              <div style={{ width: "1px", height: "40px", backgroundColor: "rgba(255,255,255,0.2)" }} />
-              <img
-                src="/sponsors/unstop.png"
-                alt="Unstop"
-                style={{ height: "52px", width: "auto", objectFit: "contain", borderRadius: "6px" }}
-                draggable={false}
-              />
-            </div>
           </div>
         </div>
 

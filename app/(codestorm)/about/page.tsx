@@ -52,51 +52,51 @@ const COMMITTEES: Committee[] = [
       {
         name: "Technical",
         members: [
-          { name: "Manav Sonawane", role: "Technical SCOM", image: "/manav-sonawane.jpg", github: "https://github.com/Manav-Sonawane", linkedin: "https://linkedin.com/in/manavsonawane" },
-          { name: "Akshata Pandit", role: "Technical SCOM", image: "/akshata-pandit.jpg", github: "https://github.com/akshatapandit", linkedin: "https://www.linkedin.com/in/akshata-pandit-452760332/" },
-          { name: "Aniket Walanj", role: "Technical SCOM", image: "/aniket-walanj.jpg", github: "https://github.com/ankyagg", linkedin: "https://linkedin.com/in/aniketwalanj" },
-          { name: "Ankit Vishwakarma", role: "Technical SCOM", image: "/ankit-vishwakarma.jpg", github: "http://github.com/Ankitvishwa07", linkedin: "https://www.linkedin.com/in/ankit-vishwakarma-29bbab20a" },
+          { name: "Manav Sonawane", role: "Technical SCOM", image: "team/scoms/manav-sonawane.jpg", github: "https://github.com/Manav-Sonawane", linkedin: "https://linkedin.com/in/manavsonawane" },
+          { name: "Akshata Pandit", role: "Technical SCOM", image: "team/scoms/akshata-pandit.jpg", github: "https://github.com/akshatapandit", linkedin: "https://www.linkedin.com/in/akshata-pandit-452760332/" },
+          { name: "Aniket Walanj", role: "Technical SCOM", image: "team/scoms/aniket.jpeg", github: "https://github.com/ankyagg", linkedin: "https://linkedin.com/in/aniketwalanj" },
+          { name: "Ankit Vishwakarma", role: "Technical SCOM", image: "team/scoms/ankit-vishwakarma.jpg", github: "http://github.com/Ankitvishwa07", linkedin: "https://www.linkedin.com/in/ankit-vishwakarma-29bbab20a" },
 
         ],
       },
       {
         name: "Marketing",
         members: [
-          { name: "Mansi Parande", role: "Marketing+Tech SCOM", image: "/mansi-parande.jpg", github: "https://github.com/Mansi374", linkedin: "https://www.linkedin.com/in/mansi-parande" },
-          { name: "Deepesh Jaisingh", role: "Marketing SCOM", image: "/deepesh-jaisingh.jpg", github: "https://github.com/jaisinghdeepesh", linkedin: "http://linkedin.com/in/deepesh-k-jaisingh" },
+          { name: "Mansi Parande", role: "Marketing+Tech SCOM", image: "team/scoms/mansi-parande.jpg", github: "https://github.com/Mansi374", linkedin: "https://www.linkedin.com/in/mansi-parande" },
+          { name: "Deepesh Jaisingh", role: "Marketing SCOM", image: "team/scoms/deepesh-jaisingh.jpg", github: "https://github.com/jaisinghdeepesh", linkedin: "http://linkedin.com/in/deepesh-k-jaisingh" },
         ],
       },
       {
         name: "Design",
         members: [
-          { name: "Vansh Gaur", role: "Design SCOM", image: "/VanshGaur_SCOM.jpg", github: "https://github.com/VanshGaur06", linkedin: "https://www.linkedin.com/in/vanshgaur06" },
-          { name: "Shreya Yeole", role: "Design SCOM", image: "/ShreyaYeole_SCOM.jpg", github: "https://github.com/shreyayeole-png", linkedin: "https://www.linkedin.com/in/shreya-yeole-8144a02b5?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
-          { name: "Priyanka Patil", role: "Design SCOM", image: "/PriyankaPatil_SCOM.jpg", github: "https://github.com/priyanka-patill", linkedin: "https://www.linkedin.com/in/priyanka-patil-45489b336" },
+          { name: "Vansh Gaur", role: "Design SCOM", image: "team/scoms/VanshGaur_SCOM.jpg", github: "https://github.com/VanshGaur06", linkedin: "https://www.linkedin.com/in/vanshgaur06" },
+          { name: "Shreya Yeole", role: "Design SCOM", image: "team/scoms/ShreyaYeole_SCOM.jpg", github: "https://github.com/shreyayeole-png", linkedin: "https://www.linkedin.com/in/shreya-yeole-8144a02b5?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+          { name: "Priyanka Patil", role: "Design SCOM", image: "team/scoms/PriyankaPatil_SCOM.jpg", github: "https://github.com/priyanka-patill", linkedin: "https://www.linkedin.com/in/priyanka-patil-45489b336" },
         ],
       },
       {
         name: "Editorial",
         members: [
-          { name: "Saarthak Patil", role: "Editorial SCOM", image: "/saarthak-patil.jpg", github: "http://github.com/Olecularwind10", linkedin: "http://linkedin.com/in/saarthak-patil" },
+          { name: "Saarthak Patil", role: "Editorial SCOM", image: "team/scoms/saarthak-patil.jpg", github: "http://github.com/Olecularwind10", linkedin: "http://linkedin.com/in/saarthak-patil" },
         ],
       },
       {
         name: "SMM",
         members: [
-          { name: "Aryan Pathare", role: "SMM SCOM", image: "/aryan-pathare.jpg", github: "https://github.com/Aryan-Pathare", linkedin: "https://www.linkedin.com/in/aryan-pathare/" },
+          { name: "Aryan Pathare", role: "SMM SCOM", image: "team/scoms/aryan-pathare.jpg", github: "https://github.com/Aryan-Pathare", linkedin: "https://www.linkedin.com/in/aryan-pathare/" },
         ],
       },
       {
         name: "Logistics",
         members: [
-          { name: "Aditya Pawar", role: "Logistics SCOM", image: "/AdityaPawar_SCOM.jpeg", github: "hhttps://www.linkedin.com/in/aditya-pawar-634755384/", linkedin: "https://github.com/LavaHoundLogic" },
-          { name: "Dhruv Hemdev", role: "Logistics SCOM", image: "/dhruv-hemdev.jpg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
+          { name: "Aditya Pawar", role: "Logistics SCOM", image: "team/scoms/AdityaPawar_SCOM.jpeg", github: "hhttps://www.linkedin.com/in/aditya-pawar-634755384/", linkedin: "https://github.com/LavaHoundLogic" },
+          { name: "Dhruv Hemdev", role: "Logistics SCOM", image: "team/scoms/dhruv-hemdev.jpg", github: "https://github.com/dhruvh6", linkedin: "https://linkedin.com/in/dhruvhemdev" },
         ],
       },
       {
         name: "Public Relations",
         members: [
-          { name: "Yash Chinchawade", role: "PR SCOM", image: "/yash-chinchawade.jpg", github: "https://github.com/14yashh", linkedin: "https://www.linkedin.com/in/yash-chinchwade" },
+          { name: "Yash Chinchawade", role: "PR SCOM", image: "team/scoms/yash-chinchawade.jpg", github: "https://github.com/14yashh", linkedin: "https://www.linkedin.com/in/yash-chinchwade" },
         ],
       },
 
@@ -109,52 +109,52 @@ const COMMITTEES: Committee[] = [
       {
         name: "Technical",
         members: [
-          { name: "Aditya Haswani", role: "Technical JCOM", image: "/AdityaHaswani_JCOM.jpg", github: "https://github.com/AadityaHaswani", linkedin: "https://www.linkedin.com/in/aditya-haswani-095209378/" },
-          { name: "Sanskar Jadhav", role: "Technical JCOM", image: "/SanskarJadhav.png", github: "https://github.com/jadhavsanskar7432-lang", linkedin: "https://www.linkedin.com/in/sanskar-jadhav-a6b76a370/" },
+          { name: "Aditya Haswani", role: "Technical JCOM", image: "team/jcoms/AdityaHaswani_JCOM.jpg", github: "https://github.com/AadityaHaswani", linkedin: "https://www.linkedin.com/in/aditya-haswani-095209378/" },
+          { name: "Sanskar Jadhav", role: "Technical JCOM", image: "team/jcoms/SanskarJadhav.png", github: "https://github.com/jadhavsanskar7432-lang", linkedin: "https://www.linkedin.com/in/sanskar-jadhav-a6b76a370/" },
         ],
       },
       {
         name: "Marketing",
         members: [
-          { name: "Vardaan Grover", role: "Marketing JCOM", image: "/vardaan-grover.jpg", github: "https://github.com/vardaangrover30-stack", linkedin: "https://www.linkedin.com/in/vardaan-grover-691393253/" },
-          { name: "Dhruv Pareek", role: "Marketing JCOM", image: "/dhruv-pareek.jpg", github: "https://github.com/dhruv-pareek23", linkedin: "https://www.linkedin.com/in/dhruv-pareek-088492264?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
-          { name: "Vedika Panjwani", role: "Marketing JCOM", image: "/vedika-panjwani.jpeg", github: "https://github.com/vedipanj115", linkedin: "https://www.linkedin.com/in/vedika-panjwani-85731127b" },
-          { name: "Aarohi Limaye", role: "Marketing JCOM", image: "/aarohi-limaye.jpeg", github: "https://github.com/aa-aarohiiii", linkedin: "https://www.linkedin.com/in/aarohi-limaye-705b79421?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
+          { name: "Vardaan Grover", role: "Marketing JCOM", image: "team/jcoms/vardaan-grover.jpg", github: "https://github.com/vardaangrover30-stack", linkedin: "https://www.linkedin.com/in/vardaan-grover-691393253/" },
+          { name: "Dhruv Pareek", role: "Marketing JCOM", image: "team/jcoms/dhruv-pareek.jpg", github: "https://github.com/dhruv-pareek23", linkedin: "https://www.linkedin.com/in/dhruv-pareek-088492264?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
+          { name: "Vedika Panjwani", role: "Marketing JCOM", image: "team/jcoms/vedika-panjwani.jpeg", github: "https://github.com/vedipanj115", linkedin: "https://www.linkedin.com/in/vedika-panjwani-85731127b" },
+          { name: "Aarohi Limaye", role: "Marketing JCOM", image: "team/jcoms/aarohi-limaye.jpeg", github: "https://github.com/aa-aarohiiii", linkedin: "https://www.linkedin.com/in/aarohi-limaye-705b79421?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
         ],
       },
       {
         name: "Design",
         members: [
-          { name: "Khushnuma Vimadalal", role: "Design JCOM", image: "/KhushnumaVimadalal_JCOM.jpg", github: "https://share.google/upWMtZmouQZr547Ol", linkedin: "https://www.linkedin.com/in/khushnuma-vimadalal-96173341a?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
-          { name: "Piyush Tehalani", role: "Design JCOM", image: "/PiyushTehalani.png", github: "https://github.com/GeekyPiyushh", linkedin: "http://www.linkedin.com/in/piyush-tehalani" },
-          { name: "Pahal Killekar", role: "Design JCOM", image: "/PahalKillekar_JCOM.jpeg", github: "https://github.com/pahal5", linkedin: "http://www.linkedin.com/in/pahal-killekar-b80953306" },
-          { name: "Sushant Raghuvanshi", role: "Design JCOM", image: "/SushantRaghuvanshi_JCOM.jpg", github: "https://github.com/sushantgit-cyber", linkedin: "https://www.linkedin.com/in/sushant-raghuvanshi-2a0309386?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
+          { name: "Khushnuma Vimadalal", role: "Design JCOM", image: "team/jcoms/KhushnumaVimadalal_JCOM.jpg", github: "https://share.google/upWMtZmouQZr547Ol", linkedin: "https://www.linkedin.com/in/khushnuma-vimadalal-96173341a?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+          { name: "Piyush Tehalani", role: "Design JCOM", image: "team/jcoms/PiyushTehalani.png", github: "https://github.com/GeekyPiyushh", linkedin: "http://www.linkedin.com/in/piyush-tehalani" },
+          { name: "Pahal Killekar", role: "Design JCOM", image: "team/jcoms/PahalKillekar_JCOM.jpeg", github: "https://github.com/pahal5", linkedin: "http://www.linkedin.com/in/pahal-killekar-b80953306" },
+          { name: "Sushant Raghuvanshi", role: "Design JCOM", image: "team/jcoms/SushantRaghuvanshi_JCOM.jpg", github: "https://github.com/sushantgit-cyber", linkedin: "https://www.linkedin.com/in/sushant-raghuvanshi-2a0309386?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
         ],
       },
       {
         name: "Editorial",
         members: [
-          { name: "Preet Karmani", role: "Editorial JCOM", image: "/PreetKarmani_JCOM.jpeg", github: "https://github.com/karnanipreett-eng", linkedin: "https://www.linkedin.com/in/preet-karnani-4146b03b9" },
+          { name: "Preet Karmani", role: "Editorial JCOM", image: "team/jcoms/PreetKarmani_JCOM.jpeg", github: "https://github.com/karnanipreett-eng", linkedin: "https://www.linkedin.com/in/preet-karnani-4146b03b9" },
         ],
       },
       {
         name: "SMM",
         members: [
-          { name: "Dixit Bind", role: "SMM JCOM", image: "/dixit-bind.jpg", github: "https://github.com/dixitbind", linkedin: "https://linkedin.com/in/dixitbind" },
-          { name: "Parv Jain", role: "SMM JCOM", image: "/parv-jain.jpg", github: "https://github.com/parvxg", linkedin: "https://www.linkedin.com/in/parv-jain-5225a5425" }
+          { name: "Dixit Bind", role: "SMM JCOM", image: "team/jcoms/dixit-bind.jpg", github: "https://github.com/dixitbind", linkedin: "https://linkedin.com/in/dixitbind" },
+          { name: "Parv Jain", role: "SMM JCOM", image: "team/jcoms/parv-jain.jpg", github: "https://github.com/parvxg", linkedin: "https://www.linkedin.com/in/parv-jain-5225a5425" }
         ],
       },
       {
         name: "Logistics",
         members: [
-          { name: "Rishabh Jain", role: "Logistics JCOM", image: "/rishabh-jain.jpg", github: "https://github.com/RishabhJainn09", linkedin: "https://www.linkedin.com/in/rishabh-jain-3a12b8364?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+          { name: "Rishabh Jain", role: "Logistics JCOM", image: "team/jcoms/rishabh-jain.jpg", github: "https://github.com/RishabhJainn09", linkedin: "https://www.linkedin.com/in/rishabh-jain-3a12b8364?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
         ],
       },
 
       {
         name: "Public Relations",
         members: [
-          { name: "Arfiya Malkani", role: "PR JCOM", image: "/arfiya-malkani.jpg", github: "https://github.com/arfiyamalkani07", linkedin: "https://www.linkedin.com/in/arfiya-malkani-2697733b9?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
+          { name: "Arfiya Malkani", role: "PR JCOM", image: "team/jcoms/arfiya-malkani.jpg", github: "https://github.com/arfiyamalkani07", linkedin: "https://www.linkedin.com/in/arfiya-malkani-2697733b9?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
         ],
       },
 

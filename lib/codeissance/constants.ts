@@ -99,7 +99,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-cost",
     question: "Is there a registration fee?",
     answer:
-      "The registration is completely free.But once you are selected for the hackathon there will be an entry free of Rs.500",
+      "The registration is completely free. But once you are selected for the hackathon there will be an entry free of Rs.500",
   },
   {
     id: "faq-apply",
@@ -111,7 +111,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-prizes",
     question: "What are the prizes?",
     answer:
-      "Official winner trophies across all tracks, along with exclusive swag kits, certificates, and opportunities with our sponsor partners.", // TODO: Confirm amount
+      "To be revealed", // TODO: Confirm amount
   },
   {
     id: "faq-nocode",

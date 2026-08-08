@@ -105,7 +105,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-apply",
     question: "How do I apply?",
     answer:
-      "Register your team through our official registration link on Unstop. You'll need to submit a brief project idea during registration.", // TODO: Confirm platform
+      "Register your team through our official registration link on Unstop.", // TODO: Confirm platform
   },
   {
     id: "faq-prizes",

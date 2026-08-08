@@ -15,7 +15,7 @@ const TOC_ITEMS = [
   { label: "24-Hour Schedule", href: "#timeline" },
   { label: "Grand Prize Pool", href: "#prizes" },
   { label: "Our Sponsors", href: "#sponsors" },
-  { label: "FAQs", href: "#recap" },
+  { label: "FAQs", href: "#faq" },
   { label: "Register Now", href: "#outro" },
 ];
 

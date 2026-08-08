@@ -171,7 +171,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollTo("recap")}
+                  onClick={() => scrollTo("faq")}
                   className="hover:text-[#1DB954] transition-colors"
                 >
                   FAQ
